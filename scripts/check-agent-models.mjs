@@ -43,7 +43,7 @@
  * word". That is not safe on this word, because it occurs in three kinds of
  * place with three different right answers:
  *
- *   - inside the pinned model id (`claude-fable-5-1`, and `gpt-6-astra` for
+ *   - inside the pinned model id (`claude-fable-5-2`, and `gpt-6-astra` for
  *     the other tier) -- already handled, and never hand-edited: it is one
  *     value in `.agents/machinery.json` and `--fix` propagates it;
  *   - as the Agent tool's own model ALIAS (`model: fable`) -- not ours to

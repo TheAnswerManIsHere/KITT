@@ -403,7 +403,7 @@ to worry about strange links."*)
      reviewer pin names a **tier**, never a version, so a new model release is
      an edit here and nowhere else. `id` must be a **full** model id: a
      dispatch stamps the id it asked for against the id that answered, and an
-     alias cannot be compared, so `fable` against `claude-fable-5-1` would
+     alias cannot be compared, so `fable` against `claude-fable-5-2` would
      establish nothing. An alias-shaped id is refused by name.
 
    **How the Claude tier actually reaches this repository**, since the two
