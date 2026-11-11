@@ -59,7 +59,7 @@ Consumers as of this writing: `TheAnswerManIsHere/Overhypeme`,
   arrives as **argv, a path, or a file the operator itself authored** — most
   of `scripts/` and `core/scripts/`, and the eval's task file — the controls
   against deliberate action are GitHub's server-side ruleset — its required
-  checks including, once enrolled, the review gate (`claude-core.md`, *Shared
+  checks including the review gate (`claude-core.md`, *Shared
   judgement on a review round*) — and David working alongside, reading the latitude line every authority-widening PR
   carries (2026-09-14, when the David-merge gate was retired), and a local
   script run by hand is not a security boundary. So a
@@ -128,8 +128,11 @@ node scripts/check-payload-banners.mjs          # every payload file the sync ca
 node scripts/sync.mjs --to <repo> --dry-run     # what a consumer would receive
 ```
 
-These run in the two required checks on every pull request to `main` — `Test`
-and `Manifest`, which are the job names the `main` ruleset lists. The number of
+These run in two of the three required checks on every pull request to `main` —
+`Test` and `Manifest`, which are the job names the `main` ruleset lists; the
+third, `Review gate`, is a commit status the review gate posts, not one of these
+commands (`claude-core.md`, *Shared judgement on a review round*; David enrolled
+it on 2026-11-11). The number of
 *commands* is not the number of *checks*: the `check-*` scripts all run in
 `Manifest`, so adding one here adds no new required check and needs no ruleset
 change. (`Manifest` no longer checks a manifest; the name is kept because it is
