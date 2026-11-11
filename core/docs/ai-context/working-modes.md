@@ -1114,8 +1114,10 @@ why. No round number brings findings to David. A corrected head that still
 violates an agreed requirement or fails a required check is still not
 mergeable: the builder fixes it or cuts it, and reports. What still goes to
 David is what always did — a product decision (what the product should do,
-an accepted user-facing consequence), a plan, and the irreversible list
-(`agent-working-rules.md`, *A reversible choice proceeds on the
+an accepted user-facing consequence), a plan, the irreversible list, and —
+new with the review gate (2026-11-11) — the waiver for a push made before a
+round's assessments (`claude-core.md`, *Shared judgement on a review round*;
+`agent-working-rules.md`, *A reversible choice proceeds on the
 recommendation*).
 
 **The measurement that built the limit stands, as a reason to stop early
@@ -1388,7 +1390,9 @@ shortfall, where no settled decision already covers it — on a code round a
 there is no readout to carry it (the Claude core's *Shared judgement on a
 review round*, rule 5; [`agent-working-rules.md`](agent-working-rules.md#a-reversible-choice-proceeds-on-the-recommendation-david-2026-10-10)); a consequence a settled
 decision reaches is settled with it, and the reply names the decision; a
-disclosure question is his; a scope addition is taken as *next* and reported,
+disclosure question is his; so is the review gate's waiver, the one release
+for a push made before a round's assessments (the Claude core's *Shared
+judgement on a review round*); a scope addition is taken as *next* and reported,
 and a split is proposed in the plan (David, 2026-10-21). **A purely technical design fork is not among them** — it is
 settled in the loop, with the Fable assessor holding the tie-break on a code
 round. This list read "a product or design fork" until 2026-09-20, which a

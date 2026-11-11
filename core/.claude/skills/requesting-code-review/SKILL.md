@@ -124,7 +124,7 @@ reaches a pull request; it does not cap the per-task reviews here.*
   required check does not merge: the builder fixes or cuts it. Only a product
   decision (intended behaviour, an accepted user-facing shortfall or a harm
   David has not accepted, where no settled decision already covers it —
-  `agent-working-rules.md`, *A reversible choice proceeds on the recommendation*) goes to him*
+  `agent-working-rules.md`, *A reversible choice proceeds on the recommendation*) goes to him, and the review gate's waiver for a push made before a round's assessments (`claude-core.md`, *Shared judgement on a review round*)*
 - Argue with valid technical feedback
 
 **If reviewer wrong:**

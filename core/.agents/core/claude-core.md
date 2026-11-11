@@ -758,7 +758,9 @@ answer**, a further batch is written when the judgement says it is worth it,
 and I say in the merge report what was recorded and why. **No round brings
 findings to David**: a corrected head that still violates an agreed
 requirement or fails a required check is mine to fix or cut, and only a
-product decision or the irreversible list is his. The retired rule's text is
+product decision, the irreversible list, or the review gate's waiver for a
+push made before a round's assessments (*Shared judgement on a review
+round*) is his. The retired rule's text is
 in git history at
 [`working-modes.md`](../../docs/ai-context/working-modes.md#the-two-review-limit-on-autonomous-iteration-david-2026-09-19).
 
@@ -1282,8 +1284,8 @@ GitHub itself enforces is *every thread resolved*: the `main` ruleset requires
 conversation resolution, so the Merge button is inert while a thread is open.
 Beside the three, one rule of the loop is enforced the same way where David
 has made it a required check: the review gate (*Shared judgement on a review
-round*) fails a PR whose findings round was answered before both
-assessments.
+round*) fails a PR whose findings round lacks either assessment, or received
+a push before both.
 
 - **Every PR in the standard loop gets a Codex review and none merges before
   it returns** (Trivial waits only for the automatic pass, to read it for a P1 I judge

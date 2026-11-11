@@ -8,7 +8,8 @@ description: Use after opening or being re-engaged on any PR, and whenever a git
 # Watching the PRs I open
 
 **Not a prototype-phase PR.** It merges in the same turn it opens (or, on a
-`prototype/<feature>` branch, there is no PR), so nothing here fires for it:
+`prototype/<feature>` branch, there is no PR; on `main` its body carries
+`Review class: prototype` for the review gate), so nothing here fires for it:
 no subscription, no labels, no rounds — save step 7's build report, which
 the `prototype` skill dispatches at each version's close-out, whichever
 regime the version ships under. **Nor one of the phase's one-line
@@ -386,7 +387,8 @@ requires it.
    violates an agreed requirement or fails a required check does not merge:
    I fix it or cut it, and report. What goes to David is only what step 3.5
    names — intended behaviour, an accepted user-facing shortfall, where no
-   settled decision already covers them — and a
+   settled decision already covers them — and the review gate's waiver
+   (step 3, above), and a
    change to the review loop is judged like any other. The usual outcome is
    **recorded gaps and follow-up issues**, and the pull request goes to
    close-out like any other. **A follow-up issue is filed with its labels**:
@@ -702,14 +704,16 @@ payload, which delivers fleet machinery rather than a workstream (the
 - **Intended behaviour or an accepted user-facing shortfall goes to David**
   (step 3.5 above — a purely technical fork is settled in the loop, never
   escalated) → `waiting:david`; `stage:code-review` stays put — the stage
-  hasn't moved, but the turn has.
+  hasn't moved, but the turn has. **The review gate's waiver is asked** (step
+  3: a push came before a round's assessments) → `waiting:david` the same way.
 - **The close-out bar is met** (CLAUDE.md's *Close-out*, all three items) →
   the ready bar is met and **I merge it myself per CLAUDE.md's close-out
   contract (David, 2026-08-15)** — re-verify live state, squash-merge, check and sync the Repl, verify, report — so `stage:merge` is normally a moment, not a resting
   state. There is no carve-out exception any more (David, 2026-09-14): a
   guardrail- or authority-widening PR merges the same way, with the latitude
   it grants named in the report. The PRs that do not are the ones whose shortfall is a product decision
-  (step 3.5); no count and no class sends one to him (David, 2026-10-21).
+  (step 3.5), and one whose review gate waits on his waiver (step 3); no
+  count and no class sends one to him (David, 2026-10-21).
 - **The PR merges with a Post-merge verification section that has real
   content** → `stage:test-run`, `waiting:replit` — or `waiting:david` while
   a step in it that would start a paid AI run above his budget waits for his

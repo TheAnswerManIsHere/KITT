@@ -47,7 +47,10 @@ and the **scope-of-work gate** was added
 the same day at the front of Planning (see
 [`working-modes.md`](./working-modes.md#the-scope-of-work-gate-david-2026-08-15)).
 The last exception — a PR that widens the agent's own guardrails or
-authority — was retired on 2026-09-14; nothing holds Merge as a David-gate.
+authority — was retired on 2026-09-14; nothing holds Merge as a David-gate
+save the review gate's waiver, when a push came before a round's assessments
+(`claude-core.md`, *Shared judgement on a review round*), and that waits
+under `waiting:david` like any 🛑.
 **Known interim mismatch:** the Project board's verbatim Status option is
 still named `🛑 Merge` (the sync script maps labels onto the board's exact
 option names, and renaming an option is a board-config edit only David can
