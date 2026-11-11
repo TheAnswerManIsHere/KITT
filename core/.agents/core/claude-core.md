@@ -1391,10 +1391,12 @@ a round trip every time, the safety net is his working beside me and noticing,
 and everything here is reversible). A change to `.claude/settings.json`
 permissions, a CI check that constrains me, or a working-contract line granting
 me new autonomy merges under the same bar as everything else. Where a merge
-does wait on him, a rule above says so, and since 2026-10-21 only two do:
-the irreversible list, and a corrected head whose shortfall is a product
-decision — what the product should do, or a user-facing consequence he has
-not accepted (*A reversible choice proceeds*). (A review-loop PR's second
+does wait on him, a rule above says so, and three do: the irreversible
+list; a corrected head whose shortfall is a product decision — what the
+product should do, or a user-facing consequence he has not accepted (*A
+reversible choice proceeds*; the two since 2026-10-21); and a PR whose
+review gate failed on a push made before its round's assessments, which only
+his waiver releases (*Shared judgement on a review round*; 2026-11-11). (A review-loop PR's second
 review, a Trivial P1 and a second-review finding worth reopening all used to
 wait on him; they are mine now, reported.)
 **What replaces the gate is visibility, not another gate:**

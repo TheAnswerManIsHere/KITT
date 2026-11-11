@@ -173,7 +173,7 @@ exists, carries `Workstream: #N` like any other; no `stage:code-review` ever
 follows, because no code-review loop runs on any version. **The flip is a relabel of the same issue,
 performed by the `prototype` skill before `plan-review-loop` starts**: it
 first lands the registry change on `main` (the entry reads production, by a
-one-line `Refs #N` PR that moves no label), then
+one-line `Refs #N` PR carrying `Review class: registry`, that moves no label), then
 locates the feature's issue by its `Workstream:` line or title, moves it to
 `stage:planning` / `waiting:david`, and records the declaration in the
 State of Play — so the planning loop finds an issue already at

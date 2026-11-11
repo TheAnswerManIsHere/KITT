@@ -1007,7 +1007,8 @@ feature is in:
   learn a feature's phase, and an entry only the unmerged branch carries
   reads from `main` as no entry, which is production phase. That PR is
   Trivial by his phase declaration (the flip paragraph above), quoted in its
-  body, and merges on green CI. It says `Refs #N` for the
+  body beside `Review class: registry` (*Trivial*, above), and merges on
+  green CI. It says `Refs #N` for the
   feature's issue, never `Workstream: #N`, so it owns no lifecycle and moves
   no label (`workstream-tracking.md`, *Closing an issue*); the same holds for
   the one-line registry PRs at the flip and at abandonment. The branch takes `main` in
@@ -1411,7 +1412,9 @@ reasoned decline is what the assessments *produce*, so reading one's own guess
 that the findings will all be declined as grounds for skipping the assessments
 ends the round on the builder's judgement alone. That is the exact behaviour
 the shared judgement replaces. Note one status line either way, so the
-discipline stays visible.
+discipline stays visible; the review gate also fails a findings round
+missing either assessment (`claude-core.md`, *Shared judgement on a review
+round*).
 
 **Trivial nits do not skip the judgement** (David, 2026-08-22, the write-gate
 rule). Writing for them is exactly the decision it exists to make: under this
