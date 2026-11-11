@@ -669,7 +669,9 @@ to every unit of work but a Trivial PR.
   is that declaration for the one-line registry PR recording it (David,
   2026-09-28; the phase bullet below), and a sync PR delivering KITT's
   payload is Trivial by his standing declaration (David, 2026-11-04;
-  `working-modes.md`, *Trivial*). I request no review of any kind and
+  `working-modes.md`, *Trivial*). The PR body carries the declaring line
+  the review gate reads — `Review class: trivial`, `sync` or `registry`,
+  on a line of its own (*Shared judgement on a review round*). I request no review of any kind and
   merge on green CI; a stalled automatic pass still gets its one bare
   re-request (*Waiting, and scheduled check-ins*, item 4). Codex's automatic pass is read for one thing: **a P1,
   which I judge and report** — fixed in a named commit, or merged with the
@@ -947,6 +949,19 @@ The loop:
   parses an assessment, so no phrase in one can authorise work.
 - **A failed dispatch is not permission to proceed on one assessment alone.**
   It is reported in plain English and the round stops.
+- **The review gate enforces both assessments and their order** (David,
+  2026-11-11: *"Please don't skip reviewers! That's a critical part of our
+  process that should not be allowed."*; KITT #293). A required commit
+  status, `Review gate`, fails a PR while a Codex findings round lacks an
+  Astra or a Fable assessment of the reviewed commit, or while a push landed
+  between that review and them. It proves push order, not when a fix was
+  written — that stays this rule. A failure is answered by posting what is
+  missing; a push already made before them is released only by David's
+  waiver — the label `review-gate: waived by David` and a comment starting
+  `Review gate waived:` with the reason, a 🛑 since only he applies it —
+  and never by working around the gate. An exempt PR says so on a line of
+  its own: `Review class: trivial`, `sync`, `registry` or `prototype`.
+  Mechanics: `scripts/review-gate.mjs`.
 - **Both assessors read the live checkout, so the dispatch refuses unless the
   tree is at the reviewed commit and clean.** Advice about code the reviewer
   never saw is worse than no advice.
@@ -1259,6 +1274,10 @@ cut, having never run once in the loop it was built for (David merged from the
 GitHub UI and checked the bar by eye). All three are reads I do. The one item
 GitHub itself enforces is *every thread resolved*: the `main` ruleset requires
 conversation resolution, so the Merge button is inert while a thread is open.
+Beside the three, one rule of the loop is enforced the same way where David
+has made it a required check: the review gate (*Shared judgement on a review
+round*) fails a PR whose findings round was answered before both
+assessments.
 
 - **Every PR in the standard loop gets a Codex review and none merges before
   it returns** (Trivial waits only for the automatic pass, to read it for a P1 I judge

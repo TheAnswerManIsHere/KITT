@@ -116,6 +116,16 @@ requires it.
    answers the other question — which heads must be reviewed, so that no
    commit merges unreviewed — and every step below serves both.
 
+   **The review gate checks this from GitHub's record** (KITT #293): its
+   `Review gate` status fails while a findings round lacks either assessment
+   of the reviewed commit, and stays failed if any push landed between the
+   review and them. So both assessments are posted before the first push of
+   anything — a fix, a base merge, an unrelated commit. A failed gate is read
+   on its run's summary: a missing assessment is posted, which re-runs it; a
+   push that came first cannot be repaired by a late assessment, so both are
+   posted anyway and David's waiver is asked for as a 🛑 (`claude-core.md`,
+   *Shared judgement on a review round*).
+
    **The oracle comes first, and it is agreed with David before round 1.** It
    is the outcome he agreed the work should achieve — an approved plan, an
    issue discussion, or an explicit request — recorded where it can be quoted,

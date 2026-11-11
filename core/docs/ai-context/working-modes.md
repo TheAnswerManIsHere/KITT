@@ -657,7 +657,12 @@ that delivers KITT's payload to a consumer and carries nothing else but the
 memory-index lines the delivery needs — is Trivial, since its content was
 reviewed in KITT where it was written (David, 2026-11-04, KITT's
 `sync-fleet` skill). A consumer-owned change the sync needs, an overlay
-answer or a settings entry, is its own PR under its own class. No
+answer or a settings entry, is its own PR under its own class. Each such PR
+says which declaration it rides on, on a line of its own in its body —
+`Review class: trivial`, `Review class: sync` or `Review class: registry`
+(a prototype-phase PR: `Review class: prototype`) — the one thing the review
+gate reads to exempt it, so no agent infers a class (David, 2026-11-11,
+KITT #293). No
 review of any kind is requested: no Codex round, no assessment, and no
 build report at close-out — a stalled automatic pass gets one bare
 re-request, which restarts it rather than requesting a round (`claude-core.md`,
