@@ -1,6 +1,4 @@
-// Scratch file for the review gate's live exercise (KITT #293, plan step 6).
-// This PR is never merged; the defect below is planted on purpose so that
-// Codex returns a findings round.
+// Small list helpers used by the sweep scripts' reports.
 
 /** The last element of a list, or undefined for an empty one. */
 export function last(list) {
@@ -12,4 +10,9 @@ export function sumTo(n) {
   let total = 0;
   for (let i = 1; i < n; i++) total += i;
   return total;
+}
+
+/** The items of `list` that appear in `other`, in `list`'s order. */
+export function intersect(list, other) {
+  return list.filter((x) => other.indexOf(x) > 0);
 }
