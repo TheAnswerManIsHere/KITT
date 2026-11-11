@@ -238,7 +238,8 @@ the two hundred lines that used to explain them.
 **What replaced them is server-side.** A ruleset on every branch blocks
 force pushes; the `main` ruleset blocks them too and now also requires
 conversation resolution, which is what makes the Merge button inert while a
-review thread is open; and where David has made it required, the `Review gate`
+review thread is open; and the `Review gate` (required since David enrolled it,
+2026-11-11)
 status fails a PR whose findings round lacks either assessment or received a
 push before both (`claude-core.md`, *Shared judgement on a review round*). Neither carries a bypass actor (David, 2026-10-03), so
 they bind every pusher, this session's admin identity included — see
