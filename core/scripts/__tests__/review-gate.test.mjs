@@ -370,3 +370,14 @@ test("KITT's root workflow and the payload's are identical", (t) => {
   if (basename(join(here, "../..")) !== "core" || !existsSync(payload)) return t.skip("not in KITT");
   assert.equal(readFileSync(root, "utf8"), readFileSync(payload, "utf8"));
 });
+
+test("no workflow job carries the status's name", () => {
+  // A job check named like the commit status would be required too, and only
+  // some events refresh it (KITT #294 round 1). Read whichever copy exists.
+  const candidates = [join(here, "../../.github/workflows/review-gate.yml"), join(here, "../../../.github/workflows/review-gate.yml")];
+  const file = candidates.find((p) => existsSync(p) && /review-gate\.mjs/.test(readFileSync(p, "utf8")));
+  assert.ok(file, "the review-gate workflow is present");
+  const names = [...readFileSync(file, "utf8").matchAll(/^\s{4}name:\s*(.+)$/gm)].map((m) => m[1].trim());
+  assert.ok(names.length > 0, "found the job names");
+  assert.ok(!names.includes(CONTEXT), `a job is named ${CONTEXT}`);
+});
