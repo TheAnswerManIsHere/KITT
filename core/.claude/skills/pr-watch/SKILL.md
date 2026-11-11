@@ -14,7 +14,8 @@ the `prototype` skill dispatches at each version's close-out, whichever
 regime the version ships under. **Nor one of the phase's one-line
 registry PRs** — at a prototype's start under the branch regime, at its flip
 and at its abandonment — which are Trivial by David's phase declaration,
-carry `Refs #N` rather than `Workstream: #N`, and own no lifecycle: no
+carry `Refs #N` rather than `Workstream: #N`, carry `Review class: registry`
+for the review gate, and own no lifecycle: no
 subscription, no labels (Codex, #168 round 7). The rule is working-modes.md,
 *The prototype phase, per feature*.
 
@@ -57,8 +58,10 @@ requires it.
   P1s included (David, 2026-10-20; `working-modes.md`, *The prototype phase,
   per feature*). A sync PR delivering KITT's payload is Trivial by his
   standing declaration (`working-modes.md`, *Trivial*; the `sync-fleet`
-  skill). Resolve each thread with one line citing his ruling, then merge on
-  green CI.
+  skill). Its body carries `Review class: trivial` or `Review class: sync`
+  on a line of its own, or the review gate fails it (`claude-core.md`,
+  *Shared judgement on a review round*). Resolve each thread with one line
+  citing his ruling, then merge on green CI.
 - **Documentation**: one pass, `review-proxy.mjs --documentation --round 1`,
   with the Fable assessor dispatched on the same package (`--prompt-only
   --source fable`). Wait for Codex's automatic pass first — its review-summary

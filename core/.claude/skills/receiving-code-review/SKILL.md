@@ -36,7 +36,12 @@ as its scope. Two upstream
 habits are therefore wrong here: fixing findings one at a time as they arrive
 rather than batching them, and applying fixes without a review of what was
 written. A cap on further editing is never an exemption from reviewing what
-was edited.
+was edited. **A third: implementing a Codex finding before its round's Astra
+and Fable assessments are posted.** On a PR in the standard loop nothing below
+is written or pushed for a round that returned findings until both are in; a
+push before them fails the review gate and only David's waiver releases it
+([`claude-core.md`](../../../.agents/core/claude-core.md), *Shared judgement on a
+review round*).
 
 ## The Response Pattern
 

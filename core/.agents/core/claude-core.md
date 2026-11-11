@@ -711,6 +711,8 @@ to every unit of work but a Trivial PR.
   (David, 2026-09-28: *"What we're cutting out is the code review loop once
   we've built it."*). Where nothing is
   downstream of `main` it lives on `main` and its PR merges in the same turn,
+  its body carrying `Review class: prototype` for the review gate (*Shared
+  judgement on a review round*),
   Codex's automatic pass read for one thing — the one fix a prototype owes,
   whoever finds it, is a defect that stops the built feature running and
   producing reasonable output (David, 2026-10-20); where users are, it lives on a
@@ -961,7 +963,8 @@ The loop:
   `Review gate waived:` with the reason, a 🛑 since only he applies it —
   and never by working around the gate. An exempt PR says so on a line of
   its own: `Review class: trivial`, `sync`, `registry` or `prototype`.
-  Mechanics: `scripts/review-gate.mjs`.
+  Mechanics: `core/scripts/review-gate.mjs` here, `scripts/review-gate.mjs`
+  in a consumer.
 - **Both assessors read the live checkout, so the dispatch refuses unless the
   tree is at the reviewed commit and clean.** Advice about code the reviewer
   never saw is worse than no advice.
@@ -1189,7 +1192,10 @@ here, `scripts/build-report.mjs` in a consumer.
    later one David asked a loop for — the approved short plan verbatim (its
    four items: the design question, the hypothesis, the surface, what it
    leaves out); otherwise its oracle is its owner's feedback (rule 4 gives
-   the line). "n/a — no plan" only for a
+   the line). An exempt PR — Trivial, sync, phase registry, prototype phase —
+   also carries its `Review class:` line on a line of its own, the only thing
+   the review gate reads to exempt it (*Shared judgement on a review round*).
+   "n/a — no plan" only for a
    genuinely trivial change. Verbatim carries a guarded string in its defanged
    form (interaction rule 11). **A plan that failed the disclosure check**
    (Planning rule 3) is the exception to verbatim: the body carries a
@@ -1878,7 +1884,10 @@ afterwards.
 - **Its standing is interaction rule 12's.** Substance findings — product,
   design, correctness — are triaged under review-loop rules 5 and 6 like any
   reviewer's; shipping-mechanics opinions carry no authority. It is not the
-  merge bar: Codex's GitHub review of the code still is.
+  merge bar: Codex's GitHub review of the code still is. Its assessment's
+  *presence* on a findings round is enforced, though — by the review gate
+  (*Shared judgement on a review round*) — while its content still only
+  advises.
 - Spawning gotchas (closed stdin, the sandbox blocking `/tmp`, detaching a
   long run, the `pkill` that kills the caller):
   [`codex-cli-in-container.md`](../../.agents/memory/codex-cli-in-container.md).

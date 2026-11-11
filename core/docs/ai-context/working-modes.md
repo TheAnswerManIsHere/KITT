@@ -662,7 +662,8 @@ says which declaration it rides on, on a line of its own in its body —
 `Review class: trivial`, `Review class: sync` or `Review class: registry`
 (a prototype-phase PR: `Review class: prototype`) — the one thing the review
 gate reads to exempt it, so no agent infers a class (David, 2026-11-11,
-KITT #293). No
+KITT #293; the gate's rule is `claude-core.md`, *Shared judgement on a
+review round*). No
 review of any kind is requested: no Codex round, no assessment, and no
 build report at close-out — a stalled automatic pass gets one bare
 re-request, which restarts it rather than requesting a round (`claude-core.md`,
@@ -783,7 +784,9 @@ it covered one.) His "etc." covers the product-design principles too
 (legible async status, no raw identifiers on a surface, and their kin): a
 prototype follows them where they cost nothing, and a miss is a ledger line
 for the flip, never a finding that starts a fix. The PR is opened and merged
-by the same agent in the same turn, on green CI. Codex's automatic pass on PR-open still runs and is
+by the same agent in the same turn, on green CI, its body carrying
+`Review class: prototype` (*Trivial*, above; `claude-core.md`, *Shared
+judgement on a review round*). Codex's automatic pass on PR-open still runs and is
 **read for one thing**: a finding that reports the built feature failing to
 run or produce reasonable output, which is fixed at prototype depth as a
 further commit of the version — or, since the PR merges on green CI without
@@ -914,7 +917,8 @@ words, for that change, so the PR quotes it and merges on green CI with no
 review of any kind, Codex's automatic pass on it read for nothing, P1s included (David, 2026-10-20: *"We're in prototype
 mode. We don't fix any issues that don't prevent us from moving
 forward."*) — and `pr-watch` never subscribes to it: it carries
-`Refs #N`, owns no lifecycle and moves no label (Codex, #168 round 7). At the
+`Refs #N` and `Review class: registry` (the review gate's exemption,
+*Trivial*, above), owns no lifecycle and moves no label (Codex, #168 round 7). At the
 flip under the branch regime the hardening PR's
 close-out also **retires the prototype environment**: the deployment is
 stopped and its database dropped once the owner's answers and the port are
