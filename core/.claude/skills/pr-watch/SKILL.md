@@ -9,7 +9,8 @@ description: Use after opening or being re-engaged on any PR, and whenever a git
 
 **Not a prototype-phase PR.** It merges in the same turn it opens (or, on a
 `prototype/<feature>` branch, there is no PR; on `main` its body carries
-`Review class: prototype` for the review gate), so nothing here fires for it:
+`Review class: prototype` for the review gate, `claude-core.md`, *Shared
+judgement on a review round*), so nothing here fires for it:
 no subscription, no labels, no rounds — save step 7's build report, which
 the `prototype` skill dispatches at each version's close-out, whichever
 regime the version ships under. **Nor one of the phase's one-line

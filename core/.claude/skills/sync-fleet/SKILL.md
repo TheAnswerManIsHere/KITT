@@ -145,7 +145,8 @@ Commit, push, and open (or update) the PR:
   written; **David's standing declaration, quoted** (*"3. 1."*, answering
   *"How each product repo's sync PR is reviewed: 1. Like a Trivial PR"*,
   2026-11-04; `working-modes.md`, *Trivial*), with the line
-  `Review class: sync` on a line of its own, which the review gate reads;
+  `Review class: sync` on a line of its own, which the review gate reads
+  (`claude-core.md`, *Shared judgement on a review round*);
   `## Decisions taken on my
   recommendation`; and the one latitude line: *none beyond the standing
   declaration*. No `Workstream:` line: a sync PR delivers fleet machinery,

@@ -26,7 +26,12 @@ as its scope. Two upstream
 habits are therefore wrong here: fixing findings one at a time as they arrive
 rather than batching them, and applying fixes without a review of what was
 written. A cap on further editing is never an exemption from reviewing what
-was edited.
+was edited. **A third, on a pull-request round that returned findings:
+fixing anything — "Critical" included — before the round's Astra and Fable
+assessments are posted.** A missing assessment, or a push before both, fails
+the review gate, and a push before them only David's waiver releases
+([`claude-core.md`](../../../.agents/core/claude-core.md), *Shared judgement on a
+review round*).
 
 ## When to Request Review
 

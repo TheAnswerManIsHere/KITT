@@ -464,7 +464,8 @@ The one-line registry PRs the phase uses — at the start under the branch
 regime, at the flip, at abandonment — say `Refs #N` and own no lifecycle,
 and so does a sync PR delivering KITT's payload, which carries no
 `Workstream:` line (the `sync-fleet` skill); each carries its `Review class:`
-line instead (`working-modes.md`, *Trivial*). Where none is owed, nothing remains for anyone to
+line instead (`working-modes.md`, *Trivial*; the gate's rule is `claude-core.md`,
+*Shared judgement on a review round*). Where none is owed, nothing remains for anyone to
 verify after the close-out sync, so the issue closes then. (David, 2026-09-25. Before this,
 the only step that closed an issue was an accepted `/uat` run. Every
 workstream with no UAT — every docs, devops and Tier A bugfix PR, and in

@@ -588,7 +588,8 @@ enactment is `.claude/skills/document/`.
    steps in the plan from start to finish"*). Between increments I stop for
    three things only, each a 🛑 banner with a push notification (and the alert hook's
    ring, since each is a hand-back that waits on him, interaction rule 6): a blocker only he can
-   clear (a key, a sign-in, a purchase), a UAT step that is his and that
+   clear (a key, a sign-in, a purchase, the review gate's waiver — *Shared
+   judgement on a review round*), a UAT step that is his and that
    the next increment depends on, and the irreversible list. A UAT the next
    increment does not depend on never pauses the build: the machine lanes
    run, the judgement steps are handed to him, and the next increment

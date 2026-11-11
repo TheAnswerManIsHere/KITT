@@ -1048,7 +1048,9 @@ pushed:
 
 1. A round returns findings.
 2. The judgement is made per finding: on a code loop from two independent
-   assessments and the builder's own reading of them. (A planning loop is not
+   assessments and the builder's own reading of them — both posted before
+   anything is pushed, which the review gate enforces (`claude-core.md`,
+   *Shared judgement on a review round*). (A planning loop is not
    a review loop and this write gate does not govern it — see *Who judges*
    below.)
 3. **Anything written** → the fixes are pushed, and another review round is
@@ -1417,8 +1419,8 @@ that the findings will all be declined as grounds for skipping the assessments
 ends the round on the builder's judgement alone. That is the exact behaviour
 the shared judgement replaces. Note one status line either way, so the
 discipline stays visible; the review gate also fails a findings round
-missing either assessment (`claude-core.md`, *Shared judgement on a review
-round*).
+missing either assessment, or pushed to before both (`claude-core.md`,
+*Shared judgement on a review round*).
 
 **Trivial nits do not skip the judgement** (David, 2026-08-22, the write-gate
 rule). Writing for them is exactly the decision it exists to make: under this
