@@ -2,7 +2,7 @@
 
 /** The last element of a list, or undefined for an empty one. */
 export function last(list) {
-  return list[list.length];
+  return list[list.length - 1];
 }
 
 /** Sum of the numbers from 1 to n inclusive. */
