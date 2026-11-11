@@ -255,7 +255,9 @@ to worry about strange links."*)
 2. Create the required consumer documents above.
 3. **Verify the repo's `main` ruleset is in place** — block force pushes,
    restrict deletions, require linear history, require a pull request, require
-   status checks, and **require conversation resolution before merging** — and
+   status checks — **`Review gate` among them** once the sync has delivered
+   `.github/workflows/review-gate.yml` and it has posted on a pull request
+   (KITT #293) — and **require conversation resolution before merging** — and
    that **no ruleset carries a bypass actor**. A bypass for the Admin role
    exempts the identity a cloud session pushes as, since it pushes as the
    owner's account, so every rule below it would bind nobody who matters.

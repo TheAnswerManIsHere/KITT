@@ -58,8 +58,9 @@ Consumers as of this writing: `TheAnswerManIsHere/Overhypeme`,
   intended*; this bullet is its application here). Where a script's input
   arrives as **argv, a path, or a file the operator itself authored** — most
   of `scripts/` and `core/scripts/`, and the eval's task file — the controls
-  against deliberate action are GitHub's server-side ruleset and David
-  working alongside, reading the latitude line every authority-widening PR
+  against deliberate action are GitHub's server-side ruleset — its required
+  checks including, once enrolled, the review gate (`claude-core.md`, *Shared
+  judgement on a review round*) — and David working alongside, reading the latitude line every authority-widening PR
   carries (2026-09-14, when the David-merge gate was retired), and a local
   script run by hand is not a security boundary. So a
   finding that needs the operator to supply a hostile value *to their own
