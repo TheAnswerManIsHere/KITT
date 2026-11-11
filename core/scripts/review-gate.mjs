@@ -164,18 +164,15 @@ export function satisfiedAt(round, assessor, assessments) {
 export function decide(facts) {
   const waived = waiverReason(facts.labels, facts.comments);
   if (waived) return result("success", `waived — ${waived}`, [`Waived by the \`${WAIVER_LABEL}\` label: ${waived}`]);
-  if (facts.labels.includes(WAIVER_LABEL)) {
-    // The label alone is not a waiver; say so rather than evaluate as if absent.
-    const r = decideRounds(facts);
-    if (r.need) return r;
-    if (r.state === "failure") {
-      r.lines.unshift(`The \`${WAIVER_LABEL}\` label is present but no comment starting \`Review gate waived:\` gives a reason, so it does not apply.`);
-    }
-    return r;
-  }
   const cls = exemptClass(facts.body);
   if (cls) return result("success", `exempt: ${cls}`, [`Exempt: the PR body declares \`Review class: ${cls}\`.`]);
-  return decideRounds(facts);
+  const r = decideRounds(facts);
+  // The label alone is not a waiver and changes no verdict (KITT #294 round 2):
+  // it only adds a line to a failure saying why it did not apply.
+  if (r.state === "failure" && facts.labels.includes(WAIVER_LABEL)) {
+    r.lines.unshift(`The \`${WAIVER_LABEL}\` label is present but no comment starting \`Review gate waived:\` gives a reason, so it does not apply.`);
+  }
+  return r;
 }
 
 function decideRounds(facts) {

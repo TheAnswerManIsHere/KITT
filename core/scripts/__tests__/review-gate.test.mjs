@@ -171,6 +171,16 @@ test("the waiver label without a reason fails; with a reason it passes", () => {
   assert.equal(r3.state, "failure");
 });
 
+test("a waiver label without its reason never sets an exemption aside (KITT #294 round 2)", () => {
+  for (const c of ["trivial", "sync", "registry", "prototype"]) {
+    for (const comments of [[], [{ id: 1, created_at: "2026-01-01T02:00:00Z", body: "Review gate waived:   " }]]) {
+      const r = decide(oneRound(comments, { body: `Review class: ${c}`, labels: [WAIVER_LABEL], pushes: undefined }));
+      assert.equal(r.state, "success", `${c}: ${JSON.stringify(r)}`);
+      assert.equal(r.description, `exempt: ${c}`);
+    }
+  }
+});
+
 test("the waiver releases #915's out-of-order PR (approval item 2)", () => {
   const f = pr915();
   f.labels = [WAIVER_LABEL];
