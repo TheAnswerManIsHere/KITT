@@ -115,7 +115,14 @@ the mandatory live check had no recorded command for close-out to run).
    device can do — and it says which, in its `**Judgement:**` line. Everything else
    is `ci`, `scripted`, `live` or `capture`, and **the check it cites is
    written in this same PR**, so the UAT he runs is the human residue and
-   nothing more. `capture` is for an answer only pixels hold — the words
+   nothing more. **Each machine check runs once, in the lifecycle, so `/uat`
+   never repeats it** (David, 2026-11-13; the `uat` skill, section 3): a
+   `ci` check runs in the required gate; a `scripted` proof runs before the
+   merge, at the head that merges, and its output is recorded on the PR —
+   a comment naming the step, the command, the commit and what it printed
+   — or `/uat` has to run it after all; and a `live` step's check is also a
+   step of this PR's *Post-merge verification* section, so close-out runs
+   it before the workstream reaches `stage:uat`. `capture` is for an answer only pixels hold — the words
    the product draws onto an image, a canvas preview, the verifiable facts
    of a real AI render (a bubble appears and reads a given text; never
    likeness, scene, humour, quality, whether it shows a person or any

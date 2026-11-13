@@ -1367,7 +1367,7 @@ a push before both.
    lands as its own message and an issue comment, or in chat only on the
    private path): both SHAs, verification results, and the UAT
    handoff naming what to go click — the judgement steps, since `/uat`
-   resolves the machine lanes itself, screen facts included (the `uat`
+   settles the machine lanes itself, running only what the lifecycle left unrun, screen facts included (the `uat`
    skill, *Where the browser automation lives*) — plus the
    reminder that `/uat` walks him through it rather than leaving him to the
    script; for a prototype-phase PR,
