@@ -199,25 +199,34 @@ self-contained by the format's rule; a script whose machine step depends
 on a human step's state is the script-wrong case below, never a check to
 run early:
 
-- **`ci`** — **settled at merge, never re-run or re-checked here.** The
-  `main` ruleset requires the gate, so the merge is the evidence: the row
-  reads `settled at merge — PR gate` and counts as a Pass. (Until
+- **`ci`** — **settled at merge, never re-run or re-checked here, for a
+  check the PR carried when it merged.** The `main` ruleset requires the
+  gate, so the merge is the evidence: the row reads `settled at merge — PR
+  gate` and counts as a Pass. A `**Check:**` written into the body after
+  the merge, retiring a `Deferred:` line, was never seen by this PR's gate
+  or guard, so the merge is no evidence for it: the `Deferred:` bullet
+  below governs it. (Until
   2026-11-13 this lane re-confirmed the check on the commit under test,
   which repeated the gate and bought only what `main`'s CI already
   watches.)
 - **`scripted`** — **cited, not re-run, when the PR recorded its output
-  at the merged head** (`pr-docs` asks for that record before the merge):
-  the row quotes the record and its commit. A step with no such record was
-  never run, so I run it here **in a checkout or worktree at the commit
-  under test** (or dispatch the on-demand workflow on that commit) and
-  keep the output with the commit it ran at — that is a first run, not a
-  repeat, and the run record names the missing record so the next PR's
-  author sees what `pr-docs` asks for. One that would start a paid AI run runs within David's paid-run budget — $5 a run, $25 a week across every product — and on his go-ahead only above it, as a paid capture does (below).
+  at the merged head**: close-out posts that record before it merges
+  (`pr-watch` step 8; `pr-docs` gives its shape), and the row quotes it and
+  its commit. **A missing comment is missing evidence, not proof the proof
+  never ran**, so before running anything I look for the output the
+  lifecycle already holds — a PR comment or CI job log at the merged head,
+  or a commit the merged head contains that touched nothing the proof
+  reads — and cite that. Only when none exists does the step run here, **in
+  a checkout or worktree at the commit under test** (or the on-demand
+  workflow dispatched on that commit), with the output kept with the commit
+  it ran at; that is close-out's lapse, so it goes on the run record's
+  **Lifecycle gaps** line (section 5). One that would start a paid AI run runs within David's paid-run budget — $5 a run, $25 a week across every product — and on his go-ahead only above it, as a paid capture does (below).
 - **`live`** — **cited from close-out's Post-merge verification when that
   section ran the step's check and the Repl's commit has not moved since**:
   the workstream reaching `stage:uat` is that pass's evidence, and the row
   names the merge report that carried it. Run here only when close-out did
-  not run that check, or when the Repl now holds a later commit than the
+  not run that check — close-out's lapse, so a **Lifecycle gaps** entry —
+  or when the Repl now holds a later commit than the
   one close-out verified — a deployed environment can drift in ways
   `main`'s CI never sees. Then I run it through the live-environment
   connector, **read-only, always**, after confirming the Repl's synced
@@ -271,7 +280,8 @@ run early:
   this workstream, recorded as section 4 step 5 does for a bug, so the
   owner landing is what reopens it. The owner's PR replaces the line with
   its runnable **Check:** in the owning PR's body (`pr-docs`), so the
-  resumed run executes it; a script still carrying the line after #N closed
+  resumed run executes it — at the commit under test, whatever its lane,
+  since no gate of this PR ever ran it; a script still carrying the line after #N closed
   is the script-wrong case, and closing #N alone is never passing evidence.
 - **A `human` step whose `Expect` a screen can answer** — an element is
   there, a message reads a given sentence, a status or an error shows, a
@@ -500,8 +510,21 @@ have no reliable way to tell which is current.
 2500.00 captured, restored at pause)
 **Bugs filed:** #903 (major)
 **Product notes:** none
+**Lifecycle gaps:** step 2 — screen fact labelled `human` (lane corrected in PR #472's body)
 **Resume at:** step 4 (2 judgement steps remaining, 4 and R3; step 2's screen fact was mine and is recorded; the 3 machine-lane checks are settled: 2 at merge, the capture at this commit)
 ```
+
+**The `Lifecycle gaps` line is how the scripts learn** (David, 2026-11-13:
+log each authoring error *"so pr-docs learns"*). It lists every check this
+run had to do because the script or the PR left it to the session — a
+screen fact labelled `human`, a `scripted` step with no recoverable
+output, a `live` step whose check was missing from Post-merge
+verification — one entry per step, by kind, or `none`. A `live` re-run
+because the Repl moved is not a gap, and nor is a missing record on a PR
+merged before 2026-11-13. Its reader is the `/maintenance` pass's process
+health (step 6b), which counts the kinds across the window; a kind that
+recurs becomes a `pr-docs` or `check-uat-format.mjs` change, per
+*Recurring failure patterns become CI guards*.
 
 **Write it on the moments that matter, not every turn:** once after setup
 (so the record exists before anything can be lost), on every non-pass, on

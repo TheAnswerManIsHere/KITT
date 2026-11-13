@@ -425,5 +425,6 @@ deleted on David's confirmation, so a surviving file meant a run still owed;
 the workstream's `stage:uat` label carries that state now, and `/uat`
 discovers runs from it. A legacy doc still in `docs/tests/UAT/` keeps the
 old rule — driven from the file, deleted by `/uat` when its run completes
-— and the guard no longer reads that directory: its citations are checked
-at run time, where a missing check Blocks the step.
+— and the guard no longer reads that directory. Its `ci` steps were
+guarded when their PR merged, so they are settled at merge like any other
+(the `uat` skill, section 3).
