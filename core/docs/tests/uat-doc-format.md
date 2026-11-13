@@ -85,8 +85,13 @@ David's (*An image an AI model generated*, below).
 | `capture` | Claude, reading an image a script captured at the commit under test — the step's result is that reading, never the script's exit status | at run time, before David starts | `**Check:**` citing the capture script, optionally `file:shot name`; an `Expect` describing the screen so it can be answered yes or no from the image alone — for an AI render, only what anyone would verify the same way (below) |
 | `human` | David's judgement: taste, legibility, whether it reads right, what an image an AI model generated shows beyond what anyone would verify the same way (below), or something only his own account or device can do | in the `/uat` session | `**Judgement:**` saying what only he can judge or do, and why no machine can |
 
+**Each machine check runs once, where the "When it runs" column puts it,
+and `/uat` repeats none of them** (David, 2026-11-13): it cites what the
+lifecycle already ran and runs only what nothing ran — the `uat` skill,
+section 3, is the rule's home.
+
 **A machine-lane check is self-contained.** It never depends on state a
-human step produces, so every machine step can be resolved before David
+human step produces, so every machine step can be settled before David
 starts. A check that can only be answered after his own action belongs to
 that human step's record (read after his "yes", before recording Pass), or
 the step is `human`. The rule below about one step needing what an earlier

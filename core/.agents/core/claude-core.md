@@ -1368,7 +1368,7 @@ a push before both.
    private path): both SHAs, verification results, and the UAT
    handoff naming what to go click — the judgement steps, since `/uat`
    settles the machine lanes itself, running only what the lifecycle left unrun, screen facts included (the `uat`
-   skill, *Where the browser automation lives*) — plus the
+   skill, section 3, and *Where the browser automation lives*) — plus the
    reminder that `/uat` walks him through it rather than leaving him to the
    script; for a prototype-phase PR,
    that the head is on `main` and unpublished, and which questions it asks
