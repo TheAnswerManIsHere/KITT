@@ -592,7 +592,7 @@ enactment is `.claude/skills/document/`.
    judgement on a review round*), a UAT step that is his and that
    the next increment depends on, and the irreversible list. A UAT the next
    increment does not depend on never pauses the build: the machine lanes
-   run, the judgement steps are handed to him, and the next increment
+   are settled (the `uat` skill, section 3), the judgement steps are handed to him, and the next increment
    starts; a failed UAT is a fix on a fresh branch, as *Close-out* says.
 5. **Mid-flight scope is taken as *next* and reported** (David, 2026-10-21)
    — recorded for the following increment, the plan unchanged. The one case

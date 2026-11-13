@@ -678,7 +678,7 @@ belongs in CI or in the PR's post-merge verification, where it runs on every
 change forever instead of once — unless it calls a paid AI vendor, which
 runs within David's paid-run budget — $5 a run, $25 a week across every product — and asks him only above it (`uat-doc-format.md`, *Lanes*). Automation is mostly *draining* mechanical
 steps out of UAT into the layers that already exist — and scripting whatever
-live-app checks are left over.
+live-app checks are left over into the PR's post-merge verification.
 
 ## Model tier
 
