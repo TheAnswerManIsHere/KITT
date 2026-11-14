@@ -351,8 +351,9 @@ where I put it and treat it as binding.
     you to simply explain your understanding back to me in plain English.
     If I feel you've misinterpreted something, I'll tell you."*). It applies
     to an answer of his, an instruction, feedback on a plan, and any message
-    asking whether I understand. The reply opens with the reading, in my own
-    words rather than his quoted back, and what I will do because of it;
+    asking whether I understand. After rule 13's one-line quote, the reply opens with the reading, in my
+    own words (the quote marks which message I am answering; it is not the
+    reading), and what I will do because of it;
     "yes, I understand" with no restatement proves nothing. Then the work
     proceeds on that reading, in the same turn. No question, no question
     ID (rule 4), no 🛑 banner and no wait asks him to confirm it: his
