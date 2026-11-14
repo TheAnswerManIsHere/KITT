@@ -223,7 +223,11 @@ does not apply. The tool, its contract and its back-out:
   where it would be too long or cumbersome to do a new commit"*). A setting
   that shapes an AI call (which engine or model a step uses, its endpoint,
   reasoning effort, temperature, token limits, prompt text) is never one of
-  those.
+  those. The one exception is something the owner has ruled, in words, is
+  not a configuration setting, recorded in the product's `decisions.md`
+  (Overhype.me's prompt tuner keeps its reviewed wording versions in the
+  database on that ruling); an agent never makes that call for a setting
+  of its own.
 - **Migrations must be idempotent and observable.**
 - **Async work must show status** at two altitudes (per-item + aggregate) — see
   [`docs/ai-context/async-ui-status.md`](../../docs/ai-context/async-ui-status.md).
