@@ -246,10 +246,15 @@ asked; the recommendation is taken and reported.
   only he can answer — an item the irreversible list names (a deletion
   against a shared database, say), a user-facing consequence no settled
   decision covers, information only he holds — is written into the plan
-  and named in the approval ask, numbered, with the recommendation beside
+  and named in the approval ask, under its question ID (Claude Code:
+  `claude-core.md`, interaction rule 4), with the recommendation beside
   it, and his approval answers it with the plan. Nothing stops the loop
   for it. The one stop a planning loop keeps before approval is the plan
-  itself. The named item settles *whether*; it is not the irreversible
+  itself — and his own feedback on the plan, which the agent says back in
+  plain English and has him confirm before revising (David, 2026-11-14;
+  `claude-core.md`, interaction rule 15): that is not a question the loop
+  raised, it is his words, and a revision built on a misreading of them
+  is the cost. The named item settles *whether*; it is not the irreversible
   list's own ask, which is made again at the moment the action runs, in
   words, as the list says above — his approval of a plan covers its
   increments, and the build still stops for the list between them.

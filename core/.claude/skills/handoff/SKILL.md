@@ -77,7 +77,7 @@ conflict: finish the round, *then* hand off.
 
 **The destination has to be named.** Sections 6 and 7 of the prompt — first
 action and out of scope — cannot be written without knowing what the new
-session is for. If David hasn't said, ask one numbered question before Step 2.
+session is for. If David hasn't said, ask one question, under its ID, before Step 2.
 
 **Report the verdict in one line either way.** If the verdict is *stay*,
 **stop there** — name in one line what I'd have carried, so David can
@@ -167,7 +167,10 @@ The handoff comment is a fixed shape:
 **Live state that does not cross** — unpushed work being abandoned (never a
   file the destination needs: Step 2), PR subscriptions dropped, wakes
   disarmed, background tasks.
-**Still open** — undecided threads, each stated as the actual question.
+**Still open** — undecided threads, each stated as the actual question; a
+  question already put to David keeps the ID it was asked under, and the
+  line ends with the highest question ID this session used, so the
+  destination continues from it (`claude-core.md`, interaction rule 4).
 **Durable learnings** — where they went, or "/document owed on #N".
 ```
 

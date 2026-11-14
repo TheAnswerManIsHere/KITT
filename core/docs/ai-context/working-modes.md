@@ -923,7 +923,7 @@ flip under the branch regime the hardening PR's
 close-out also **retires the prototype environment**: the deployment is
 stopped and its database dropped once the owner's answers and the port are
 captured, owned by the `prototype` skill, and where only David can delete
-the host's deployment that step is a numbered ask to him. **Questions still unanswered when he
+the host's deployment that step is an ask to him. **Questions still unanswered when he
 declares are retired by the declaration**: they become the first items of
 the pre-plan conversation, never a reason for another prototype version.
 (An observable

@@ -55,7 +55,8 @@ behaviour, scope, or accepted user-facing shortfalls — including his own use o
 the software factory — where no decision he has already made covers them. A
 consequence a settled decision already reaches is settled with it: name the
 decision. A question that is his is written into the plan and named in the
-approval readout as a numbered item with the recommendation beside it; it does
+approval readout as an item under its question ID (`Q1`, `Q2`, …, static
+until answered) with the recommendation beside it; it does
 not stop the loop (`agent-working-rules.md`, *A reversible choice proceeds on the recommendation*, the authority for every statement of this
 in this contract).
 

@@ -119,8 +119,29 @@ where I put it and treat it as binding.
 3. **"What do you think?" means planning, not building.** Assessment and
    conversation; building starts only on an explicit go-ahead or an approved
    plan, even if the same message sketches something buildable.
-4. **Numbered questions, never lettered** (1, 2, 3 — so his replies are
-   unambiguous).
+4. **Every question to David carries a static ID — `Q1`, `Q2`, … — and
+   never a letter** (David, 2026-11-14: *"when you ask me questions, they
+   should have some type of ID that is static until they've been answered
+   … That way, when I'm answering questions, I'm referencing the exact
+   question you asked rather than a future question which may have a
+   different number"*; and on the form: *"Let's just use Q and then a
+   number for the question ID going forward. It's easier for me to
+   type"*). An ID belongs to one question from the moment it is asked. An
+   open question keeps its ID every time it is shown again — a banner, the
+   open-ask line, a plan's *Questions for David*, `/status`, a hand-off
+   prompt — and an answered one retires it: a new question takes the next
+   unused number in the session, never a reused one, so "Q3: yes" can mean
+   one thing. Numbering runs through the session and never restarts per
+   message, plan or list; a session a hand-off opens continues from the
+   highest ID its prompt carries. **The options inside one question are
+   plain numbers** — 1, 2, 3 — answered with the ID ("Q3: 2"), and a
+   question is never itself a bare list number, so the two cannot collide.
+   A bare reply ("2", "1. No") while more than one question is open is
+   never guessed at: I ask which question it answers. An ask for an action
+   rather than an answer (a sign-in code) carries no ID. (Until 2026-11-14
+   this read "Numbered questions, never lettered (1, 2, 3)"; one session
+   showed him four separate 1-2-3 lists, and his "1. No" fitted more than
+   one.)
 5. **Sparse chat.** Short status lines, no essays, no play-by-play. Governs my
    chat messages, not Codex threads or PR artifacts.
 6. **Blocking asks get the 🛑 banner and always notify — and only four
@@ -129,9 +150,14 @@ where I put it and treat it as binding.
    only he can take (a sign-in code, `/model`). Everything else I decide on
    my recommendation and report (*A reversible choice proceeds*, below) —
    *"9/10 times you ask me a question and give me a recommendation, I go
-   with your recommendation. That means that asking me is futile."* Shape:
+   with your recommendation. That means that asking me is futile."*
+   Whether I have understood his feedback on a plan, or anything he asks
+   whether I understand, is the third of the four — only he holds it — and
+   is asked by saying it back (rule 15). Shape:
    a rule, `🛑 **NEED YOU** — <one-line ask>`, what David must supply,
-   numbered options with ramifications where there is a choice, a
+   each question under its ID (rule 4; a single question's ID opens the
+   one-line ask, `🛑 **NEED YOU** — Q4: <ask>`, and the open-ask line
+   repeats it), numbered options with ramifications where there is a choice, a
    `Recommendation:` line naming the preferred option or next action and
    why, a closing rule. What the repository can answer is
    never asked, and whether a choice is his is the decision rules' to say,
@@ -301,6 +327,29 @@ where I put it and treat it as binding.
     `^Workstream:[ \t]*#(\d+)`, and a PR that no longer matches reads as
     untracked); the title goes beside such a marker in prose, never inside
     it.
+15. **I say back what he meant, and he confirms it, before anything rests
+    on it** (David, 2026-11-14: *"when I give you feedback on a plan or I
+    ask you for clarifying questions, it's important that you prove to me
+    that you understand what I was saying and that you say it back to me
+    in plain english in such a way that I know that you understood me.
+    Especially when I ask you if you understand. You should get my
+    approval that I believe you understand me properly before proceeding
+    to do additional work."*). Two things trigger it: his feedback on a
+    plan — a scope, a draft or an approved plan, at any point in the loop
+    or after it — and any message of his asking whether I understand. The
+    reply restates what he meant in plain English, in my own words rather
+    than his quoted back, with what I would change because of it, and ends
+    the turn on a 🛑 banner asking, under a question ID (rule 4), whether
+    that reading is right. "Yes, I understand" with no restatement proves
+    nothing. Whether I understood him is information only he holds (rule
+    6), never a choice of mine to proceed on (*A reversible choice
+    proceeds*, below). **Until he confirms, nothing that rests on the
+    reading happens** — no plan revision, no review exchange, no build —
+    and a correction of his is said back again. Work that does not rest on
+    it continues. An approval that asks for no change is not feedback and
+    owes no say-back. (Measured once: a session summarised his plan
+    feedback and rewrote the whole plan in the same turn, before he had
+    said the summary was right.)
 
 ## Advice is independent, or it is worthless
 
@@ -608,11 +657,14 @@ enactment is `.claude/skills/document/`.
    on it existed only because the page made it unnecessary. Chat is the
    delivery; the file committed at approval (rule 3) is the durable copy, and
    neither replaces the other. **v1 is shown and the loop proceeds without waiting** —
-   it changes anyway.
+   it changes anyway. His feedback on any version is the one thing that
+   pauses it: said back and confirmed before the revision (interaction
+   rule 15).
 7. **A choice about intended behaviour or a user-facing consequence that no
    settled decision already covers is David's, and it reaches him in the
    approval readout** — written into the plan and named in the approval ask
-   as a numbered item carrying Astra's view and mine side by side, never
+   as an item under its question ID (interaction rule 4) carrying Astra's
+   view and mine side by side, never
    absorbed into a revision and never a separate mid-loop interrupt
    (`agent-working-rules.md`, *A reversible choice proceeds on the recommendation*: the loop does not stop for it, and the one stop before
    approval is the plan). **A consequence a settled decision already covers
@@ -640,7 +692,10 @@ enactment is `.claude/skills/document/`.
    exchange still gets its readout: that independent opinion is the thing David
    is otherwise reading blind without, and it arrives free with every exchange.
    **An assessment saying it could not do the job is not a clean exchange** —
-   that is mine to supply and re-run, never convergence.
+   that is mine to supply and re-run, never convergence. The relay is of
+   Astra's concerns and waits for no reply; David's own feedback on the
+   plan is a different thing, said back and confirmed before any revision
+   rests on it (interaction rule 15).
 
 Planning runs in my main loop end to end — continuous, stateful, judgment-dense,
 never routed to a cheaper subagent. Mechanics: `plan-review-loop` skill.

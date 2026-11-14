@@ -27,7 +27,7 @@ explicit-only invocation).** I classify each work request by its shape:
   otherwise hesitate. It is still a hypothesis, not a verdict: Tier C exits
   the workflow regardless of how it was entered.
 - **Ambiguous** — the "bug" could really be a behavior change ("fix the
-  ranking, it feels wrong") → one numbered question: whether behaviour
+  ranking, it feels wrong") → one question, under its ID: whether behaviour
   changes is product intent, the one ambiguity the lighter-mode rule keeps
   as an ask (`working-modes.md`, *How each agent enters / exits a mode*). No
   entry design settles these; they were always going to be asked.
@@ -421,7 +421,7 @@ classification announcement makes the switch visible. Two cases
 still deserve care:
 
 - **A request that could be either** — a "fix" that might really mean
-  re-designing the behavior — gets one numbered question, not a guess:
+  re-designing the behavior — gets one question, under its ID, not a guess:
   whether behaviour changes is product intent, which still asks even where
   the mode itself is taken on the lighter reading
   ([`working-modes.md`](../../../docs/ai-context/working-modes.md#how-each-agent-enters--exits-a-mode),
