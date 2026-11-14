@@ -214,7 +214,16 @@ does not apply. The tool, its contract and its back-out:
   (2026-09-14, when the human-merge gate was retired). Neither class is
   fixed because the diff would be small: each fix costs a review round, and the aggregate is never
   weighed at the moment one is chosen.
-- **Prefer database-backed config for tunable operational settings.**
+- **Configuration lives in code by default.** A setting is a constant in the
+  repository, reviewed and versioned with the code that reads it, so its
+  history and the version it shipped with are kept. It goes in the database
+  only when it must take effect in the running product immediately and a
+  commit would be too slow or cumbersome (David, 2026-11-14: *"the right way
+  to do things is in code unless it needs immediate impact in the product
+  where it would be too long or cumbersome to do a new commit"*). A setting
+  that shapes an AI call (which engine or model a step uses, its endpoint,
+  reasoning effort, temperature, token limits, prompt text) is never one of
+  those.
 - **Migrations must be idempotent and observable.**
 - **Async work must show status** at two altitudes (per-item + aggregate) — see
   [`docs/ai-context/async-ui-status.md`](../../docs/ai-context/async-ui-status.md).
