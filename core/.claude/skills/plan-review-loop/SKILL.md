@@ -169,7 +169,9 @@ oracle as a fenced `plan-oracle` block at its head — for a prototype's version
 the short plan `PLANS.md` describes, whose product is the questions file the
 `prototype` skill names. Tell David it is drafted and
 **keep going** — v1 changes anyway, and waiting buys nothing. He interjects
-whenever he likes.
+whenever he likes, and when he does the loop pauses: his feedback is said
+back and confirmed before any revision or exchange rests on it (*David's
+feedback on the plan pauses the loop*, below).
 
 **Run it detached. An exchange outlives the tool call that starts it.**
 
@@ -569,9 +571,12 @@ this at the scope gate, before the first label below is touched:
 
 - **The scope banner posts** (and at the scope exchange's hand-over) →
   `waiting:david`.
-- **David agrees the scope** → `waiting:claude`, and it stays there for the
-  whole loop. **There is no `waiting:codex` state**: an exchange is a local
-  process I am waiting on, so I am the holder throughout.
+- **David agrees the scope** → `waiting:claude`, and it stays there while
+  the loop runs. **There is no `waiting:codex` state**: an exchange is a local
+  process I am waiting on, so I am the holder through every exchange.
+- **A say-back of his feedback posts** (`claude-core.md`, interaction rule
+  15) → `waiting:david`, and back to `waiting:claude` when he confirms the
+  reading.
 - **The approval ask posts** → `waiting:david`.
 - **David approves** → `stage:coding`, `waiting:claude`.
 

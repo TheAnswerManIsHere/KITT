@@ -27,7 +27,7 @@ explicit-only invocation).** I classify each work request by its shape:
   otherwise hesitate. It is still a hypothesis, not a verdict: Tier C exits
   the workflow regardless of how it was entered.
 - **Ambiguous** — the "bug" could really be a behavior change ("fix the
-  ranking, it feels wrong") → one question, under its ID: whether behaviour
+  ranking, it feels wrong") → one question, under its ID (`claude-core.md`, interaction rule 4): whether behaviour
   changes is product intent, the one ambiguity the lighter-mode rule keeps
   as an ask (`working-modes.md`, *How each agent enters / exits a mode*). No
   entry design settles these; they were always going to be asked.

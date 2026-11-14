@@ -65,7 +65,7 @@ An invocation may name a PR, an issue, or nothing.
    a `## UAT run` section (section 5) whose verdict is `in progress`. If one
    exists, offer to **resume at its recorded step** — and re-do any setup it
    records as owed (section 2), since a paused run tears its setup down.
-3. **One candidate → start it. Several → ask which**, one question under its ID.
+3. **One candidate → start it. Several → ask which**, one question under its ID (`claude-core.md`, interaction rule 4).
    **None → say so** and don't invent a run.
 
 Then give him a **three-line preview before step 1**, never the whole script:

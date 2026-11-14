@@ -1331,7 +1331,9 @@ carries what it was for.)
 **That agreement is the loop's authority to run autonomously up to the
 approval ask** — it replaces the retired per-round check-in (below) as
 David's control point at the front of the loop, paired with explicit plan
-approval at the back. **The agreed scope of work is also the review oracle
+approval at the back; his own feedback on the scope or a draft, whenever it
+comes, pauses the loop until he confirms the builder's plain-English reading
+of it (David, 2026-11-14; `claude-core.md`, interaction rule 15). **The agreed scope of work is also the review oracle
 itself** — it is handed to the reviewer verbatim, every round, as the thing the
 plan is checked against. The corollary is the escalation rule: anything that
 would *change* the agreed scope of work — a change to intended behaviour, a

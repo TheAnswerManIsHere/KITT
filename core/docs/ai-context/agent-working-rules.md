@@ -165,7 +165,10 @@ exception is if the choice is irreversible"*). What still asks: the
 irreversible list below, a plan before it is enacted (below), and what only
 he can supply — information the repository does not hold, an action only he
 can take. A question the agent would answer with a recommendation is not
-asked; the recommendation is taken and reported.
+asked; the recommendation is taken and reported. Whether the agent has
+understood his feedback on a plan is never such a question — only he holds
+the answer, and it is asked by saying the reading back (David, 2026-11-14;
+`claude-core.md`, interaction rule 15).
 
 - **Reversible is an observable, not a feeling.** A choice is reversible when
   undoing it is a corrective commit in the same repository and nothing outside
@@ -250,8 +253,9 @@ asked; the recommendation is taken and reported.
   `claude-core.md`, interaction rule 4), with the recommendation beside
   it, and his approval answers it with the plan. Nothing stops the loop
   for it. The one stop a planning loop keeps before approval is the plan
-  itself — and his own feedback on the plan, which the agent says back in
-  plain English and has him confirm before revising (David, 2026-11-14;
+  itself — and his own feedback on the plan, before approval or after it,
+  which the agent says back in plain English and has him confirm before
+  any revision, review exchange or build rests on it (David, 2026-11-14;
   `claude-core.md`, interaction rule 15): that is not a question the loop
   raised, it is his words, and a revision built on a misreading of them
   is the cost. The named item settles *whether*; it is not the irreversible

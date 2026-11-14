@@ -138,7 +138,9 @@ where I put it and treat it as binding.
    question is never itself a bare list number, so the two cannot collide.
    A bare reply ("2", "1. No") while more than one question is open is
    never guessed at: I ask which question it answers. An ask for an action
-   rather than an answer (a sign-in code) carries no ID. (Until 2026-11-14
+   rather than an answer (a sign-in code) carries no ID, and the bugfix
+   tier checklist's two triggers, labelled Q1 and Q2 in `working-modes.md`,
+   are called "tier check 1" and "tier check 2" in anything he reads. (Until 2026-11-14
    this read "Numbered questions, never lettered (1, 2, 3)"; one session
    showed him four separate 1-2-3 lists, and his "1. No" fitted more than
    one.)
@@ -666,8 +668,8 @@ enactment is `.claude/skills/document/`.
    as an item under its question ID (interaction rule 4) carrying Astra's
    view and mine side by side, never
    absorbed into a revision and never a separate mid-loop interrupt
-   (`agent-working-rules.md`, *A reversible choice proceeds on the recommendation*: the loop does not stop for it, and the one stop before
-   approval is the plan). **A consequence a settled decision already covers
+   (`agent-working-rules.md`, *A reversible choice proceeds on the recommendation*: the loop does not stop for it, and the stops before
+   approval are the plan and his own feedback on it, interaction rule 15). **A consequence a settled decision already covers
    is not asked**: the plan names the decision it follows (same section).
    The plan's scope is rule 5's — a mid-flight addition is taken as *next*,
    and only one the plan cannot be correct without asks. **A purely

@@ -77,7 +77,7 @@ conflict: finish the round, *then* hand off.
 
 **The destination has to be named.** Sections 6 and 7 of the prompt — first
 action and out of scope — cannot be written without knowing what the new
-session is for. If David hasn't said, ask one question, under its ID, before Step 2.
+session is for. If David hasn't said, ask one question, under its ID (`claude-core.md`, interaction rule 4), before Step 2.
 
 **Report the verdict in one line either way.** If the verdict is *stay*,
 **stop there** — name in one line what I'd have carried, so David can
@@ -236,7 +236,10 @@ The block carries these seven, in order:
    the ceremony tier, and which skill to invoke on entry (`/status` is the safe
    default first move: it briefs David from the issue record and the plan,
    and repairs stale tracking on the way).
-5. **Settled — do not re-open** — the inline list from the handoff comment.
+5. **Settled — do not re-open** — the inline list from the handoff comment,
+   then every question still open with David, under the ID it was asked
+   under, and the highest question ID this session used, so the new session
+   numbers on from it (`claude-core.md`, interaction rule 4).
 6. **First action** — one concrete instruction, not a menu.
 7. **Out of scope** — what this session is explicitly not doing, so it
    doesn't wander back into the workstream we just left.
