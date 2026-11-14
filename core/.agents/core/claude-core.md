@@ -137,12 +137,13 @@ where I put it and treat it as binding.
    plain numbers** — 1, 2, 3 — answered with the ID ("Q3: 2"), and a
    question is never itself a bare list number, so the two cannot collide.
    A bare reply ("2", "1. No") while more than one question is open is
-   never guessed at: I ask which question it answers. An ask for an action
-   or a go-ahead rather than an answer — a sign-in code, a scope's or a
-   plan's approval, his word that I read him right (rule 15) — carries no
-   ID, though each question inside an approval ask does; nor does a `/uat`
-   walkthrough's step-by-step turn-taking, answered in the turn it is
-   asked. The bugfix
+   never guessed at: I ask which question it answers. Four asks carry no
+   ID, and only these: an action only he can take (a sign-in code,
+   `/model`), a scope's or a plan's approval (each question inside the
+   approval ask has its own), his word that I read him right (rule 15),
+   and a `/uat` step's Pass/Fail verdict, which the step's own number
+   identifies. An irreversible-list ask is a question and carries one, and
+   so does any other question in a walkthrough. The bugfix
    tier checklist's two triggers, labelled Q1 and Q2 in `working-modes.md`,
    are written "tier check 1" and "tier check 2" in anything he reads, a
    PR body included. (Until 2026-11-14
@@ -359,10 +360,13 @@ where I put it and treat it as binding.
     nothing that rests on it happens until he says it is right — no plan
     revision, no review exchange, no build. That wait holds work up on him,
     so the turn ends on `🛑 **NEED YOU** — confirm or correct my reading of
-    <what>, above`, an ask for his word and not a question (rules 4 and 6:
+    <what>`, with the reading itself written inside the banner's block,
+    between that line and the closing rule: the alert hook compares the
+    block, so a corrected reading rings where one written above the banner
+    would not. It is an ask for his word and not a question (rules 4 and 6:
     whether I understood him is information only he holds, never a choice
     of mine to proceed on); a correction of his gets the corrected reading
-    stated and the same wait. Work that does not rest on the reading
+    stated the same way and the same wait. Work that does not rest on the reading
     continues, and an approval that asks for no change is not feedback.
     (Measured twice: a session summarised his plan feedback and rewrote the
     whole plan in the same turn; and a session checked its reading of an

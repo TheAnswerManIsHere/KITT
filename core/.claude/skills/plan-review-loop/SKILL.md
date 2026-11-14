@@ -354,9 +354,10 @@ right** (David, 2026-11-14; `claude-core.md`, interaction rule 15, which
 also covers a message asking whether I understand and feedback after
 approval). Feedback on a scope, on v1 or any later version, or on the
 approval readout gets a plain-English statement of what I understood him to
-mean and what I would change, ending on `🛑 **NEED YOU** — confirm or correct
-my reading of your plan feedback, above` — never a question asking whether I
-understood, and no question ID. No revision, no exchange with Astra and no
+mean and what I would change, written inside the block of a `🛑 **NEED YOU** —
+confirm or correct my reading of your plan feedback` banner (under the
+banner line, before the closing rule, so a corrected reading rings) — never
+a question asking whether I understood, and no question ID. No revision, no exchange with Astra and no
 build rests on my reading until he says it is right; the next `plan-action`
 block is written only then. This is not the relay of step 1, which reports
 Astra's concerns and waits for nothing.

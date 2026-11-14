@@ -645,8 +645,11 @@ A live walkthrough is a conversation: nearly every turn ends with a question
 by construction, and firing the 🛑 banner and a push for each one would make
 interaction rule 6 unusable exactly where he's most present. So, **scoped to
 an active run**: ordinary step-by-step turn-taking — including the
-continue-or-pause question right after a failure — gets **no banner, no
-`PushNotification` call and no question ID** (interaction rule 4). He's at the keyboard; that's the premise of the
+continue-or-pause question right after a failure — gets **no banner and no
+`PushNotification` call**. A step's Pass/Fail verdict carries no question
+ID, since the step's number identifies it; every other question in the run
+(the "sort of worked" question, continue-or-pause, which priority) carries
+its ID like any question (`claude-core.md`, interaction rule 4). He's at the keyboard; that's the premise of the
 session. The alert hook rings nothing on those turns either: a walkthrough
 turn carries no banner and no plan-done line, which are the only hand-backs
 the hook rings for — beyond a permission prompt the session parks on and a
