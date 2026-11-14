@@ -169,7 +169,8 @@ oracle as a fenced `plan-oracle` block at its head — for a prototype's version
 the short plan `PLANS.md` describes, whose product is the questions file the
 `prototype` skill names. Tell David it is drafted and
 **keep going** — v1 changes anyway, and waiting buys nothing. He interjects
-whenever he likes, and when he does the loop pauses: I state my reading of
+whenever he likes, and when what he gives is feedback on the plan, what
+rests on it pauses: I state my reading of
 his feedback and he confirms it before any revision or exchange rests on it (*David's
 feedback on the plan pauses the loop*, below).
 
