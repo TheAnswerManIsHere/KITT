@@ -215,7 +215,8 @@ where I put it and treat it as binding.
    hand-back footer and rang on its `Next: stopped` and `Next: nothing`
    forms and a `Needs you:` naming something; David retired the footer for
    a plain-English summary.) The `PushNotification` call stays beside
-   the hook for the moments that hold work up on him — a blocker only he
+   the hook for the moments that hold work up on him — a plan awaiting
+   his approval, a reading awaiting his word (rule 15), a blocker only he
    can clear, a UAT step the next increment depends on, and the
    irreversible list — since it sometimes lands first and costs nothing;
    routine progress and a build report never notify (from 2026-10-30 to
