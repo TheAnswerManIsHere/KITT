@@ -1787,7 +1787,9 @@ reviewer challenges a mis-tiering by arguing with the reason and a bare letter
 gives them nothing to argue with. It is **required for Tier A as much as Tier
 B.** A is the classification reviewers most need to be able to challenge, so
 "A (contained)" alone is not enough: name the Q1/Q2 items you checked and
-ruled out, not just the ones that would have fired. A bare tier letter with no
+ruled out (written "tier check 1" and "tier check 2" in the PR body and
+anything else David reads: `Q1`, `Q2` there are his question IDs,
+`claude-core.md`, interaction rule 4), not just the ones that would have fired. A bare tier letter with no
 reasoning is a mis-tiering risk whether or not the letter turns out to be
 right.
 

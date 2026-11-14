@@ -16,9 +16,10 @@ description: "You MUST use this before any creative work - creating features, bu
 > ([`working-modes.md`](../../../docs/ai-context/working-modes.md#the-prototype-phase-per-feature-david-2026-09-26)).
 > Every question below goes to David under its static ID, and a question's
 > options are numbered, never lettered — the "A/B/C/D" below is upstream's
-> (`claude-core.md`, interaction rule 4). His requested changes to a design
-> or spec are said back and confirmed before they are made (interaction
-> rule 15).
+> (`claude-core.md`, interaction rule 4). My reading of his requested changes to a
+> design or spec is stated and confirmed by him before they are made
+> (interaction rule 15); the clickable A/B/C cards in
+> `visual-companion.md` are widget keys, not typed options.
 
 Help turn ideas into fully formed designs and specs through natural collaborative dialogue.
 

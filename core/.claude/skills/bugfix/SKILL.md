@@ -281,7 +281,7 @@ the PR back only delays the review that catches things.
    ````markdown
    Oracle source: bugfix, Tier <A or B>
 
-   **Tier rationale:** <the Q1/Q2 triggers checked: which one fired (B), or
+   **Tier rationale:** <the tier checks run, written "tier check 1" and "tier check 2", never Q1/Q2, which are David's question IDs (`claude-core.md`, interaction rule 4): which one fired (B), or
      which were ruled out (A) — a bare tier letter isn't enough; A is the
      classification a reviewer most needs to be able to challenge>
    **Reported symptom:** <David's report, quoted verbatim>

@@ -167,7 +167,8 @@ he can supply — information the repository does not hold, an action only he
 can take. A question the agent would answer with a recommendation is not
 asked; the recommendation is taken and reported. Whether the agent has
 understood his feedback on a plan is never such a question — only he holds
-the answer, and it is asked by saying the reading back (David, 2026-11-14;
+the answer; the agent states its reading and waits for his word, without
+putting a new question to him (David, 2026-11-14;
 `claude-core.md`, interaction rule 15).
 
 - **Reversible is an observable, not a feeling.** A choice is reversible when
@@ -254,7 +255,7 @@ the answer, and it is asked by saying the reading back (David, 2026-11-14;
   it, and his approval answers it with the plan. Nothing stops the loop
   for it. The one stop a planning loop keeps before approval is the plan
   itself — and his own feedback on the plan, before approval or after it,
-  which the agent says back in plain English and has him confirm before
+  which the agent restates in plain English and has him confirm, without a new question, before
   any revision, review exchange or build rests on it (David, 2026-11-14;
   `claude-core.md`, interaction rule 15): that is not a question the loop
   raised, it is his words, and a revision built on a misreading of them

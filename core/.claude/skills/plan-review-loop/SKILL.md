@@ -169,8 +169,8 @@ oracle as a fenced `plan-oracle` block at its head — for a prototype's version
 the short plan `PLANS.md` describes, whose product is the questions file the
 `prototype` skill names. Tell David it is drafted and
 **keep going** — v1 changes anyway, and waiting buys nothing. He interjects
-whenever he likes, and when he does the loop pauses: his feedback is said
-back and confirmed before any revision or exchange rests on it (*David's
+whenever he likes, and when he does the loop pauses: I state my reading of
+his feedback and he confirms it before any revision or exchange rests on it (*David's
 feedback on the plan pauses the loop*, below).
 
 **Run it detached. An exchange outlives the tool call that starts it.**
@@ -349,12 +349,16 @@ question is his (`workstream-tracking.md`, the canonical check). A purely
 technical fork between two approaches to agreed behaviour is none of these.
 
 **David's feedback on the plan pauses the loop until he confirms I read it
-right** (David, 2026-11-14; `claude-core.md`, interaction rule 15). Feedback
-on a scope, on v1 or any later version, or on the approval readout gets a
-plain-English say-back of what he meant and what I would change, ending on a
-🛑 banner under a question ID. No revision, no exchange with Astra and no
-build rests on my reading until he says it is right. This is not the relay
-of step 1, which reports Astra's concerns and waits for nothing.
+right** (David, 2026-11-14; `claude-core.md`, interaction rule 15, which
+also covers a message asking whether I understand and feedback after
+approval). Feedback on a scope, on v1 or any later version, or on the
+approval readout gets a plain-English statement of what I understood him to
+mean and what I would change, ending on `🛑 **NEED YOU** — confirm or correct
+my reading of your plan feedback, above` — never a question asking whether I
+understood, and no question ID. No revision, no exchange with Astra and no
+build rests on my reading until he says it is right; the next `plan-action`
+block is written only then. This is not the relay of step 1, which reports
+Astra's concerns and waits for nothing.
 
 **An assessment that says it could not do the job is not a clean exchange.** The
 old loop had two status labels that computed this; now it is prose I read. If
@@ -574,7 +578,7 @@ this at the scope gate, before the first label below is touched:
 - **David agrees the scope** → `waiting:claude`, and it stays there while
   the loop runs. **There is no `waiting:codex` state**: an exchange is a local
   process I am waiting on, so I am the holder through every exchange.
-- **A say-back of his feedback posts** (`claude-core.md`, interaction rule
+- **My stated reading of his feedback posts** (`claude-core.md`, interaction rule
   15) → `waiting:david`, and back to `waiting:claude` when he confirms the
   reading.
 - **The approval ask posts** → `waiting:david`.

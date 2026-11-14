@@ -152,7 +152,7 @@ the work is genuinely at (usually `stage:discovery`), `waiting:claude`, and
 the right `mode:`.
 
 **A handoff is not a lifecycle transition.** `stage:` does not change, and
-`waiting:` does not change either — the holder is `claude` before and after.
+`waiting:` does not change either — whoever held the work before holds it after.
 Only the narrative moves.
 
 The handoff comment is a fixed shape:

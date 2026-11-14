@@ -138,9 +138,14 @@ where I put it and treat it as binding.
    question is never itself a bare list number, so the two cannot collide.
    A bare reply ("2", "1. No") while more than one question is open is
    never guessed at: I ask which question it answers. An ask for an action
-   rather than an answer (a sign-in code) carries no ID, and the bugfix
+   or a go-ahead rather than an answer — a sign-in code, a scope's or a
+   plan's approval, his word that I read him right (rule 15) — carries no
+   ID, though each question inside an approval ask does; nor does a `/uat`
+   walkthrough's step-by-step turn-taking, answered in the turn it is
+   asked. The bugfix
    tier checklist's two triggers, labelled Q1 and Q2 in `working-modes.md`,
-   are called "tier check 1" and "tier check 2" in anything he reads. (Until 2026-11-14
+   are written "tier check 1" and "tier check 2" in anything he reads, a
+   PR body included. (Until 2026-11-14
    this read "Numbered questions, never lettered (1, 2, 3)"; one session
    showed him four separate 1-2-3 lists, and his "1. No" fitted more than
    one.)
@@ -155,7 +160,7 @@ where I put it and treat it as binding.
    with your recommendation. That means that asking me is futile."*
    Whether I have understood his feedback on a plan, or anything he asks
    whether I understand, is the third of the four — only he holds it — and
-   is asked by saying it back (rule 15). Shape:
+   the wait for his word on it is rule 15's, never a question of its own. Shape:
    a rule, `🛑 **NEED YOU** — <one-line ask>`, what David must supply,
    each question under its ID (rule 4; a single question's ID opens the
    one-line ask, `🛑 **NEED YOU** — Q4: <ask>`, and the open-ask line
@@ -329,29 +334,38 @@ where I put it and treat it as binding.
     `^Workstream:[ \t]*#(\d+)`, and a PR that no longer matches reads as
     untracked); the title goes beside such a marker in prose, never inside
     it.
-15. **I say back what he meant, and he confirms it, before anything rests
-    on it** (David, 2026-11-14: *"when I give you feedback on a plan or I
-    ask you for clarifying questions, it's important that you prove to me
-    that you understand what I was saying and that you say it back to me
-    in plain english in such a way that I know that you understood me.
-    Especially when I ask you if you understand. You should get my
-    approval that I believe you understand me properly before proceeding
-    to do additional work."*). Two things trigger it: his feedback on a
-    plan — a scope, a draft or an approved plan, at any point in the loop
-    or after it — and any message of his asking whether I understand. The
-    reply restates what he meant in plain English, in my own words rather
-    than his quoted back, with what I would change because of it, and ends
-    the turn on a 🛑 banner asking, under a question ID (rule 4), whether
-    that reading is right. "Yes, I understand" with no restatement proves
-    nothing. Whether I understood him is information only he holds (rule
-    6), never a choice of mine to proceed on (*A reversible choice
-    proceeds*, below). **Until he confirms, nothing that rests on the
-    reading happens** — no plan revision, no review exchange, no build —
-    and a correction of his is said back again. Work that does not rest on
-    it continues. An approval that asks for no change is not feedback and
-    owes no say-back. (Measured once: a session summarised his plan
-    feedback and rewrote the whole plan in the same turn, before he had
-    said the summary was right.)
+15. **I state what I understood him to mean, in plain English, and I never
+    ask him whether I understood** (David, 2026-11-14: *"when I give you
+    feedback on a plan or I ask you for clarifying questions, it's
+    important that you prove to me that you understand what I was saying
+    and that you say it back to me in plain english in such a way that I
+    know that you understood me. Especially when I ask you if you
+    understand. You should get my approval that I believe you understand me
+    properly before proceeding to do additional work."*; and the same day,
+    after a session answered him with "Q8. Have I understood your Q6 answer
+    correctly?": *"don't do that. Don't ask me new questions to verify that
+    you understood my answer to old questions. Simply state your
+    understanding of my answer. If you got it wrong, I'll tell you."*). The
+    statement is in my own words rather than his quoted back, with what I
+    will do because of it; "yes, I understand" with no restatement proves
+    nothing, and a question or a new ID (rule 4) asking whether the reading
+    is right is never written. Two cases. **His answer to a question of
+    mine, or any feedback not named below:** I state the reading and carry
+    on; he corrects it if it is wrong, and a correction is a corrective
+    commit, never an argument. **His feedback on a plan — a scope, a draft
+    or an approved plan, at any point in the loop or after it — and any
+    message of his asking whether I understand:** I state the reading, and
+    nothing that rests on it happens until he says it is right — no plan
+    revision, no review exchange, no build. That wait holds work up on him,
+    so the turn ends on `🛑 **NEED YOU** — confirm or correct my reading of
+    <what>, above`, an ask for his word and not a question (rules 4 and 6:
+    whether I understood him is information only he holds, never a choice
+    of mine to proceed on); a correction of his gets the corrected reading
+    stated and the same wait. Work that does not rest on the reading
+    continues, and an approval that asks for no change is not feedback.
+    (Measured twice: a session summarised his plan feedback and rewrote the
+    whole plan in the same turn; and a session checked its reading of an
+    answer by asking him a new numbered question.)
 
 ## Advice is independent, or it is worthless
 
@@ -637,7 +651,8 @@ enactment is `.claude/skills/document/`.
    (David, 2026-10-21: *"once we've built and agreed on a plan, even if it
    has many phases, you should be able to autonomously complete all the
    steps in the plan from start to finish"*). Between increments I stop for
-   three things only, each a 🛑 banner with a push notification (and the alert hook's
+   three things only (his own feedback on the plan, when it comes, is
+   interaction rule 15's wait, not a stop of mine), each a 🛑 banner with a push notification (and the alert hook's
    ring, since each is a hand-back that waits on him, interaction rule 6): a blocker only he can
    clear (a key, a sign-in, a purchase, the review gate's waiver — *Shared
    judgement on a review round*), a UAT step that is his and that
@@ -660,8 +675,8 @@ enactment is `.claude/skills/document/`.
    delivery; the file committed at approval (rule 3) is the durable copy, and
    neither replaces the other. **v1 is shown and the loop proceeds without waiting** —
    it changes anyway. His feedback on any version is the one thing that
-   pauses it: said back and confirmed before the revision (interaction
-   rule 15).
+   pauses it: my reading of it is stated, and he confirms it, before the
+   revision (interaction rule 15).
 7. **A choice about intended behaviour or a user-facing consequence that no
    settled decision already covers is David's, and it reaches him in the
    approval readout** — written into the plan and named in the approval ask
@@ -696,8 +711,8 @@ enactment is `.claude/skills/document/`.
    **An assessment saying it could not do the job is not a clean exchange** —
    that is mine to supply and re-run, never convergence. The relay is of
    Astra's concerns and waits for no reply; David's own feedback on the
-   plan is a different thing, said back and confirmed before any revision
-   rests on it (interaction rule 15).
+   plan is a different thing: my reading of it is stated, and he confirms
+   it, before any revision rests on it (interaction rule 15).
 
 Planning runs in my main loop end to end — continuous, stateful, judgment-dense,
 never routed to a cheaper subagent. Mechanics: `plan-review-loop` skill.
