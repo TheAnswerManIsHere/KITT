@@ -170,7 +170,7 @@ the short plan `PLANS.md` describes, whose product is the questions file the
 `prototype` skill names. Tell David it is drafted and
 **keep going** — v1 changes anyway, and waiting buys nothing. He interjects
 whenever he likes, and when what he gives is feedback on the plan, I state
-my reading of it and then revise (*David's feedback on the plan*, below).
+my reading of it and revise, without waiting (*David's feedback on the plan*, below).
 
 **Run it detached. An exchange outlives the tool call that starts it.**
 
@@ -347,15 +347,16 @@ reported, and only one the plan cannot be correct without asks (David,
 question is his (`workstream-tracking.md`, the canonical check). A purely
 technical fork between two approaches to agreed behaviour is none of these.
 
-**David's feedback on the plan gets my reading of it stated, then the
-revision — in that order, with no wait between** (David, 2026-11-14;
+**David's feedback on the plan gets my reading of it stated as its own
+paragraph, and the revision with no wait for him to confirm it** (David, 2026-11-14;
 `claude-core.md`, interaction rule 15). Feedback on a scope, on v1 or any
-later version, or on the approval readout is answered by a reply that opens
-with what I understood him to mean, in plain English, and what I will change
-because of it. Then the loop carries on, on that reading: no question, no
+later version, or on the approval readout is answered by saying what I understood him to mean, in plain English, and
+what I changed or will change because of it. The loop carries on, on that
+reading, in the same turn: no question, no
 question ID and no banner asks him to confirm it, and he corrects it if it is
-wrong. The reading is its own statement at the top of the reply, never
-folded into the revised plan, which is the failure this rule was written
+wrong. The reading is its own statement at the top of the turn's last message,
+after the last tool call (text written before the work reaches him
+paraphrased), never folded into the revised plan, which is the failure this rule was written
 for. It is not the relay of step 1, which reports Astra's concerns.
 
 **An assessment that says it could not do the job is not a clean exchange.** The

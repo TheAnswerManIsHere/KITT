@@ -351,15 +351,19 @@ where I put it and treat it as binding.
     you to simply explain your understanding back to me in plain English.
     If I feel you've misinterpreted something, I'll tell you."*). It applies
     to an answer of his, an instruction, feedback on a plan, and any message
-    asking whether I understand. After rule 13's one-line quote, the reply opens with the reading, in my
-    own words (the quote marks which message I am answering; it is not the
-    reading), and what I will do because of it;
-    "yes, I understand" with no restatement proves nothing. Then the work
-    proceeds on that reading, in the same turn. No question, no question
+    asking whether I understand. The reading is written in the turn's last message, after the last tool
+    call, since text between tool calls reaches him paraphrased (rule 6):
+    at its top, after rule 13's one-line quote (which marks the message I
+    am answering and is not the reading), as its own paragraph ahead of
+    the account of the work, in my own words, with what I did or will do
+    because of it; it is written once a turn;
+    "yes, I understand" with no restatement proves nothing. The work
+    proceeds on that reading in the same turn, without waiting for that
+    message. No question, no question
     ID (rule 4), no 🛑 banner and no wait asks him to confirm it: his
     silence is the confirmation, and a correction of his is restated the
     same way and acted on, never argued and never re-confirmed. The reading
-    is stated before the work that rests on it, never folded into it, so he
+    is its own statement, never folded into the result, so he
     can see what I took him to mean without reading the result. (His first
     wording ended *"You should get my approval that I believe you understand
     me properly before proceeding"*; from KITT #302 until this rule that was
@@ -673,7 +677,7 @@ enactment is `.claude/skills/document/`.
    delivery; the file committed at approval (rule 3) is the durable copy, and
    neither replaces the other. **v1 is shown and the loop proceeds without waiting** —
    it changes anyway. His feedback on any version does not pause it
-   either: I state my reading of it, then revise (interaction rule 15).
+   either: I state my reading of it and revise (interaction rule 15).
 7. **A choice about intended behaviour or a user-facing consequence that no
    settled decision already covers is David's, and it reaches him in the
    approval readout** — written into the plan and named in the approval ask
@@ -708,8 +712,8 @@ enactment is `.claude/skills/document/`.
    **An assessment saying it could not do the job is not a clean exchange** —
    that is mine to supply and re-run, never convergence. The relay is of
    Astra's concerns and waits for no reply; David's own feedback on the
-   plan gets my reading of it stated ahead of the revision it causes, and
-   waits for none either (interaction rule 15).
+   plan gets my reading of it stated as its own paragraph, and waits for
+   no reply either (interaction rule 15).
 
 Planning runs in my main loop end to end — continuous, stateful, judgment-dense,
 never routed to a cheaper subagent. Mechanics: `plan-review-loop` skill.

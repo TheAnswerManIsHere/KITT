@@ -254,7 +254,7 @@ and carries on, and he corrects it if it is wrong (David, 2026-11-14;
   it, and his approval answers it with the plan. Nothing stops the loop
   for it. The one stop a planning loop keeps before approval is the plan
   itself. His own feedback on the plan is not a stop: the agent states in
-  plain English what it understood him to mean, then revises (David,
+  plain English what it understood him to mean, and revises (David,
   2026-11-14; `claude-core.md`, interaction rule 15). The named item settles *whether*; it is not the irreversible
   list's own ask, which is made again at the moment the action runs, in
   words, as the list says above — his approval of a plan covers its
