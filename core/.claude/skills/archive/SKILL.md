@@ -71,7 +71,7 @@ Exactly one, first match wins:
 | Verdict | When |
 | --- | --- |
 | **continue** | Any checklist hit, or approved work in this session's plan is still startable here. Name each hit and the action that clears it. |
-| **hand off** | No hit, the next work is in a different workstream, and this session holds context worth carrying (the `handoff` skill's Step 1 test). Under `/archive`, recommend `/handoff` and do not run it; on a build report's **Session** line, the hand-off prompt follows the report instead (`claude-core.md`, *Watching the PRs I open*). |
+| **hand off** | No hit, the next work is in a different workstream, and this session holds context worth carrying (the `handoff` skill's Step 1 test). Under `/archive`, run the `handoff` skill, which starts the new session itself; on a build report's **Session** line, it runs after the report (`claude-core.md`, *Watching the PRs I open*). |
 | **archive** | No hit, and nothing worth carrying: the work is done, or the next work starts cold just as well. |
 
 A *continue* whose every hit I can clear myself is not a verdict to stop on:
@@ -127,8 +127,10 @@ The verdict is the hand-back's plain-English summary (`claude-core.md`,
 write first` — which the alert hook rings once (`claude-core.md`,
 interaction rule 6): a finished session with nothing startable is one he
 directs next, and the one-minute archiving wake Step 3 arms is the
-session's end, not work scheduled after it. A *hand off* verdict waits on him to open the new session, so
-it ends on a 🛑 banner (the `handoff` skill).
+session's end, not work scheduled after it. A *hand off* verdict runs the `handoff` skill, which starts
+the new session itself and rings nothing here — the new session's Astra
+sign-in rings him from there — and ends on a 🛑 banner only where it could
+not start one and he must paste the prompt (the `handoff` skill, Steps 5–6).
 
 ## What this skill does not do
 

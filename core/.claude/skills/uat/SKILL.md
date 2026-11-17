@@ -421,9 +421,12 @@ In order, in the same turn:
    in now, at intake, because a session that ends before it is written loses
    the link entirely. `bugfix` step 1 owns this contract; I'm executing it
    at the earlier moment, because I'm the one holding the context.
-6. **Hand him a paste-ready prompt** for a fresh session, naming the issue
-   number so that session works the filed bug instead of opening a second
-   one for the same defect.
+6. **Start a fresh session for the fix** — `create_session` with a prompt
+   naming the issue number, so that session works the filed bug instead of
+   opening a second one for the same defect, and with the Astra sign-in as
+   its first action (the `handoff` skill, Step 5, for the call and its
+   fallback). Where it cannot be started, hand him that prompt, paste-ready,
+   instead.
 
 **The `waiting:` flip is NOT part of intake — it happens when the run
 actually stops** (section 6). `bugfix` step 1 flips the interrupted
