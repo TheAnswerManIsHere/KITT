@@ -89,8 +89,9 @@ loses the work. See CLAUDE.md's *This environment's git constraints*.)
 (David, 2026-08-09).** With routed entry, bug reports can land while a
 feature branch has in-flight work. Don't stash-juggle the feature state: run
 the bugfix in an isolated worktree (`EnterWorktree`, branched from
-`origin/main` per above) or say plainly that a fresh session is cleaner and
-let David choose — either way the feature tree comes back untouched.
+`origin/main` per above) or, when a fresh session is cleaner, start one for
+the bug (the `handoff` skill, Step 5, for the call and its fallback) and say
+which I chose — either way the feature tree comes back untouched.
 
 Then confirm the branch name (the classification announcement at entry
 already named the workflow).

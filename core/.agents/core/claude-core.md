@@ -577,7 +577,8 @@ versioned files don't. `/compact` is an in-session relief valve, not the memory.
 - **`/handoff`** carries a session's live state to a new session when — and only
   when — the context actually needs to move. It decides first and stops when the
   answer is no; when it is yes, it starts the new session itself with the
-  prompt it wrote (`create_session`), pasting only where it cannot. Runs in
+  prompt it wrote (`create_session`), pasting only where it cannot
+  (`handoff`, Step 5). Runs in
   the main loop, never a subagent. It never names a
   working-tree file as a resume point: a file the next session needs is
   pushed, or quoted into the issue, first (`handoff`, Step 2;
@@ -1185,7 +1186,8 @@ this session can see its own context, so it is the `archive` skill's
 verdict, run here without being asked (that skill defers to the `handoff`
 skill's Step 1 for hand off), with the `handoff` skill run after
 the report when the answer is hand off — it starts the new session
-itself (David, 2026-11-17); only an explicit `/archive`
+itself, or hands David the prompt and a 🛑 where it cannot (`handoff`,
+Step 5; David, 2026-11-17); only an explicit `/archive`
 archives. Delivered twice, verbatim: in chat — where its landing rings
 nothing, since it holds nothing up (interaction rule 6; David,
 2026-11-02, retiring the ring KITT #264 gave it) —

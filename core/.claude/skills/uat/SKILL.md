@@ -386,8 +386,8 @@ in both directions:
 
 ## 4. When a step fails — file it now, then ask
 
-David wants the fix started while the context is hot, and he's right: he
-opens a bugfix session immediately. My job is to make sure the report that
+David wants the fix started while the context is hot, and he's right: a
+bugfix session starts immediately — I start it (item 6 below). My job is to make sure the report that
 session inherits is a real one and that the way back to *this* run survives
 (David, 2026-08-21).
 

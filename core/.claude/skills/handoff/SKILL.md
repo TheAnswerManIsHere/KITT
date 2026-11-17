@@ -126,7 +126,9 @@ before Step 4 writes anything:
 This repo is public and an issue body is public. Run the
 [canonical disclosure check](../../../docs/ai-context/workstream-tracking.md#what-must-never-happen)
 before writing to an issue. A handoff that fails it stays on the private path
-— deliver the prompt in chat only and say plainly that nothing was persisted.
+— nothing is written to the issue, and I say plainly that nothing was
+persisted there. Step 5 still starts the new session: its prompt goes to the
+session, not to GitHub, so the check does not bar it.
 
 ## Step 4 — Persist to the workstream issue
 
