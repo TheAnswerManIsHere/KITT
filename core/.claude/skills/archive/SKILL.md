@@ -134,8 +134,10 @@ not start one and he must paste the prompt (the `handoff` skill, Steps 5–6).
 
 ## What this skill does not do
 
-- **Move context.** That is `/handoff`, and its prompt-writing is the cost
-  this skill exists to avoid.
+- **Move context itself.** That is `/handoff`, and its prompt-writing is
+  the cost this skill exists to avoid until the verdict is *hand off* — then
+  it runs that skill, which starts the new session (the `handoff` skill,
+  Step 5).
 - **Recommend the next task.** That is `/next`; *archive* means only that
   nothing here needs this session.
 - **Run unasked.** The build report's **Session** line states the same
