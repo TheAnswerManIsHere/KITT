@@ -626,7 +626,8 @@ requires it.
       saying so, because only this session can see its own context: the
       `archive` skill's verdict, run here without being asked, and when it
       says hand off, the `handoff` skill runs after the report and starts
-      the new session itself. An *archive*
+      the new session itself, or hands David the prompt and a 🛑 where it
+      cannot (the `handoff` skill, Step 5). An *archive*
       line here archives nothing; only an explicit `/archive` does.
 
    - **The report is the role's words, not my summary of them.** `chatReport`
