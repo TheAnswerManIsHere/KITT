@@ -197,14 +197,18 @@ them with `ToolSearch` if they are deferred), once per destination, with:
 - `prompt` — the prompt below, exactly as written;
 - `source_url` — the destination repository's clone URL, so the new session
   starts with it checked out (for work in another repository, that
-  repository — and the attach step in item 3 is then moot, which the prompt
-  still carries harmlessly);
+  repository, which is why item 3's attach step opens with its own
+  condition: the session checks its checkout and skips it);
 - `title` — what the destination work is, in the `retitle` skill's form.
 
-Everything else is left to inherit — environment, model and permission mode
-come from this session; a model or effort is never set here, since that is
-David's (`claude-core.md`, *Model, cost, and routing*). The call returns the
-new session's id; that, and the title, are what this session reports.
+Everything else is left to inherit. The tool's own schema, as read
+2026-11-17: `environment_id` *"Defaults to the calling session's
+environment"*; `model` *"Defaults to the calling session's model"*;
+`permission_mode` *"omit to inherit it"*; and `effort` *"not inherited from
+this session. Omit it to use the default."* A model or effort is never set
+here, since that is David's (`claude-core.md`, *Model, cost, and routing*).
+The call *"Returns the new session's ID and status"*; the id and the title
+are what this session reports.
 
 The prompt is also shown in chat, as one fenced code block per destination:
 it is the record of what the new session was told, and the fallback below.
@@ -244,7 +248,8 @@ The block carries these seven, in order:
    repository other than the new session's primary one** — the attach step,
    named as the first action after that sign-in, and by its full tool name:
 
-   > Right after the Astra sign-in, before anything else, attach the repo: call
+   > Right after the Astra sign-in, if this session was not started with
+   > `<owner>/<repo>` checked out, attach it before anything else: call
    > `mcp__Claude_Code_Remote__add_repo` with owner `<owner>`, repo `<repo>`,
    > access `<read|push>`. Run the clone command it returns, then call
    > `mcp__Claude_Code_Remote__register_repo_root` with the clone path. If that

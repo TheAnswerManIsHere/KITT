@@ -423,15 +423,16 @@ In order, in the same turn:
    at the earlier moment, because I'm the one holding the context.
 6. **Start a fresh session for the fix** — `create_session` with a prompt
    naming the issue number, so that session works the filed bug instead of
-   opening a second one for the same defect, and with the Astra sign-in as
-   its first action (the `handoff` skill, Step 5, for the call and its
+   opening a second one for the same defect, that says the UAT run is still
+   live and its `waiting:` label is this session's to set (below), and with
+   the Astra sign-in as its first action (the `handoff` skill, Step 5, for the call and its
    fallback). Where it cannot be started, hand him that prompt, paste-ready,
    instead.
 
 **The `waiting:` flip is NOT part of intake — it happens when the run
-actually stops** (section 6). `bugfix` step 1 flips the interrupted
-workstream to `waiting:claude` because by the time *it* runs, the UAT is
-interrupted by definition. Here it may not be: if David says continue, he is
+actually stops** (section 6), and it is this session's, not the bugfix
+session's: that session starts while the run may still be going, so its
+prompt says so and `bugfix` step 1 leaves the label alone. If David says continue, he is
 still the holder and the next real action is still his click, so
 `stage:uat`/`waiting:david` stays exactly right. Flipping at intake would
 also mirror the wrong holder onto a phased parent and hide an active,

@@ -131,7 +131,10 @@ pre-launch, but the interrupted UAT is what gets lost. Per
   body, and one line in its State of Play naming **which UAT step failed**
   — that's what turns resumption into "resume at step 4" rather than a full
   re-run.
-- **Also flip the interrupted issue's `waiting:` label to `claude`**,
+- **Also flip the interrupted issue's `waiting:` label to `claude`** —
+  unless this session was started from a `/uat` run's intake whose prompt
+  says the run is still live: that label, and its parent's, are then the
+  UAT session's to set when the run stops (the `uat` skill, section 4). Otherwise flip it,
   recording its prior value (normally `david`, mid-UAT) in the same State
   of Play line. Left at `waiting:david`, `/status-all` — which doesn't
   parse `Blocked by:` and was deliberately left unchanged — keeps showing
