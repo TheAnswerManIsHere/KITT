@@ -71,7 +71,7 @@ Exactly one, first match wins:
 | Verdict | When |
 | --- | --- |
 | **continue** | Any checklist hit, or approved work in this session's plan is still startable here. Name each hit and the action that clears it. |
-| **hand off** | No hit, the next work is in a different workstream, and this session holds context worth carrying (the `handoff` skill's Step 1 test). Under `/archive`, run the `handoff` skill, which starts the new session itself; on a build report's **Session** line, it runs after the report (`claude-core.md`, *Watching the PRs I open*). |
+| **hand off** | No hit, the next work is in a different workstream, and this session holds context worth carrying (the `handoff` skill's Step 1 test). Under `/archive`, run the `handoff` skill, which starts the new session itself, or hands David the prompt where it cannot (the `handoff` skill, Step 5); on a build report's **Session** line, it runs after the report (`claude-core.md`, *Watching the PRs I open*). |
 | **archive** | No hit, and nothing worth carrying: the work is done, or the next work starts cold just as well. |
 
 A *continue* whose every hit I can clear myself is not a verdict to stop on:
