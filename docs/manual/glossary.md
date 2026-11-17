@@ -691,7 +691,7 @@ Home: [`core/scripts/needs-you-alert.mjs`](../../core/scripts/needs-you-alert.mj
 ### Paid-run ledger
 
 One issue in KITT's repository, labelled `paid-ai-ledger`, with a
-comment for every paid AI run in any product, so the weekly paid-run budget —
+comment for every paid AI run in any product, so the monthly paid-run budget —
 one total across every product — is read rather than remembered. One of
 the two small ledgers the #89 cut's "no ledger" now admits; the other is a
 workstream issue's *Spend so far* line.
