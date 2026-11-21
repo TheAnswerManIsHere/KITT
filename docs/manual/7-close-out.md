@@ -170,9 +170,12 @@ the workstream issue, and the workstream's `stage:uat` label leaving is what
 says the run is no longer owed. A behaviour the script is the only written
 description of is harvested into the product's manual at close-out. A
 legacy file still under `docs/tests/UAT/` from before the move is driven
-from the file and deleted when its run completes. `/uat` also lists the runs
-the lifecycle is still holding, so a close-out interrupted halfway does not
-hide the UAT it owes.
+from the file and deleted when its run completes. `/uat` looks first at the
+work its own session just finished and, when that owes a run, starts there
+without searching further; only a session with nothing of its own to test
+lists every run owed, and the runs the lifecycle is still holding, so a
+close-out interrupted halfway does not hide the UAT it owes (the
+[`uat` skill](../../core/.claude/skills/uat/SKILL.md), section 1).
 
 ### Closing the workstream
 
