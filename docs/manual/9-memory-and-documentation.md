@@ -195,8 +195,11 @@ The [`archive` skill](../../core/.claude/skills/archive/SKILL.md) (2026-10-22)
 answers a cheaper question than a handoff: is everything this session had to
 do actually done? It checks only what would die with the session — unpushed
 work, a pull request it watches, armed check-ins, running tasks, close-out it
-still owes, learnings not yet written down, an open ask — and returns one of
-three verdicts: continue, hand off, or archive. On *archive* it schedules the
+still owes, learnings not yet written down, an open ask, a UAT run it owes
+(its own work's, or one it started and left unfinished) ([Step 1](../../core/.claude/skills/archive/SKILL.md#step-1--the-checklist))
+— and returns one of three verdicts: continue, hand off, or archive. An owed
+UAT run is a *continue* that starts `/uat` in the same turn instead of
+archiving over it (2026-11-23). On *archive* it schedules the
 session's own archiving shortly after the verdict is shown. It recommends a
 handoff rather than running one. The same verdict fills the *Session* line of
 every [build report](./glossary.md#build-report), under a label saying it is

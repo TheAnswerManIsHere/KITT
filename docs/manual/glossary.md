@@ -601,9 +601,10 @@ Home: [`core/.claude/skills/handoff/SKILL.md`](../../core/.claude/skills/handoff
 
 The `/archive` check of whether a session is finished: it looks only at what
 would die with the session — unpushed work, a watched pull request, armed
-check-ins, running tasks, unpaid close-out, unwritten learnings, an open ask
-— and returns continue, hand off or archive, archiving itself shortly after
-the verdict when nothing would be lost. Its verdict also fills a build
+check-ins, running tasks, unpaid close-out, unwritten learnings, an open ask,
+a UAT run it owes (its own work's, or one it started and left unfinished) — and returns continue, hand off or archive,
+archiving itself shortly after the verdict when nothing would be lost. An
+owed UAT run is a *continue* that starts `/uat` instead. Its verdict also fills a build
 report's *Session* line.
 Home: [`core/.claude/skills/archive/SKILL.md`](../../core/.claude/skills/archive/SKILL.md)
 
