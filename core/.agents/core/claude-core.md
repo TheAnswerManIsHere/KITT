@@ -587,7 +587,8 @@ versioned files don't. `/compact` is an in-session relief valve, not the memory.
   with it, checked cheaply — and archives it when nothing does. Main loop,
   like `/handoff`, which it runs on a *hand off* verdict; a UAT run this
   session's own work owes is never archived over, and starts `/uat`
-  instead (David, 2026-11-23).
+  instead (David, 2026-11-23;
+  [`archive`, Step 1 item 8](../../.claude/skills/archive/SKILL.md#step-1--the-checklist)).
 - **`/document`** is the batched harvest of durable learnings (see below).
 - [`docs/handoff/`](../../docs/handoff/README.md) is cross-*tool* transit, which a
   session handoff never writes to.

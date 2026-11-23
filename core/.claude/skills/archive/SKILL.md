@@ -128,7 +128,7 @@ asking (`claude-core.md`, *A reversible choice proceeds*).
 ```
 ARCHIVE — nothing left here.
   Pushed and merged: #231. No open PR, no armed wake, no running task.
-  Close-out paid; nothing held only in chat.
+  Close-out paid; no UAT owed; nothing held only in chat.
 
 ✅ **PLAN DONE** — the work here is done; archiving at 14:05 unless you write first
 ```

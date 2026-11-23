@@ -302,7 +302,9 @@ rings him by the alert hook (`claude-core.md`, interaction rule 6) from the
 place that actually needs him; a banner here too would ring him twice for
 one thing. The summary says the new session is running and that this one
 has nothing left — `/archive` is his when he wants it, since only an
-explicit `/archive` archives. **Where Step 5 fell back** to a pasted
+explicit `/archive` archives, and it starts the UAT run this session's own
+work still owes rather than archiving over it (the `archive` skill, Step 1
+item 8). **Where Step 5 fell back** to a pasted
 prompt, the hand-off waits on him, and the hand-back is a 🛑 banner —
 opening the new session with the prompt above — as before.
 
