@@ -291,7 +291,8 @@ watching that the new session now owns, disarm any scheduled wake, and state
 in one line what this session is still on the hook for — normally nothing.
 A UAT run on the workstream this hand-off carries goes with it, whether
 owed or paused partway, since the new session inherits that workstream and
-resumes a paused run on it (the `uat` skill, section 1 items 0 and 2); a
+resumes a paused run on it (the `archive` skill, Step 1 item 8, and the
+`uat` skill, section 1 items 0 and 2); a
 run on a workstream the hand-off left behind, owed or started here and
 left unfinished, stays here and is named (the `archive` skill, Step 1
 item 8). Where Step 5 fell back to a pasted prompt, nothing has gone yet.
