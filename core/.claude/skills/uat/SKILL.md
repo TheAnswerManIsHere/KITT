@@ -45,7 +45,10 @@ session, then it should do what it does today."*).
    my own context for the units of work this session took to a merge or
    delivered — the PRs whose merge report I wrote here, and a workstream
    handed to this session by a `/handoff` prompt, which is this session's
-   work by inheritance. Context compaction keeps the summary of them, and
+   work by inheritance. A workstream this session handed to a session the
+   `handoff` skill started is no longer its own, whoever wrote the merge
+   report: its run, owed or paused, went with it (the `archive` skill,
+   Step 1 item 8). Context compaction keeps the summary of them, and
    the summary is enough to name them; nothing else is read for this step.
    A PR of this session's that has not merged is not finished work — the
    Repl tracks `main`, so there is nothing of it for him to click — and is
