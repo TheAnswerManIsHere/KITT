@@ -74,15 +74,19 @@ do not stop at the first hit, since David wants the whole list once.
      inherited by a `/handoff` prompt, whose PR body carries a `## UAT`
      section (or a legacy doc on current `origin/main`) and whose
      workstream has no finished run record, a run recorded `in progress`
-     included. **A workstream this session handed to a session the
-     `handoff` skill started is not a hit here**: its run went with it,
-     since that skill's item 0 makes it the new session's by inheritance.
-     A hand-off that fell back to a pasted prompt releases nothing until
-     that session exists.
+     included.
    - **A run this session started or resumed** and left unfinished,
      whatever work it tests — a session opened to test someone else's
      PR included — read from the run record's `in progress` verdict
      (the `uat` skill, section 5).
+
+   **Neither kind is a hit on a workstream this session handed to a
+   session the `handoff` skill started**, whether its run is owed or
+   paused: the run went with the workstream, since the `uat` skill's
+   section 1 item 0 makes that workstream the new session's by
+   inheritance and its item 2 resumes a paused run there. A hand-off that
+   fell back to a pasted prompt releases nothing until that session
+   exists.
 
    The session holds the context that run starts from; archiving sends it
    to a cold repository-wide search. Either kind is carried into the `uat`
