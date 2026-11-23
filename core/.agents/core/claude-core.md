@@ -586,7 +586,7 @@ versioned files don't. `/compact` is an in-session relief valve, not the memory.
 - **`/archive`** answers only whether this session is finished — what dies
   with it, checked cheaply — and archives it when nothing does. Main loop,
   like `/handoff`, which it runs on a *hand off* verdict; a UAT run this
-  session's own work owes is never archived over, and starts `/uat`
+  session owes is never archived over, and starts `/uat`
   instead (David, 2026-11-23;
   [`archive`, Step 1 item 8](../../.claude/skills/archive/SKILL.md#step-1--the-checklist)).
 - **`/document`** is the batched harvest of durable learnings (see below).
