@@ -146,8 +146,8 @@ where I put it and treat it as binding.
    regression check, fixed by the script's headings like a `Q` ID is fixed
    when asked (David, 2026-11-23: *"the test steps should be numbered in
    the same way that questions you ask me are numbered so I can respond to
-   them accurately. Let's use T1, T2, etc."*; `uat-doc-format.md`, *Every
-   step has a static ID*). An irreversible-list ask is a question and carries one, and
+   them accurately. Let's use T1, T2, etc."*; `uat-doc-format.md`, *The rule
+   that makes it deterministic*). An irreversible-list ask is a question and carries one, and
    so does any other question in a walkthrough. The bugfix
    tier checklist's two triggers, labelled Q1 and Q2 in `working-modes.md`,
    are written "tier check 1" and "tier check 2" in anything he reads, a

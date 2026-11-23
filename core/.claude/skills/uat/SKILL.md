@@ -375,8 +375,8 @@ close-out, 2 run now, all passed; 3 steps for you").
 steps should be numbered in the same way that questions you ask me are
 numbered so I can respond to them accurately. Let's use T1, T2, etc."*):
 `T1`, `T2`, … for `### Steps` and `R1`, `R2`, … for `### Regression`, read
-from the script's own headings (`uat-doc-format.md`, *Every step has a
-static ID*), so a step keeps its ID when machine-lane steps are settled
+from the script's own headings (`uat-doc-format.md`, *The rule that makes it
+deterministic*), so a step keeps its ID when machine-lane steps are settled
 around it, when the run pauses and resumes, and when it is re-presented. A
 turn opens with the ID in bold — `**T3 — Search results read as the right
 answers**` — and he may answer with it ("T3: pass", "T3: the second result
@@ -513,7 +513,7 @@ So, from that moment:
 
 - **The bug becomes a private draft Project item**, per CLAUDE.md's
   disclosure rule, with a short stable reference of my choosing
-  (`UAT-<PR>-<step>`) written into the item.
+  (`UAT-<PR>-<step ID>`, the step's `T` or `R` ID) written into the item.
 - **The run record goes manual, and I say so.** A draft Project item is
   write-only to me — no available tool reads or writes Projects v2 item
   fields (`workstream-tracking.md`), so it cannot hold a record I checkpoint
@@ -525,7 +525,7 @@ So, from that moment:
   exactly this path — an accepted cost of not leaking the symptom, stated
   out loud at the moment it starts, never silently.
 - **The public workstream issue keeps only a content-free pointer**:
-  `Blocked by: private tracking (UAT-472-2)` and a State of Play line saying
+  `Blocked by: private tracking (UAT-472-T2)` and a State of Play line saying
   which step failed **without saying how**. That reads as prose rather than
   the anchored `Blocked by: #N` marker, so it does not gate automatically —
   which means I say so plainly to David rather than assuming the stack pops

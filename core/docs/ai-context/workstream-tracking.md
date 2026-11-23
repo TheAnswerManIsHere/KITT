@@ -278,7 +278,7 @@ of issue links, which survives any session ending:
    **and** adds `Blocked by: #new` to the interrupted workstream, plus one
    line in its State of Play recording **which UAT step failed**, by its
    static ID (`T4`, `R2`: [`uat-doc-format.md`](../tests/uat-doc-format.md),
-   *Every step has a static ID*). That last detail is what makes resumption
+   *The rule that makes it deterministic*). That last detail is what makes resumption
    "resume at T4" instead of "run the whole thing again."
 2. **Depth is unbounded.** If the descent hits its own blocker, the chain
    nests. Nothing needs to know how deep it is.
