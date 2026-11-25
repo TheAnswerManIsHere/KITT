@@ -1201,8 +1201,7 @@ Only ever to my feature branch, never `main`. `git diff origin/main HEAD
    the permission classifier. Re-arming is a fresh `send_later`. An obsolete
    one-shot is left alone: it fires once, no-ops, and self-disables. If a
    `send_later` ever prompts, that's new information for the workstream issue.
-4. **A requested Codex review gets its own check-in at 15 minutes**, sized to
-   the machine: about twice the longest measured pass. Every Codex review request — the
+4. **A requested Codex review gets its own check-in at 15 minutes.** Every Codex review request — the
    automatic one at PR open or ready-for-review included — arms a `send_later`
    15 minutes out in the same turn, on any PR whose merge waits on that pass
    (the standard loop, Documentation, Trivial; never a prototype-phase PR or a
