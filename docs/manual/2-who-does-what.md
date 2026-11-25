@@ -168,8 +168,8 @@ subagent that fetches one finished unit of work from GitHub itself — the
 workstream issue and its plan, every pull request and review round — and
 explains it to David in plain English, in fixed sections he can scan: what
 was built, the decisions taken on Claude's recommendation with their undo,
-the ramifications, what ships unfixed, where it disagrees with how Claude
-handled it, and what the build cost. Its account reaches him unedited, in chat
+where it disagrees with how Claude handled it and what ships unfixed (each
+only when there is something), and where the plan stands. Its account reaches him unedited, in chat
 and as a comment on the workstream issue, alongside Claude's own if Claude
 writes one.
 

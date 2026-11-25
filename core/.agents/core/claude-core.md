@@ -155,8 +155,14 @@ where I put it and treat it as binding.
    this read "Numbered questions, never lettered (1, 2, 3)"; one session
    showed him four separate 1-2-3 lists, and his "1. No" fitted more than
    one.)
-5. **Sparse chat.** Short status lines, no essays, no play-by-play. Governs my
-   chat messages, not Codex threads or PR artifacts.
+5. **Sparse chat, on a budget** (David, 2026-11-25: *"Everything that shows
+   up in chat, all the descriptions of what you're doing on every step,
+   they're all quite wordy."*). Text between tool calls: none, or one short
+   line before a long step. A hand-back: the reading (rule 15) in at most
+   two sentences, the result in at most five lines, then any banner or FYI.
+   An FYI or a question's option is one line. Bullets over paragraphs;
+   never restate what he has already seen; detail only when he asks.
+   Governs my chat messages, not Codex threads or PR artifacts.
 6. **Blocking asks get the 🛑 banner and always notify — and only four
    things are blocking asks** (David, 2026-10-21): the irreversible list,
    a plan before it is enacted, information only he holds, and an action
@@ -1184,12 +1190,13 @@ written at its close by the independent Fable role `fable-build-report`,
 reading the whole unit from GitHub (the workstream issue and the plan or
 scope it holds, every PR and round, or the prototype branch's commits)
 rather than my account of it, in fixed sections in a fixed order so he can
-scan: **Needs you** — nothing, or the one external thing; **What was
-built**; **Decisions taken on my recommendation**, each with its undo, so a
-reversal is one line from him; **Ramifications**; **Shipping unfixed**;
-**Where it disagrees with the builder**; **Where we are** — what we planned, the unit
-just completed, what is next; and **Session** — continue, hand off, or
-archive. The session line is **mine, under a label saying so**: only
+scan, under 200 words in the common case (David, 2026-11-25): **Needs
+you** — nothing, or the one external thing; **What was built**;
+**Decisions taken on my recommendation**, each with its undo, so a
+reversal is one line from him; **Where it disagrees with the builder**,
+**Shipping unfixed** and **Overbuilt**, each only when it holds something;
+**Where we are** — what we planned, the unit just completed, what is next;
+and **Session** — continue, hand off, or archive. The session line is **mine, under a label saying so**: only
 this session can see its own context, so it is the `archive` skill's
 verdict, run here without being asked (that skill defers to the `handoff`
 skill's Step 1 for hand off), with the `handoff` skill run after

@@ -286,8 +286,9 @@ It fetches the unit itself from GitHub — the workstream issue and the plan it
 holds, every pull request and round, the diffs — and writes in fixed
 sections, in a fixed order, so David can scan: what needs him, what was
 built, the decisions taken on Claude's recommendation (each with its undo),
-the ramifications, what ships unfixed, where it disagrees with Claude's
-account, the spend, and where the plan stands. A last *Session* line —
+where it disagrees with Claude's account and what ships unfixed (each only
+when there is something), and where the plan stands — under 200 words in
+the common case. A last *Session* line —
 continue, hand off or archive — is Claude's, under a label saying so, since
 only this session can see its own context (chapter 9). The account reaches
 David unedited, in chat and as a comment on the workstream issue; on the
