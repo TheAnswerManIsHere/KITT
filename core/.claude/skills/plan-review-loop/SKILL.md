@@ -392,14 +392,15 @@ as the human fallback, and I say plainly when I am on it.
 **Everything reaches David in chat. There is no page** — no Artifact, no HTML,
 no link.
 
-1. **The approval ask, in chat**, as a 🛑 ask (`claude-core.md`, interaction rule 6: a plan before it is enacted is one of the four): a short readout, then **the complete plan**.
-   The readout carries what will be built and what is excluded, why the approach
-   fits, how success will be recognised, the remaining uncertainty and accepted
-   trade-offs, anything still needing his decision — each such question under
-   its ID, the same one it carries in the plan's *Questions for David* —
-   and any tie I settled over a
-   dissent with its practical implication. He should not have to reconstruct the
-   conversation to approve.
+1. **The approval ask, in chat**, as a 🛑 ask (`claude-core.md`, interaction rule 6: a plan before it is enacted is one of the four): **the plan's Summary, verbatim** — the *Summary for David* section of `PLANS.md`, and nothing else of the plan (a prototype's short plan is shown whole).
+   The Summary already carries what will be built and what is excluded, how
+   success will be checked, anything still needing his decision — each such
+   question under its ID, the same one it carries in the plan's *Questions for
+   David* — and any accepted trade-off or tie I settled over a dissent, with
+   its practical implication. **His approval of it approves the whole plan**,
+   so before the ask I re-read the Summary against the final detail: anything
+   that is his and missing from it is added first. He should not have to
+   reconstruct the conversation, or read the detail, to approve.
 2. `SendUserFile` for the plan document is **on request**, not the default.
 3. **Plan approval is explicit only.** Nothing else counts — not Astra's
    agreement, not an empty ledger, not a harness nudge after a tool error. When

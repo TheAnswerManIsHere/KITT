@@ -208,12 +208,13 @@ further.
 
 ### 7. Approval
 
-When the plan is ready, Claude posts the approval ask **in chat**: a short
-readout — what will be built and what is excluded, why the approach fits, how
-success will be recognised, remaining uncertainty and accepted trade-offs,
-anything still needing his decision, and any tie settled over a dissent —
-followed by **the complete plan**. There is no page, no link and no pull
-request for the plan.
+When the plan is ready, Claude posts the approval ask **in chat**: the plan's
+**Summary**, its first section, written for David in about 250 words — the
+problem, what he gets, what it leaves out, his questions, how he will check
+it, and the costs and risks that are his (David, 2026-11-25: the detail is for
+the AI readers, the summary is what he approves). His approval of the Summary
+approves the whole plan; the full plan is the committed file, sent on request.
+There is no page, no link and no pull request for the plan.
 
 **Approval is explicit, in words, and nothing else counts** — not Astra's
 agreement, not an empty concern list, not a harness "continue" message after

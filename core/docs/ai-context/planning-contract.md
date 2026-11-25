@@ -139,6 +139,14 @@ plan brought for approval must make clear what will be built, what remains
 outside scope, how success will be recognised, and any consequential
 uncertainty David is being asked to accept.
 
+**David reads the plan's Summary and approves on it; the rest of the plan is
+for the two of you** (`PLANS.md`, *Summary for David*). So the Summary is
+assessed on every exchange like any other section: it must say, in plain
+product English, everything that is his to decide or accept, and nothing the
+detail below it does not support. A Summary that leaves out a choice that is
+his, or disagrees with the detail, is a concern to raise, whatever the
+quality of the detail.
+
 ## 3. Early scope assessment
 
 Before a detailed plan exists, assess whether the proposed work addresses the
