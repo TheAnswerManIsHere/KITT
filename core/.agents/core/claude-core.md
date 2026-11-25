@@ -464,8 +464,8 @@ my enactment is `.claude/skills/document/`.
 - **The bridge:** at close-out of a production-phase product feature I post
   a **harvest-notes comment on the workstream issue** — decisions and why,
   alternatives rejected, gotcha candidates. Cheap, no PR. A prototype-phase
-  PR's close-out posts none — its close-out is the sync, the merge report and
-  the build report. The batched pass reads those comments plus the diffs.
+  PR's close-out posts none — its close-out is the sync and the merge report.
+  The batched pass reads those comments plus the diffs.
 
 ## Planning
 
@@ -753,8 +753,8 @@ The loop:
    the round's review and before both assessments is disclosed in that
    block**: the commit, what it contained, and whether it touched a line a
    finding names; an early push of a fix is named as a breach of the
-   write-gate rule, and the build report carries it under *Where it
-   disagrees with the builder*.
+   write-gate rule, and a build report David asks for carries it under
+   *Where it disagrees with the builder*.
 
 - **The oracle is agreed with David before the first round runs**; the script
   refuses to compose a package without one. **The assessors take it from
@@ -853,22 +853,16 @@ there is nothing to watch, and a prototype branch opens no PR. Two gates:
   batched call) and decide from that. Webhooks lag, drop CI successes, and
   arrive out of order; silence is never "all clear."
 
-**The build report.** One account per unit of work — a PR's merge, or a
-prototype version delivered on its own branch — written at its close by the
-independent Fable role `fable-build-report`, reading the whole unit from
-GitHub rather than my account. A Trivial PR gets none. Delivered twice,
-verbatim, with nothing else said about the unit: in chat, where it rings
-nothing; and as a comment on the workstream issue — **except a workstream on
-the private path, whose report goes in chat only**. **No page, no Artifact, no
-HTML, no link, no receipt store** — rebuilding any of them is forbidden. Its
-session line — continue, hand off, or archive — is **mine, under a label
-saying so**: the `archive` skill's verdict, run here unasked, with the
-`handoff` skill run after the report when the answer is hand off; only an
-explicit `/archive` archives. My own write-up of a unit is welcome beside it,
-labelled as mine. **It is an independent assessment, not a guarantee.** **A
-dispatch that fails is disclosed in plain English and never blocks the
-loop.** Its sections, the private-path relay and the dispatch: `pr-watch`,
-step 7.
+**The build report is on demand only** (David, 2026-11-25): it runs when
+David types `/buildreport` or asks for one in words, and never at close-out,
+after a merge, or on my initiative. It is written by the independent Fable
+role `fable-build-report` from GitHub rather than my account, in simple plain
+English, and pasted verbatim in chat only, with nothing else said about the
+unit. **No page, no Artifact, no HTML, no link, no receipt store** —
+rebuilding any of them is forbidden. **It is an independent assessment, not a
+guarantee.** What it shows and how it runs: the `buildreport` skill. **I raise
+a hand-off or an archive only when one is actually needed**, and run no
+`archive` check after a merge unasked.
 
 ## Pull requests
 
@@ -946,8 +940,7 @@ which its own prototype environment tracks. Production is a separate,
 explicitly-asked `publish_app`.
 
 **The bar: CI green + Codex review returned for the head commit + every thread
-resolved**, the build report dispatched at close-out (off the critical path;
-it never holds a merge), and, for a PR whose plan took the private path, the
+resolved**, and, for a PR whose plan took the private path, the
 one assessment against the full text (*Internal tooling: what is downstream*).
 That is the whole bar for product and internal PRs alike, except (*Review
 loops*): a **Trivial** PR merges on green CI and resolved threads, a P1 in
@@ -957,8 +950,7 @@ assessed batch — assessed once Codex's automatic pass reports Completed — wi
 no Codex round beyond a stalled pass's one re-request (*Waiting, and scheduled
 check-ins*, item 4); and a **prototype-phase** PR, on `main` only where nothing
 is downstream, waits for nothing but green CI, Codex's automatic pass read only
-for a defect that stops the feature working. A Documentation or prototype-phase
-PR still gets its build report; a Trivial PR none. CI and Codex catch *broken*;
+for a defect that stops the feature working. CI and Codex catch *broken*;
 David's UAT catches *wrong*, after the sync.
 
 No receipt proves the bar; all three are reads I do. GitHub enforces *every
@@ -1007,7 +999,7 @@ each step's mechanics, and each step binds whether or not it is loaded:**
    connector, when it has content.
 5. **Post the harvest-notes comment** on the workstream issue (production-phase
    product PRs; a prototype-phase PR posts none).
-6. **Merge report to David, then the build report.** **Nothing of mine
+6. **Merge report to David.** **Nothing of mine
    follows the merge report**; when more approved work is startable, its
    resume is armed before the report is written (*Waiting, and scheduled
    check-ins*, item 0).
@@ -1080,9 +1072,9 @@ any git operation that is not a plain push of new commits to my own branch.
    (a subscribed PR, a background task, a `send_later`), with nothing else in
    the plan startable meanwhile; **a 🛑 stop** (interaction rule 6's four);
    **a report this contract makes a turn's last text** — the merge report
-   (*Close-out*, step 6), a build report, an increment's hand-back — whose
-   continuation I arm *before* writing it when more approved work is
-   startable (the build-report dispatch, a background sleep (rule 1) or a
+   (*Close-out*, step 6), a build report David asked for, an increment's
+   hand-back — whose continuation I arm *before* writing it when more
+   approved work is startable (a background sleep (rule 1) or a
    `send_later` (rule 3) wakes me, and the next item starts on that wake
    without David prompting it; rule 2's "never a substitute for finishing
    now" does not forbid this); or **a check-in that trips its cap** (rule 2),

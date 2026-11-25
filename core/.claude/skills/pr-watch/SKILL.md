@@ -11,9 +11,7 @@ description: Use after opening or being re-engaged on any PR, and whenever a git
 `prototype/<feature>` branch, there is no PR; on `main` its body carries
 `Review class: prototype` for the review gate, `claude-core.md`, *Shared
 judgement on a review round*), so nothing here fires for it:
-no subscription, no labels, no rounds — save step 7's build report, which
-the `prototype` skill dispatches at each version's close-out, whichever
-regime the version ships under. **Nor one of the phase's one-line
+no subscription, no labels, no rounds. **Nor one of the phase's one-line
 registry PRs** — at a prototype's start under the branch regime, at its flip
 and at its abandonment — which are Trivial by David's phase declaration,
 carry `Refs #N` rather than `Workstream: #N`, carry `Review class: registry`
@@ -64,7 +62,7 @@ thread is still resolved, because the ruleset requires it.
   thread as review rule 6 answers any finding — fixed in a named commit, or
   declined with the reason and the assessment it rests on — resolve it, and
   merge on green CI. No second pass. The merge report says what the batch
-  changed, in my words, and the build report follows it (step 7).
+  changed, in my words.
 
 ## The loop
 
@@ -228,9 +226,8 @@ thread is still resolved, because the ruleset requires it.
      the findings**: two assessments at roughly a hundred and fifty thousand
      tokens each **only if the round returns findings**, since step 3
      dispatches neither on a clean round — save the one clean round of a PR
-     whose plan took the private path, which step 3 assesses anyway; the
-     build report the close-out owes, once per unit of work; and my own
-     turns either way. Then what is downstream if this round finds nothing.
+     whose plan took the private path, which step 3 assesses anyway; and my
+     own turns either way. Then what is downstream if this round finds nothing.
      When that reads "a sentence in a comment two agents read", the
      disproportion is legible to both of us *before* it is spent rather than
      after. The token counts are already reported to me on every dispatch;
@@ -275,147 +272,8 @@ thread is still resolved, because the ruleset requires it.
      at. `get_check_runs` returning `total_count: 0` means checks have not
      reported yet, which is not green and must never be reported as green.
 
-7. **The build report: one independent account per unit of work, at
-   close-out** (`claude-core.md`, *Watching the PRs I open*). Nothing runs
-   per round. A unit is a PR's merge, or a prototype version delivered on its
-   own `prototype/<feature>` branch, which opens no PR. A Trivial PR gets
-   none. It is dispatched **after** the merge report hands back, never before
-   a merge, and never holds one: it is off the critical path by design.
-
-   **The build report.** One account per unit of work — a PR's merge, or a
-   prototype version delivered on its own branch — written at its close by the
-   independent Fable role `fable-build-report`, reading the whole unit from
-   GitHub (the workstream issue and the plan or scope it holds, every PR and
-   round, or the prototype branch's commits) rather than my account, in fixed
-   sections in a fixed order, under 200 words in the common case: **Needs you** —
-   nothing, or the one external thing; **What was built**; **Decisions taken on
-   my recommendation**, each with its undo; **Where it disagrees with the
-   builder**, **Shipping unfixed** and **Overbuilt**, each only when it holds
-   something; **Where we are** — what we planned, the unit just completed, what
-   is next; and **Session** — continue, hand off, or archive. The session line is
-   **mine, under a label saying so**: the `archive` skill's verdict, run here
-   unasked (deferring to the `handoff` skill's Step 1 for hand off), with the
-   `handoff` skill run after the report when the answer is hand off — it starts
-   the new session itself, or hands David the prompt and a 🛑 where it cannot
-   (`handoff`, Step 5); only an explicit `/archive` archives. Delivered twice,
-   verbatim: in chat, where it rings nothing; and as a comment on the workstream
-   issue — **except a workstream on the private path, whose report goes in chat
-   only**, kept by David pasting it into the private item; its plan and decisions
-   reach the role as the item's text David relays, quoted in the brief under its
-   provenance, never as my summary. A Trivial PR gets none.
-
-   **The delivery is a message in chat, and there is nothing else.**
-   `chatReport` composes it from the answer's own fields and I paste that
-   verbatim, saying nothing else about the unit. **No page, no Artifact, no HTML,
-   no link, no receipt store** — rebuilding any of them is forbidden.
-
-   **Fable fetches the unit from GitHub itself** — issue, threads, comments,
-   reviews, diffs, with only a private item's text relayed — from a brief passed
-   inline (the role holds no file-reading tool), and writes its answer to a file
-   the script derives, so **the role's account reaches David unedited**. My own
-   write-up of a unit is welcome beside it, labelled as mine. **It is an
-   independent assessment, not a guarantee**: it defends against my being
-   *wrong*, never against my being deliberately misleading, and it says what it
-   verified and what it took on trust. **A dispatch that fails is disclosed in
-   plain English and never blocks the loop.** Mechanics: the rest of this step;
-   `core/scripts/build-report.mjs` here, `scripts/build-report.mjs` in a
-   consumer.
-
-   **The deliverable is a message in chat and the same text as a comment on
-   the workstream issue — chat only on the private path (step 4). There is
-   no page. Do not rebuild one** — not an Artifact, not an HTML file, not a
-   receipt store, not a link.
-
-   **How it runs** (`core/scripts/build-report.mjs` here, `scripts/` in a
-   consumer):
-
-   1. **Write the brief and prepare the answer path in one call**:
-      `node <dir>/build-report.mjs brief --unit <slug> --issue <n> --issue-title "<title>" --pr <n> --pr-title "<title>" [--pr <n> --pr-title "<title>" …]`,
-      or for a branch-regime prototype version
-      `--branch prototype/<feature> --since <sha> --head <sha>` in place of
-      the PRs: `--since` is the previous version's head, read off the
-      *Evidence* line of that version's build report — on the issue, or,
-      on the private path, in the private item, which David relays — or
-      the branch's base for the first version. The unit's slug names the
-      answer file (`pr-231`, `ingest-v2`). **Every number carries its
-      title, as read from GitHub**: the coordinates come back to David as
-      the report's *Evidence* line, and a bare number tells him nothing
-      (`claude-core.md`, interaction rule 14), so `brief` refuses an
-      `--issue` without `--issue-title` and a `--pr` without its
-      `--pr-title`, in order. Preparing clears any earlier
-      attempt's answer and coordinates, so a re-dispatch that writes nothing
-      reads as a failure, never as its predecessor. **A workstream whose
-      plan is on a private draft Project item** — no public issue at all, or
-      one that turned sensitive and keeps only sanitized tracking — is
-      reported from **the item's text, relayed by David**: the item
-      is write-only to agents, so I ask him to paste it (the plan and the
-      decisions taken on recommendation), write it
-      to the scratchpad, never the repository, and pass `--private-source
-      <file>` with `--private-ref <the item's reference>`, in place of
-      `--issue` or beside a sanitized one. `brief` refuses a source inside
-      the checkout, quotes it inline under its provenance, and marks the
-      unit private; `--private yes` without a source is refused, since the
-      flag alone would point the role at a sanitized issue for the plan. The role still reads the PRs or branch from GitHub
-      itself; only the plan side is relayed. With no issue and no source,
-      `brief` refuses by name and says to ask for the relay.
-   2. **Dispatch `fable-build-report`** with `model:` set to the pin's alias
-      (`dispatchModel().agentModel`, which is `fable` today), and **the
-      printed brief as the whole prompt**. The role holds no file-reading
-      tool, so a brief handed to it as a path is unreachable. The brief
-      carries the schema for the same reason. Announce the dispatch in one
-      line.
-   3. **Read only after the harness reports the dispatch complete**, in the
-      tool result or a later task notification. The completion signal is the
-      synchronisation; `run_in_background: false` is not
-      ([`backgrounded-subagent-answer-is-in-its-own-transcript.md`](../../../.agents/memory/backgrounded-subagent-answer-is-in-its-own-transcript.md)).
-      The answer is the file, never the role's closing message. When no
-      signal ever arrives, read once at the next event: no file is a failed
-      report, never a quiet one.
-   4. **Paste the report verbatim**:
-      `node <dir>/build-report.mjs report --unit <slug> --session continue|"hand off"|archive --session-why "<one clause>"`,
-      in chat and as a comment on the workstream issue, and say nothing else
-      about the unit. **A private-path unit's report goes in chat only**,
-      never as an issue comment, and the report says so at its top, asking
-      David to paste it into the private item, which is where it is kept:
-      the role writes a plain account of the diff, and from a relayed
-      source the restricted plan too, which is what the canonical
-      disclosure check keeps off GitHub (`workstream-tracking.md`,
-      *Sensitive / disclosure-carve-out workstreams*). The report's
-      *Evidence* line names what it covered from the brief's own
-      coordinates, and for a branch unit both ends of the range — the next
-      version's `--since`. The **session** line is mine and printed under a label
-      saying so, because only this session can see its own context: the
-      `archive` skill's verdict, run here without being asked, and when it
-      says hand off, the `handoff` skill runs after the report and starts
-      the new session itself, or hands David the prompt and a 🛑 where it
-      cannot (the `handoff` skill, Step 5). An *archive*
-      line here archives nothing; only an explicit `/archive` does.
-
-   - **The report is the role's words, not my summary of them.** `chatReport`
-     composes it from the validated answer's own fields; the only text in it
-     that is not the role's is the labels and my labelled session line. My
-     own account is welcome beside it, labelled as mine; editing the role's
-     account, or presenting mine as it, is not.
-   - **A failure is honest and never blocks.** No file, unparseable JSON and
-     a schema-invalid answer are each a visible **failed** report, never
-     "nothing to report". If the dispatch itself is refused — a newly added
-     agent type is not dispatchable for some minutes, and an edited one may
-     be served stale — say so in plain English, write the unit up myself
-     labelled as my own account, and try again at the next unit.
-   - **"Agrees" prints only when nothing differs, nothing shipping unfixed is
-     called unreasonable, no decision drew a concern and everything reachable
-     was assessed.** The model is disclosed, not observed: the role reports
-     its own and the report mentions it only on a mismatch or an absence.
-   - **`Write` is not path-scoped, and this role reads every comment on the
-     pull request, from anyone.** A path specifier in a `tools:` list removes
-     the tool rather than narrowing it, so the bare grant ships and the
-     exposure is named: an injected instruction could direct the one write
-     tool at any path in the checkout. What bounds it: the answer directory is
-     `*`-gitignored; the container is ephemeral; and the only route to `main`
-     is a commit I make. **So after every dispatch, read `git status
-     --porcelain`**: an untracked file inside `.agents/reviews/` is the one
-     kind of noise, and anything else — a tracked file modified anywhere,
-     `.agents/reviews/.gitignore` included — is a finding.
+7. **No build report.** It is on demand only: the `buildreport` skill, when
+   David types `/buildreport` (David, 2026-11-25). Nothing here dispatches it.
 
 8. **Merge, sync, report**, per `claude-core.md`'s *Close-out is mine, end to
    end*, with the `close-out` skill loaded for each step's mechanics: re-verify live state with a fresh `pull_request_read` — not cached
@@ -429,8 +287,7 @@ thread is still resolved, because the ruleset requires it.
    the merge report with both SHAs, the latitude line, the PR's **Decisions
    taken on my recommendation** entries, the UAT handoff and, last, its
    plain-English summary — on the `✅ **PLAN DONE** —` line when this merge
-   finished the approved work (`claude-core.md`, *A reversible choice proceeds, and every hand-back says what it did*, rule 2) — then
-   dispatch the build report (step 7). In KITT, finished work whose merges
+   finished the approved work (`claude-core.md`, *A reversible choice proceeds, and every hand-back says what it did*, rule 2). In KITT, finished work whose merges
    changed `core/` runs `sync-fleet` before that line is written (KITT's
    `CLAUDE.md`, *Delivering the payload*).
    **No readiness receipt is minted or quoted** (`pr-ready.mjs` is gone); the three-item bar is read
