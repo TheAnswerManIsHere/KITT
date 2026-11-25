@@ -104,7 +104,19 @@ over-ceremony; until then an unclear class was a numbered question.
   complete all the steps in the plan from start to finish"*.
 - Rule 5: a three-option question to him until 2026-10-21.
 - Rule 6 (2026-09-18) retired the private Artifact page of 2026-09-09, which
-  had replaced the plan-review PR.
+  had replaced the plan-review PR. Until 2026-11-25 it pasted the complete
+  plan in chat at approval. David: *"For the version that Fable and Astra are
+  working with, keep all the detail (except for duplication that is not
+  necessary). For the version that I review and approve, I want the simplified
+  version."* His choices, by numbered option: the Summary has six items in
+  about 250 words (Problem, What you get, What it leaves out, Questions for
+  David, How you'll check it, Costs and risks that are yours) and is the
+  plan's first section; approving it approves the whole plan; the full plan is
+  sent on request. For the detail: one copy of the scope block, no Repo
+  Context Inspected, Current and Runtime Behavior folded into Proposed Design,
+  sections that do not apply left out — and **Proposed Design is not capped**,
+  on my recommendation that it is where the reviewer finds real problems. The
+  template lets the questions run past the 250 words; he was not asked that.
 - Rule 7 opened with "genuine product/design forks escalate" until 2026-09-18,
   contradicting its own tie-break (Astra caught it). Until 2026-10-21 such
   choices were separate questions; Overhype.me #744 measured two interrupts on

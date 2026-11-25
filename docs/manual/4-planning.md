@@ -123,8 +123,9 @@ Before drafting, Claude runs every check in the preflight of
   invariants, not implementation.
 
 Claude then writes the plan to a file in its working tree, from the template
-in `PLANS.md`: a short Summary for David first, then the oracle and the
-detail the AI readers work from, each fact written once. It stays there, ignored by git,
+in `PLANS.md`: a short Summary for David first, then the detail the AI readers work
+from, each fact written once. The scope David agreed at the gate stays in its
+own file beside the plan, as the fixed text every exchange is measured against. It stays there, ignored by git,
 until David approves it. A prototype's first version gets a
 short plan instead — the design question, the hypothesis, the surface it
 shows, and what it leaves out — and only the increment test applies to it.
@@ -280,8 +281,8 @@ saves the Markdown answer. Its machinery protects things other than a verdict:
 - **Chat, not a page.** The plan was once reviewed on a pull request, then on
   a private page. The plan loop now follows the same rule as the code review
   loop, where a page turned out to be something David had to go and open
-  rather than something he read: he reads chat and uses it well, so the plan
-  comes to him there, complete.
+  rather than something he read: he reads chat and uses it well, so the plan's
+  Summary comes to him there, and the full plan is the committed file.
 - **The approved plan is committed, after a disclosure check.** From
   2026-09-09 the rule was that a plan is never published, and it stood in for
   the disclosure gate once the review pull request went. It left the plan in
