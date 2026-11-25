@@ -127,7 +127,7 @@ Four rules, because setup writes to the live app:
   and let him decide.
 - **Teardown runs before the run stops — at the end, and equally before a
   pause.** A production-safety rule: UAT scripts put the live app into
-  deliberately wrong states (e.g. lowering `budget_limit_legendary_usd`, the
+  deliberately wrong states (e.g. Overhype.me's PR #443 script lowers `budget_limit_legendary_usd`, the
   **real** Legendary spend limit, and putting it back at the end). A run paused mid-bugfix can sit for days, so a pause
   that skipped teardown would leave production mis-configured for exactly
   that long. Tear down, record in the run what setup is owed on resume, and
@@ -686,8 +686,8 @@ such identity has not settled it, and section 3's machine block says what
 happens there. **The rule: a step's lane is read
 from its `Expect`'s clauses and from who can perform its `Do`, never from
 its heading or its verb. A screen fact — an element is there, a message
-reads a given sentence, a status or an error shows, a layout holds — is
-machine-lane; a `Do` only David's own account or device can perform keeps
+reads a given sentence, a status or an error shows, a layout holds, or any
+other UI check that needs no taste input from him — is machine-lane; a `Do` only David's own account or device can perform keeps
 the step `human`; the clause that is judgement is a `human` step of its
 own, and what an image an AI model generated shows, beyond what anyone
 would verify the same way, is always judgement (`uat-doc-format.md`, *Lanes*, *An image an AI model generated*); and a screen fact that reaches a run labelled `human` is run by me, in
