@@ -753,7 +753,8 @@ The loop:
    the round's review and before both assessments is disclosed in that
    block**: the commit, what it contained, and whether it touched a line a
    finding names; an early push of a fix is named as a breach of the
-   write-gate rule, and the build report carries it.
+   write-gate rule, and the build report carries it under *Where it
+   disagrees with the builder*.
 
 - **The oracle is agreed with David before the first round runs**; the script
   refuses to compose a package without one. **The assessors take it from
