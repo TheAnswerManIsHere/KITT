@@ -20,10 +20,13 @@ carry `Refs #N` rather than `Workstream: #N`, carry `Review class: registry`
 for the review gate, and own no lifecycle: no subscription, no labels. The
 rule is working-modes.md, *The prototype phase, per feature*.
 
+Budget cadence, receipt shapes, snapshot recipes, round-count recovery and
+adjudicator dispatch are gone, with the scripts they drove; none is rebuilt.
 The two assessments are step 3; neither of them binds, and what happens next
 is the action step 6 states. Every PR opens non-draft with its `## UAT`
 section in the body (`uat-doc-format.md`). The class-level sweep that
-`claude-core.md` rule 6 points at is stated here only, in step 5.
+`claude-core.md` review-loop rule 6 points at is stated here only, in step 5. A
+step below that reads thin is thin on purpose.
 
 **Two classes do not run this loop** (the rule is in `claude-core.md`, *Two
 classes and a phase that leave the loop*). I still subscribe to them (step
@@ -274,7 +277,8 @@ thread is still resolved, because the ruleset requires it.
       **corrected question landing on the answer to the old one**, which reads
       as a reply to what I just asked and is not. Counting up eliminates the
       state instead of clearing it, and the file name then says which attempt
-      produced it.
+      produced it. The Fable side needs no such guard, so a package guard is
+      written on the Astra side only.
 
       **The question carries the evidence**, in the form
       `claude-core.md`'s *A load-bearing claim is quoted, or it is marked
@@ -574,7 +578,7 @@ thread is still resolved, because the ruleset requires it.
    dispatch the build report (step 7). In KITT, finished work whose merges
    changed `core/` runs `sync-fleet` before that line is written (KITT's
    `CLAUDE.md`, *Delivering the payload*).
-   **No readiness receipt is minted or quoted**; the three-item bar is read
+   **No readiness receipt is minted or quoted** (`pr-ready.mjs` is gone); the three-item bar is read
    by eye.
 
 ## One standing stop
@@ -632,7 +636,8 @@ payload, which delivers fleet machinery rather than a workstream (the
   keeps the workstream here while it routes through the normal channel.
   A **legacy** `docs/tests/Replit/PR<N>_..._TEST_RUN.md` doc still on `main`
   follows this same flow, plus deleting the doc on a full pass — a tiny
-  deletion PR, self-merged; the label move is likewise mine.
+  deletion PR, self-merged; the label move is likewise mine, since the
+  `test-run-completion.yml` Action that once made it is retired.
 - **The PR merges with "none needed" verification** → `stage:uat` **only
   after the close-out sync checks pass, and only if the PR body carries a
   `## UAT` section ([`uat-doc-format.md`](../../../docs/tests/uat-doc-format.md);
