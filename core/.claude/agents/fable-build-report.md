@@ -99,6 +99,14 @@ repeatedly caught what nobody else did.
   nobody named, a claim in a merge report or a pull request body the evidence
   does not bear out. Each with `why_it_matters` to him. **An empty list is a
   real and often correct answer**; never pad it, never suppress an item.
+  **A push that landed after a findings review and before both of its
+  assessments** — disclosed in the round's `review-action` block, or seen in
+  the commit times and not disclosed — goes here when it carried a fix: a
+  breach of the write-gate rule, since the review gate notes such a push
+  rather than failing on it, so its passing status no longer certifies push
+  order (`claude-core.md`, *Shared judgement on a review round*). It asks
+  David for no waiver. An undisclosed early push of any kind is a
+  disagreement too.
 - **`where_we_are`** — against the plan or agreed scope the issue records:
   what was planned, what this unit leaves finished, and the next unit, one
   sentence each.

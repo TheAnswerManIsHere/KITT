@@ -240,8 +240,8 @@ force pushes; the `main` ruleset blocks them too and now also requires
 conversation resolution, which is what makes the Merge button inert while a
 review thread is open; and the `Review gate` (required since David enrolled it,
 2026-11-11)
-status fails a PR whose findings round lacks either assessment or received a
-push before both (`claude-core.md`, *Shared judgement on a review round*). Neither carries a bypass actor (David, 2026-10-03), so
+status fails a PR whose findings round lacks either assessment (a push before
+both is noted, not failed; `claude-core.md`, *Shared judgement on a review round*). Neither carries a bypass actor (David, 2026-10-03), so
 they bind every pusher, this session's admin identity included — see
 `claude-core.md`, *This environment's git constraints*. Neither can fail open, neither can be disarmed by a
 `cd`, and neither is a parser. `drizzle-kit push` is still refused by
