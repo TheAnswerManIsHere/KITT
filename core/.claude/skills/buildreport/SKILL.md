@@ -37,8 +37,8 @@ against my being deliberately misleading.
 - **Pull request numbers** — those pull requests, with their workstream
   issue.
 - **A prototype branch** — that branch from after `--since` (the head named
-  in the previous version's report, or the branch's base for the first
-  version) through its head.
+  in the previous version's merge report or hand-back, or the branch's base
+  for the first version) through its head.
 
 The workstream issue is required, or on the private path its relayed text.
 

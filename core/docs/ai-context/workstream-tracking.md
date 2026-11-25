@@ -560,7 +560,7 @@ set" `stage:done`, and nothing ever asked him to.)
   private path, and nothing it holds), and any text already on the issue that
   fails the check is edited out and named to David in one line, since an
   edit does not unpublish what was already read. **Its 👀 FYIs stay in
-  chat**, like any build report David asks for: the one-line FYI comment every other
+  chat**, like any build report David asks for (the `buildreport` skill): the one-line FYI comment every other
   workstream's issue receives (`claude-core.md` interaction rule 7, David,
   2026-10-23) is an account of the work, which is what the check keeps off
   GitHub. They reach the private item the way such a report does — David
