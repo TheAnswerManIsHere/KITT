@@ -17,14 +17,14 @@ where "everything" is every session working in **this** repository, never
 the other repositories in the fleet.
 
 The lifecycle: Discovery → Planning → 🛑 Plan approval → Coding → Code
-review → Merge → Test run → 🛑 UAT → Close-out — or, for a feature declared
+review → Merge → Test run → 🛑 UAT → Close-out — or, for a feature David has declared
 prototype phase, Discovery → Planning → 🛑 Plan approval for its first
 version, then Coding → 🛑 his feedback → Coding, with no code review and no
 UAT
 ([`working-modes.md`](../../../docs/ai-context/working-modes.md#the-prototype-phase-per-feature-david-2026-09-26)).
 This skill reads from **outside** any session, using GitHub as the shared
-substrate — no session memory required — so it runs cold in a fresh session,
-never inside a long existing thread.
+substrate — no session memory required — so it is best run cold in a fresh session,
+not inside a long existing thread.
 
 **This is a read-only reporting skill.** It never writes labels, comments,
 or issue bodies — that's `pr-watch`, `plan-review-loop`, `bugfix`,
@@ -221,8 +221,8 @@ per-thread narration in the output.
 `get_reviews` to exhaustion**, the same way Step 1 pages through issues —
 Step 4 picks the *latest* item across these collections, and an incomplete
 page can make an active workstream look stalled. `get_comments` is required
-because the Codex loop delivers some events (a clean re-review pass, a
-review trigger) as plain issue comments. `get_reviews` is required because a
+because the Codex loop delivers some events (a clean re-review pass, an
+`@codex review` trigger) as plain issue comments. `get_reviews` is required because a
 clean Codex pass with **no** inline findings may be visible only as a review
 object, with its own actor and submission timestamp. `get_commits` is
 required because a PR's raw `updated_at` carries no actor.
@@ -398,7 +398,7 @@ David-gate value (`waiting:david`):
 - **Never assert a reviewer's state from a gate.** An approval gate
   establishes neither unanimity nor a blocker: the planning loop supports
   `settled-over-dissent`, where a technical tie was settled over an
-  objection Astra still holds, and the concern ledger lives in
+  objection Astra still holds and the approval ask is required to name it, and the concern ledger lives in
   `.agents/reviews/`, which is gitignored and never reaches GitHub. Report a
   concern only when an available source establishes it.
 - Accuracy over cheapness here: read the actual comment/thread rather than
