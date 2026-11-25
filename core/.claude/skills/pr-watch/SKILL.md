@@ -424,7 +424,7 @@ requires it.
 
 5. **Reply to every finding and resolve its thread**, right after posting that
    reply, never in a batch, and never as a standalone summary comment in place
-   of per-thread replies. The shape is `claude-core.md` rule 6's and is not
+   of per-thread replies. The shape is `claude-core.md` review-loop rule 6's and is not
    restated here. What that rule points at and states nowhere else:
 
    - **The sweep is class-level, always.** A fix closes the class the finding
