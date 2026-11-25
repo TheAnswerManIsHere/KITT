@@ -559,8 +559,7 @@ for the two classes and in
 [its phase section](../../docs/ai-context/working-modes.md#the-prototype-phase-per-feature-david-2026-09-26)
 for the third; this is my enactment. Everything else in this section is the
 **standard** loop: the write-gate, shared judgement, review rule 4's "any
-changed head gets its review" and the close-out bar apply to it only; the build
-report at close-out applies to every unit of work but a Trivial PR.
+changed head gets its review" and the close-out bar apply to it only.
 
 - **Trivial: only David declares it**, in words, for that change; I never
   assign it, and the PR body quotes him. His phase declaration for a feature
@@ -668,8 +667,7 @@ judge it alone.
   returns: two assessments plus my turns to package, post, reply and resolve.
   **A clean round is not that bill** (save the one clean round of a PR whose
   plan took the private path, assessed regardless): no assessor is dispatched
-  when there is nothing to assess, so its cost is my turns plus the build
-  report the close-out owes, and stating it otherwise overstates the
+  when there is nothing to assess, so its cost is my turns, and stating it otherwise overstates the
   commonest way a loop ends. Every artifact I read into context is
   re-billed on every later turn, so **artifacts bound for GitHub are not read
   into my context when a hand-back summary decides the question**, and **a

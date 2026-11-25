@@ -28,7 +28,7 @@ findings, before anything is written for them.
       Fable assessor as the **`fable-review-assessor`** subagent, given the
       package `--prompt-only` emits with `--source fable`, and **dispatched
       with `model: dispatchModel().agentModel`** the way the build report
-      (step 7) is.
+      (the `buildreport` skill) is.
 
       **Pass the argument even though the definition now declares the tier.**
       `fable-review-assessor` carries `model:` and `effort:` in its frontmatter,
