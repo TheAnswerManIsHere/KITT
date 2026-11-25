@@ -378,3 +378,31 @@ The risk accepted is the one Fable named: a moved mechanic applies only when
 its home is read, so the contract keeps every rule's statement and names the
 moment its home is loaded (before every merge; before any git operation
 beyond a plain push).
+
+## The build report becomes on demand (2026-11-25)
+
+David: *"We should eliminate the build report unless I explicitly ask for it.
+Maybe we should create a new skill called /buildreport … Even then, it should
+be much smaller than it is now."* He then ruled on each section in turn (Q12
+to Q20):
+
+| Section | Ruling |
+|---|---|
+| Needs you | dropped — the 🛑 banner covers it |
+| What was built | kept, at most three sentences |
+| Decisions taken on my recommendation | only those the reader questions |
+| Where it disagrees with the builder | kept, with "Agrees" otherwise, in simpler plain English |
+| Shipping unfixed | only those the reader calls unreasonable |
+| Overbuilt | kept, only when it holds something |
+| Where we are | replaced by one sentence, **Next**, so `/next` need not be re-run |
+| Session line | dropped; no archive check runs after a merge |
+| Evidence and caveats | Evidence line dropped; the two caveats kept, only when they apply |
+
+Decided on the builder's recommendation, not asked: the report goes to chat
+only, no longer to the workstream issue; and a branch unit's lower bound
+(`--since`) is now read from the previous version's merge report or
+hand-back, since no earlier build report need exist.
+
+What was given up, said to David before he decided: the build report was the
+only account of a unit not written by the builder; on demand, nothing
+independent checks a unit unless he asks.

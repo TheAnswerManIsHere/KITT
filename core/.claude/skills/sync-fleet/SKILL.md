@@ -161,8 +161,7 @@ The bar is the Trivial class's, nothing more (`working-modes.md`,
 automatic pass (`claude-core.md`, *Waiting, and scheduled check-ins*, item
 4), read that pass for a P1 — judged and reported, fixed in a named commit
 or merged with the reason — resolve each thread citing the declaration,
-merge on green CI by squash. No review is requested and no build report is
-written.
+merge on green CI by squash. No review is requested.
 
 **A sync PR whose CI fails is a finding about KITT, not about the
 consumer**: the payload broke something there. It stays open, the failure

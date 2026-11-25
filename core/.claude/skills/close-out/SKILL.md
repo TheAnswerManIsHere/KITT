@@ -58,9 +58,7 @@ skill is the mechanics of each step. The contract governs on any conflict.
    month past it (`uat-doc-format.md`, *Lanes*).
 5. **Post the harvest-notes comment** on the workstream issue (production-phase
    product PRs; a prototype-phase PR posts none).
-6. **Merge report to David, then the build report** (dispatched after the
-   merge report hands back, landing as its own message and an issue comment,
-   or in chat only on the private path): both SHAs, verification results, and
+6. **Merge report to David**, kept short (interaction rule 5): both SHAs, verification results, and
    the UAT handoff naming what to go click — the judgement steps, since `/uat`
    settles the machine lanes itself, running only what the lifecycle left
    unrun, screen facts included (the `uat` skill, section 3, and *Where the
@@ -75,8 +73,8 @@ skill is the mechanics of each step. The contract governs on any conflict.
    alert (interaction rule 6). **Nothing of mine
    follows the merge report**; when more approved work is startable, its
    resume is armed before the report is written (*Waiting, and scheduled
-   check-ins*, item 0); the build report that lands after it is the Fable
-   role's, delivered as its own message when it arrives.
+   check-ins*, item 0). **No build report follows it**: that is the
+   `buildreport` skill's, only when David asks.
 
 ## Working the Replit connector during close-out
 

@@ -28,7 +28,7 @@ findings, before anything is written for them.
       Fable assessor as the **`fable-review-assessor`** subagent, given the
       package `--prompt-only` emits with `--source fable`, and **dispatched
       with `model: dispatchModel().agentModel`** the way the build report
-      (step 7) is.
+      (the `buildreport` skill) is.
 
       **Pass the argument even though the definition now declares the tier.**
       `fable-review-assessor` carries `model:` and `effort:` in its frontmatter,
@@ -194,7 +194,7 @@ findings, before anything is written for them.
       assessments is disclosed in this block**, whatever the action: the
       commit, what it contained, and whether it touched a line a finding
       names. An early push of a fix is named as a breach of the write-gate
-      rule; the build report carries it, and it asks David for nothing
+      rule; a build report David asks for carries it, and it asks David for nothing
       (`claude-core.md`, *Shared judgement* item 6).
 
    **Sign-in is the session's first action** (`claude-core.md`, *Astra*); a
