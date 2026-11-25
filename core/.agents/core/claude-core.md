@@ -803,7 +803,7 @@ what a single round is for:**
    change of shape would make me stop, written before the round runs. **Each
    names an OBSERVABLE, never a judgement** — something read off the round,
    not decided in the moment: **a condition I have to interpret is one I will
-   reinterpret.** Shapes and evidence: `pr-watch`.
+   reinterpret.** Shapes: `pr-watch`.
 5. **Triage is a shared judgement, and the rule it applies lives in one
    file**: [`review-judgment.md`](../../docs/ai-context/review-judgment.md),
    the Worth rule Astra, the Fable assessor and I apply. Never restate it;
