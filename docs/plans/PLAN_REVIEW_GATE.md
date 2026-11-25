@@ -144,6 +144,10 @@ machinery; loosening the gate is undone by a revert). Prose sweep; `/sync-fleet`
   or a mistake) is disclosed in that round's `review-action` block: the commit, what it contained,
   and whether it touched any line a finding names. An early push of a fix is still a breach of the
   write-gate rule and is reported as one in the build report; it no longer goes to David.
+- **The build report (Astra, RG-A2).** The `review-action` disclosure names an early push of a
+  fix as a breach of the unchanged working rule. The build-report role
+  (`fable-build-report`) reports that disclosed breach, says that the gate's passing status no
+  longer certifies push order, and asks no waiver for it.
 - **No mechanical pre-push check.** The session cannot read the PR's reviews through the REST API
   (implementation step 1), and a check before a push still races a review that lands after it, which
   is how #1263 happened; the note covers the race either way.
@@ -154,7 +158,7 @@ machinery; loosening the gate is undone by a revert). Prose sweep; `/sync-fleet`
 plan: `core/scripts/review-gate.mjs` and its tests; both copies of `review-gate.yml` (header
 comment); `claude-core.md` (*Planning* rule 4, *The write-gate rule*, *Shared judgement on a review
 round*, *Close-out*); `pr-watch`; `requesting-code-review`; `receiving-code-review`; `status-all`;
-`agent-working-rules.md`; `working-modes.md`; `workstream-tracking.md`; the memory note
+`agent-working-rules.md`; `agents-core.md`; `code-review.md`; `fable-build-report`; `working-modes.md`; `workstream-tracking.md`; the memory note
 `review-round-never-answered-before-both-assessments.md`; `CLAUDE.md` (*The guard is gone*). The
 `prose-sweep` skill runs over the retired reading ("only David's waiver releases a push", "stays
 failed if any push landed") before the PR opens.
