@@ -475,6 +475,45 @@ thread is still resolved, because the ruleset requires it.
    none. It is dispatched **after** the merge report hands back, never before
    a merge, and never holds one: it is off the critical path by design.
 
+   **The build report.** One account per unit of work — a PR's merge, or a
+   prototype version delivered on its own branch — written at its close by the
+   independent Fable role `fable-build-report`, reading the whole unit from
+   GitHub (the workstream issue and the plan or scope it holds, every PR and
+   round, or the prototype branch's commits) rather than my account, in fixed
+   sections in a fixed order, under 200 words in the common case: **Needs you** —
+   nothing, or the one external thing; **What was built**; **Decisions taken on
+   my recommendation**, each with its undo; **Where it disagrees with the
+   builder**, **Shipping unfixed** and **Overbuilt**, each only when it holds
+   something; **Where we are** — what we planned, the unit just completed, what
+   is next; and **Session** — continue, hand off, or archive. The session line is
+   **mine, under a label saying so**: the `archive` skill's verdict, run here
+   unasked (deferring to the `handoff` skill's Step 1 for hand off), with the
+   `handoff` skill run after the report when the answer is hand off — it starts
+   the new session itself, or hands David the prompt and a 🛑 where it cannot
+   (`handoff`, Step 5); only an explicit `/archive` archives. Delivered twice,
+   verbatim: in chat, where it rings nothing; and as a comment on the workstream
+   issue — **except a workstream on the private path, whose report goes in chat
+   only**, kept by David pasting it into the private item; its plan and decisions
+   reach the role as the item's text David relays, quoted in the brief under its
+   provenance, never as my summary. A Trivial PR gets none.
+
+   **The delivery is a message in chat, and there is nothing else.**
+   `chatReport` composes it from the answer's own fields and I paste that
+   verbatim, saying nothing else about the unit. **No page, no Artifact, no HTML,
+   no link, no receipt store** — rebuilding any of them is forbidden.
+
+   **Fable fetches the unit from GitHub itself** — issue, threads, comments,
+   reviews, diffs, with only a private item's text relayed — from a brief passed
+   inline (the role holds no file-reading tool), and writes its answer to a file
+   the script derives, so **the role's account reaches David unedited**. My own
+   write-up of a unit is welcome beside it, labelled as mine. **It is an
+   independent assessment, not a guarantee**: it defends against my being
+   *wrong*, never against my being deliberately misleading, and it says what it
+   verified and what it took on trust. **A dispatch that fails is disclosed in
+   plain English and never blocks the loop.** Mechanics: `pr-watch`, step 7;
+   `core/scripts/build-report.mjs` here, `scripts/build-report.mjs` in a
+   consumer.
+
    **The deliverable is a message in chat and the same text as a comment on
    the workstream issue — chat only on the private path (step 4). There is
    no page. Do not rebuild one** — not an Artifact, not an HTML file, not a
@@ -572,7 +611,7 @@ thread is still resolved, because the ruleset requires it.
      `.agents/reviews/.gitignore` included — is a finding.
 
 8. **Merge, sync, report**, per `claude-core.md`'s *Close-out is mine, end to
-   end*: re-verify live state with a fresh `pull_request_read` — not cached
+   end*, with the `close-out` skill loaded for each step's mechanics: re-verify live state with a fresh `pull_request_read` — not cached
    green — then, for each `scripted` step in the body's `## UAT` section,
    make sure its output is recorded on the PR at this head, running and
    posting any that is missing in the shape `pr-docs` gives (a proof that

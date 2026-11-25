@@ -37,6 +37,7 @@ cold reader a lookup. Existing names carry nicknames rather than renames:
 | **Bonnie** | the `/maintenance` pass | Bonnie Barstow, the engineer who keeps KITT running |
 | **KARR** | a feature in prototype phase | KITT's prototype, built without the directive to protect anyone |
 | **Comlink** | the `/sync-fleet` skill | the communicator KITT talks to Michael through: it carries the payload out and tells the sessions |
+| **Devon** | the `close-out` skill | Devon Miles, who debriefs Michael after every mission: it holds what a merge owes afterwards |
 
 The command and the contract term stay as they are: `/maintenance` is still
 typed, and "prototype phase" is still the phrase the rules use.

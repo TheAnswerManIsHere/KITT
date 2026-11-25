@@ -856,41 +856,19 @@ there is nothing to watch, and a prototype branch opens no PR. Two gates:
 **The build report.** One account per unit of work — a PR's merge, or a
 prototype version delivered on its own branch — written at its close by the
 independent Fable role `fable-build-report`, reading the whole unit from
-GitHub (the workstream issue and the plan or scope it holds, every PR and
-round, or the prototype branch's commits) rather than my account, in fixed
-sections in a fixed order, under 200 words in the common case: **Needs you** —
-nothing, or the one external thing; **What was built**; **Decisions taken on
-my recommendation**, each with its undo; **Where it disagrees with the
-builder**, **Shipping unfixed** and **Overbuilt**, each only when it holds
-something; **Where we are** — what we planned, the unit just completed, what
-is next; and **Session** — continue, hand off, or archive. The session line is
-**mine, under a label saying so**: the `archive` skill's verdict, run here
-unasked (deferring to the `handoff` skill's Step 1 for hand off), with the
-`handoff` skill run after the report when the answer is hand off — it starts
-the new session itself, or hands David the prompt and a 🛑 where it cannot
-(`handoff`, Step 5); only an explicit `/archive` archives. Delivered twice,
-verbatim: in chat, where it rings nothing; and as a comment on the workstream
-issue — **except a workstream on the private path, whose report goes in chat
-only**, kept by David pasting it into the private item; its plan and decisions
-reach the role as the item's text David relays, quoted in the brief under its
-provenance, never as my summary. A Trivial PR gets none.
-
-**The delivery is a message in chat, and there is nothing else.**
-`chatReport` composes it from the answer's own fields and I paste that
-verbatim, saying nothing else about the unit. **No page, no Artifact, no HTML,
-no link, no receipt store** — rebuilding any of them is forbidden.
-
-**Fable fetches the unit from GitHub itself** — issue, threads, comments,
-reviews, diffs, with only a private item's text relayed — from a brief passed
-inline (the role holds no file-reading tool), and writes its answer to a file
-the script derives, so **the role's account reaches David unedited**. My own
-write-up of a unit is welcome beside it, labelled as mine. **It is an
-independent assessment, not a guarantee**: it defends against my being
-*wrong*, never against my being deliberately misleading, and it says what it
-verified and what it took on trust. **A dispatch that fails is disclosed in
-plain English and never blocks the loop.** Mechanics: `pr-watch`, step 7;
-`core/scripts/build-report.mjs` here, `scripts/build-report.mjs` in a
-consumer.
+GitHub rather than my account. A Trivial PR gets none. Delivered twice,
+verbatim, with nothing else said about the unit: in chat, where it rings
+nothing; and as a comment on the workstream issue — **except a workstream on
+the private path, whose report goes in chat only**. **No page, no Artifact, no
+HTML, no link, no receipt store** — rebuilding any of them is forbidden. Its
+session line — continue, hand off, or archive — is **mine, under a label
+saying so**: the `archive` skill's verdict, run here unasked, with the
+`handoff` skill run after the report when the answer is hand off; only an
+explicit `/archive` archives. My own write-up of a unit is welcome beside it,
+labelled as mine. **It is an independent assessment, not a guarantee.** **A
+dispatch that fails is disclosed in plain English and never blocks the
+loop.** Its sections, the private-path relay and the dispatch: `pr-watch`,
+step 7.
 
 ## Pull requests
 
@@ -997,12 +975,9 @@ round*).
   a commit I have since pushed past has not reviewed the diff that would
   merge. What counts as returning is the `**Reviewed commit:**` announcement —
   or, on a round nobody requested, the connector's review-summary row reading
-  **Completed against this exact commit** (admitted only there, since that
-  comment is rewritten in place each round). **A 👍 never counts.** A pass I
-  cannot read is a parser behind the source, not proof no review ran: I read
-  the PR before saying the loop never started, and a genuinely new shape is
-  read on the PR, judged on my recommendation and reported as a 👀 FYI naming
-  the shape, never guessed at.
+  **Completed against this exact commit**. **A 👍 never counts.** A pass in a
+  shape I cannot read, and the two things no gate proves: the `close-out`
+  skill.
 - **A Codex code-review outage is a FULL STOP.** Not the security-review
   usage-limit bounce, which is metered separately and means "ask for the code
   review." A genuine code-review outage means: stop building production-phase
@@ -1017,55 +992,25 @@ round*).
   after the one bare re-request (*Waiting, and scheduled check-ins*, item 4) —
   is an outage from that wake. A security review left Running is not one: the
   merge bar is the code review.
-- **Two things no gate proves, still mine to check by eye**: that every
-  requested round came back (two requests can name one commit and a single
-  pass satisfies both), and that the pass I am reading covers the head that
-  would merge.
 
-**The sequence:**
+**The sequence. I load the `close-out` skill before every merge; it holds
+each step's mechanics, and each step binds whether or not it is loaded:**
 
 1. **Re-verify live PR state immediately before merging** — a fresh
    `pull_request_read`, not cached green. If anything moved, re-work the bar.
 2. **Squash-merge.** Every merge in this repo, whoever clicks it.
-3. **Check the Repl, then trigger its sync.** First one read-only
-   `ask_question` for `git fetch` and `git status -sb`: a Repl `main`
-   **ahead** of GitHub's, alone or diverged, holds commits made in the Repl,
-   which are moved to a pushed branch and the Repl's `main` realigned first
-   (*This environment's git constraints*), never synced over. Then trigger a
-   fast-forward-only sync, wait ~15 seconds, and verify via one `ask_question`
-   that the checked-out SHA matches the new `main` commit **and** the worktree
-   is clean — neither check substitutes for the other. Still **behind** means
-   it hasn't landed: retry at ~15-second intervals up to 4 tries, then report
-   a sync problem. **Every merge, with no exception I reason my way into** —
-   not "the project is paused", "no product surface", or "the Repl will pick
-   it up anyway": drift is the sum of those judgements, and an unneeded sync
-   costs nothing.
-4. **Execute the PR's Post-merge verification section** through the connector
-   (the two-call sequence below, read-only scoping stated), when it has
-   content. A step that would start a paid AI run is not read-only and runs
-   within David's monthly budget, asking only for a run that would take the
-   month past it (`uat-doc-format.md`, *Lanes*).
+3. **Check the Repl for commits of its own, then sync it and verify** the
+   checked-out SHA **and** a clean worktree. **Every merge, with no exception
+   I reason my way into.**
+4. **Execute the PR's Post-merge verification section** through the
+   connector, when it has content.
 5. **Post the harvest-notes comment** on the workstream issue (production-phase
    product PRs; a prototype-phase PR posts none).
-6. **Merge report to David, then the build report** (dispatched after the
-   merge report hands back, landing as its own message and an issue comment,
-   or in chat only on the private path): both SHAs, verification results, and
-   the UAT handoff naming what to go click — the judgement steps, since `/uat`
-   settles the machine lanes itself, running only what the lifecycle left
-   unrun, screen facts included (the `uat` skill, section 3, and *Where the
-   browser automation lives*) — plus the reminder that `/uat` walks him
-   through it; for a prototype-phase PR, that the head is on `main` and
-   unpublished, and which questions it asks (the `prototype` skill); the PR's
-   **Decisions taken on my recommendation** entries, one line each; and,
-   last, its plain-English summary (*A reversible choice proceeds*, rule 2) —
-   ending on the `✅ **PLAN DONE** —` line when this merge finished the
-   approved work and nothing of mine is scheduled after it; a merge that waits
-   on him ends on a 🛑 banner, with a push notification beside the hook's
-   alert (interaction rule 6). **Nothing of mine
+6. **Merge report to David, then the build report.** **Nothing of mine
    follows the merge report**; when more approved work is startable, its
    resume is armed before the report is written (*Waiting, and scheduled
-   check-ins*, item 0); the build report that lands after it is the Fable
-   role's, delivered as its own message when it arrives.
+   check-ins*, item 0).
+
 
 **No PR waits for David's click.** A change to `.claude/settings.json`
 permissions, a CI check that constrains me, or a contract line granting me new
@@ -1088,77 +1033,40 @@ branch. A revert is only for a `main` that is actually broken.
 
 ## This environment's git constraints
 
-Two layers, in order of authority: the **harness classifier** refuses to let me
+**Every change to `main` arrives through a pull request** — no identity lands
+on `main` outside a merged PR, David's and this session's admin account
+included. Two layers enforce it: the **harness classifier** refuses to let me
 edit my own guardrails in place (a guard change goes through a PR like any
-other); and **GitHub's rulesets**, server-side, binding on **everyone who
-pushes, me included**, in every shape, **to the branches they target**, and on
-no other branch.
+other), and **GitHub's rulesets**, server-side, with no bypass actor, bind
+everyone who pushes. What each ruleset blocks, the command table, and the
+procedures for a Repl `main` ahead of GitHub's and for sweeping a prototype
+branch are
+[`git-constraints.md`](../../docs/ai-context/git-constraints.md), read before
+any git operation that is not a plain push of new commits to my own branch.
 
-On `main`, with **no bypass actor**: block force pushes, restrict deletions,
-require linear history, require a PR, require status checks, require
-conversation resolution. On **all branches**, `claude/**` included: block force
-pushes.
-
-**They bind David too, and every change to `main` arrives through a pull
-request** — no identity lands on `main` outside a merged PR, his and this
-session's admin account included. His display-only tweaks from Replit too: the
-Repl tracks `main`, so a tweak is committed there unless he branches first, and
-that commit can never be pushed. When I find the Repl's `main` ahead of
-GitHub's, I move those commits to a branch through the connector, push it,
-realign the Repl's `main` to GitHub's, and open the PR; it merges like any
-other — on green CI when he declares it Trivial. The close-out sync is where I
-find it (*Close-out*, step 3). I never drop such a commit unless he says to. A
-commit on `main` with no PR behind it means a ruleset has been loosened: one
-line to David
-([`replit-commits-reach-main-only-through-a-pr.md`](../../.agents/memory/replit-commits-reach-main-only-through-a-pr.md)).
-
-**There is no local shell guard.** Force pushes are blocked by the rulesets,
-`drizzle-kit push` by `permissions.deny`, `curl`/`wget` by the agent proxy, a
-root `rm -rf` by the ephemeral container.
-
-**I never force-push, and no flow of mine needs to.** That is a rule about me,
-not a fact about the server, and it covers a repo whose rulesets are not yet
-configured. It is also mechanical on every branch: `--force-with-lease` is
-refused with GH013 outside `claude/**` too, which is the protection a
-`prototype/<feature>` branch relies on.
-
-**The one shape that would need a force push**: restarting a branch in place,
-under the same name, before it has merged. The remedy is a new branch name and
-a new PR — or, for a `prototype/<feature>` branch, a new name written into its
-registry line. Everything else never rewrites history: squash-merge handles
-rebasing and commit messages, rotation handles a leaked secret (a rewrite does
-not unpublish it), and `git checkout -B <branch> origin/<branch>` handles a
-diverged local copy.
-
-| Command | Result |
-|---|---|
-| any force push, any shape, any branch | blocked by a ruleset |
-| a plain push of new commits to `claude/**`, or to a `prototype/<feature>` branch ([`working-modes.md`](../../docs/ai-context/working-modes.md#the-prototype-phase-per-feature-david-2026-09-26)) | **works** — this is every flow |
-| `git reset --hard` | works (cannot reach the remote) |
-| `git push origin --delete <branch>` | does **not** work (proxy hangs) |
-| `git checkout -B <branch> <ref>` | works — my reset primitive |
-
-**A bad pushed commit gets a corrective commit. Never rewrite pushed
-history.** Rebasing "to sit on top of main" is unnecessary — squash-merge
-3-way-merges against current `main`.
-
+- **A Repl `main` ahead of GitHub's holds David's commits**: I move them to a
+  pushed branch, realign the Repl's `main` and open the PR (the close-out
+  sync is where I find it), and never drop such a commit unless he says to. A
+  commit on `main` with no PR behind it means a ruleset has been loosened: one
+  line to David.
+- **I never force-push, and no flow of mine needs to.** That is a rule about
+  me, not a fact about the server, and it covers a repo whose rulesets are not
+  yet configured.
+- **The one shape that would need a force push** is restarting a branch in
+  place, under the same name, before it has merged. The remedy is a new branch
+  name and a new PR — or, for a `prototype/<feature>` branch, a new name
+  written into its registry line.
+- **A bad pushed commit gets a corrective commit. Never rewrite pushed
+  history.** Rebasing "to sit on top of main" is unnecessary; a branch that
+  genuinely needs newly-landed `main` gets a **merge, never a rebase**.
 - **First push of a fresh branch:** `git fetch origin main && git checkout -B
-  <branch> origin/main`, apply work, push. Also how I restart a branch whose PR
-  squash-merged — a plain push, since GitHub deleted the merged branch.
-  GitHub's `main` needs no sweep of who committed there. **A session on a
-  branch-regime prototype sweeps that branch instead**, the one place on
-  GitHub direct commits still land — `git fetch origin prototype/<feature>`
-  and then `git log --author="Replit Agent" --since="14 days ago" --oneline
-  origin/prototype/<feature>`. **Bounded by time, never by commit count**
-  (`-3` silently drops the fourth commit of a busy week). What a sweep finds
-  goes into the feature's next version (*Connectors → Replit*).
-- **Follow-up on an already-pushed branch:** add commits and plain-push. If the
-  branch genuinely needs newly-landed `main`, **merge, never rebase**.
-- **If local has diverged accidentally:** realign with `git checkout -B
-  <branch> origin/<branch>` and continue; the local copy yields.
-
-Only ever to my feature branch, never `main`. `git diff origin/main HEAD
---stat` shows the true delta.
+  <branch> origin/main`, apply work, push — also how I restart a branch whose
+  PR squash-merged. A diverged local copy yields: `git checkout -B <branch>
+  origin/<branch>`.
+- **A session on a branch-regime prototype sweeps that branch** for direct
+  `Replit Agent` commits, **bounded by time, never by commit count**; what it
+  finds goes into the feature's next version.
+- Only ever to my feature branch, never `main`.
 
 ## Waiting, and scheduled check-ins
 
@@ -1247,10 +1155,9 @@ Only ever to my feature branch, never `main`. `git diff origin/main HEAD
   - The named judgements (below) run at the strongest available tier
     regardless — a separate routing, not this rule being violated.
 - **Verify the active tier before Opus-reserved execution** (migration, Tier B
-  fix, security review, dev-infra) rather than inferring it. The `opus` pin in
-  `.claude/settings.json` is **not proof of the running tier**; in-Repl
-  sessions run Sonnet by local settings, and a session started under the old
-  `opusplan` stays there until restart.
+  fix, security review, dev-infra) rather than inferring it: the `opus` pin in
+  `.claude/settings.json` is **not proof of the running tier**
+  (`model-routing`).
 - **Route bounded, stateless work to a Sonnet subagent** — a codebase "how does
   X work" investigation, a mechanical multi-file edit from an approved plan, a
   self-contained research sweep, drafting from an already-complete handoff.
@@ -1265,10 +1172,8 @@ Only ever to my feature branch, never `main`. `git diff origin/main HEAD
   resolve their tier through `.agents/machinery.json`. Any other subagent
   judgement — the per-task reviews in `subagent-driven-development` included —
   is sized to its work.
-  **A Claude role is bound twice, and needs both**: its definition declares
-  `model:` and `effort:`, derived from the pin and held equal to it by
-  `scripts/check-agent-models.mjs`, and the dispatch also passes `model:` on
-  the call; the frontmatter is the only route there is for effort. Measured order and evidence: `model-routing`.
+  **A Claude role is bound twice, and needs both**: `model:` and `effort:` in
+  its definition, and `model:` on the dispatch call (`model-routing`).
   **Both loops' assessments advise; neither decides.** I weigh them,
   investigate disputed facts myself, and decide. On a planning exchange the
   next action is stated in a `plan-action` block, never inferred from an
@@ -1276,43 +1181,29 @@ Only ever to my feature branch, never `main`. `git diff origin/main HEAD
   to settle with the reasoning recorded; on a code round the same holds under
   *Shared judgement on a review round*, where the Fable assessor settles the
   surviving technical tie. What is reserved for David stays his.
-  Three package limits: a dispatch that reuses my own reasoning isn't rescued
-  by the stronger tier; an incomplete enumeration is invisible to the
-  assessor; and a **false premise produces a confidently wrong assessment** —
-  so pin the commit the question is about, check my working tree matches it
-  when the question is about a tree, and tell the assessor to verify
-  load-bearing premises rather than taking them from me. **Every factual
-  premise I supply in a brief** — oracle, lens, priors, pinned commit — **is
-  written under *A load-bearing claim is quoted, or it is marked
-  unverified***. A lens is a judgement; only the facts it rests on are
-  premises. The standing text a dispatch script emits is the script's claim,
-  reviewed when the script is. When an assessment rests on a false premise I
-  supplied, I correct the *input* and re-ask, rather than arguing with the
-  conclusion — a rule about where the error is, never about authority.
+  **A false premise produces a confidently wrong assessment** — so pin the
+  commit the question is about, check my working tree matches it when the
+  question is about a tree, and tell the assessor to verify load-bearing
+  premises rather than taking them from me. **Every factual premise I supply
+  in a brief** — oracle, lens, priors, pinned commit — **is written under *A
+  load-bearing claim is quoted, or it is marked unverified***. When an
+  assessment rests on a false premise I supplied, I correct the *input* and
+  re-ask, rather than arguing with the conclusion — a rule about where the
+  error is, never about authority. The other package limits: `model-routing`.
 - **An unclassified judgement does not dispatch.** It runs in my main loop,
   and is a signal to classify it in a PR. Adding or removing a dispatch bar is
   a contract change, shipped through the ordinary PR path.
 - **I announce every subagent dispatch and why**, in both directions. Silent
   routing is the failure mode.
 - **`effortLevel`** in `.claude/settings.json` (`low`–`xhigh`) is a real cost
-  dial needing no ask; `max` is session-only. For settings questions the
-  **JSON schema is the source of truth, not the docs page**.
-- **Fable dispatches as a subagent whose instructions I do not write.** The
-  role is an agent definition under `core/.claude/agents/`, loaded by the
-  harness; I pass only the round's package or the unit's brief. **A `tools:`
-  list there is a hard upper bound** on which tools a role holds. **It bounds
-  which tools, never where they reach**: a path specifier in a `tools:` list
-  is not honoured and may remove the tool or grant nothing, so a tool list is
-  never described as read-only while a write tool is on it. **The role
-  discloses its model rather than the dispatch observing it** — the role
-  reports what it runs as, the dispatch what it requested, and a mismatch
-  prints. I do not build a real observation. **So no
-  disclosure of mine is ever worded as an observation.**
-  **Agent definitions are cached, two ways**: a newly added type may fail
-  with `Agent type not found` for a while (wait; the definition is not
-  wrong), and an edit to a loaded definition may not be served. So **a probe
-  of a definition change carries a freshness token planted in the same
-  edit**.
+  dial needing no ask (`model-routing`).
+- **Fable dispatches as a subagent whose instructions I do not write**: the
+  role is an agent definition the harness loads, and I pass only the round's
+  package or the unit's brief. **The role discloses its model rather than the
+  dispatch observing it, so no disclosure of mine is ever worded as an
+  observation**, and a tool list is never described as read-only while a
+  write tool is on it. What a `tools:` list bounds, definition caching and
+  the freshness token a probe carries: `model-routing`.
 
 ### Subagent delegation is capped
 
@@ -1336,13 +1227,10 @@ this repo's Repl configuration is
 close-out mechanics are the `pr-docs` skill:
 
 - **Every Agent request bills at the mode of the last message David typed in
-  that Repl's Agent chat** — the dropdown alone changes nothing, and
-  `ask_question` and `update_app_using_prompt` behave alike
-  (`replit-platform.md`, *Agent modes*). When he has typed under Power or Max
-  there, his one short message typed under Free is the way back; I cannot see
-  the mode, so I go by the footers he reports. `list_app_files` and
+  that Repl's Agent chat**, and I cannot see the mode. `list_app_files` and
   `read_app_file` reach no Agent, and are the read path whenever a file's
-  contents answer the question.
+  contents answer the question (`replit-platform.md`, *Agent modes* and
+  *Working through the connector*).
 - **Syncing the Repl is authorized as part of close-out. Publishing is not** —
   `publish_app` is production-facing, per-use and explicitly asked, and
   deferred until closer to launch. There is
@@ -1368,18 +1256,13 @@ close-out mechanics are the `pr-docs` skill:
 - **Scope every request and say what it must not touch** — Replit Agent
   defaults to *building*, so an unscoped ops question can come back as a
   feature.
-- **`ask_question` reads, `update_app_using_prompt` acts.** Only
-  `ask_question` returns text; the write channel returns a status, never the
-  result. `phase: "busy"` means the request was dropped: wait two to three
-  minutes, then re-ask (an immediate resend only bounces). `"updating"` is not
-  busy: re-invoking opens a new agent turn. Ask it to **run named commands and
-  report output** (quotable evidence), not how something works.
-- **A post-merge verification run is a two-call sequence**: kick it off with
-  `update_app_using_prompt` carrying the checks and an explicit read-only
-  instruction, wait a few minutes, then `ask_question` for the results. A
-  paid AI step — within his budget, or above it on his go-ahead — goes in a
-  separate request that names its paid calls and worst-case cost as the only
-  thing it may do beyond reading (`uat-doc-format.md`, *Lanes*).
+- **`ask_question` reads, `update_app_using_prompt` acts**, and a `busy`
+  reply was dropped: wait two to three minutes before re-asking
+  (`replit-platform.md`, *Working through the connector*). A post-merge
+  verification run is the two-call sequence in the `close-out` skill, and a
+  paid AI step goes in a separate request that names its paid calls and
+  worst-case cost as the only thing it may do beyond reading
+  (`uat-doc-format.md`, *Lanes*).
 
 ### Astra (Codex CLI)
 
