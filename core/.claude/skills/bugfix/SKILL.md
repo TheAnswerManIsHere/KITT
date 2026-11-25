@@ -127,7 +127,7 @@ edit, not later.** Per
   says the run is still live: that label, and its parent's, are then the
   UAT session's to set when the run stops (the `uat` skill, section 4). Otherwise flip it,
   recording its prior value (normally `david`, mid-UAT) in the same State
-  of Play line. (`/status-all` doesn't parse `Blocked by:`; left at
+  of Play line. (`/status-all` doesn't parse `Blocked by:` and is deliberately left that way; left at
   `waiting:david` it shows a non-actionable UAT under NEEDS YOU while the
   actual ask is agent-held work.)
 - **If the interrupted workstream is a phase sub-issue, mirror the same
@@ -321,7 +321,9 @@ what the fix touches (a statement of what is downstream — not a rubric
 selector, and not a round budget), the **write-gate
 rule — every round that returns findings gets two independent assessments
 before anything is written for it, and any commit that does get written gets a
-mandatory review round; the shared judgement advises rather than binds**, the
+mandatory review round; the shared judgement advises rather than binds**
+(no continue/stop call, criticality gate, count trend, oscillation
+diagnosis, per-finding adjudicator or critical-only decline quota applies), the
 fix / accept-and-document / escalate triage stated per finding, the
 class-sweep protocol (name the class, cite the mechanical oracle, sweep to
 zero, re-run prior rounds' oracles before every push), resolving each thread
