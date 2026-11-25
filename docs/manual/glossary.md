@@ -364,7 +364,8 @@ Home: [`core/docs/engineering/code-review.md`](../../core/docs/engineering/code-
 
 How a plan is developed before building: Claude and [Astra](#astra) work on
 it as peers reading one contract, inside the session, with every exchange
-relayed to David in plain English and the plan delivered in chat. Astra
+relayed to David in plain English and the plan's Summary — the short first
+section he approves on — delivered in chat. Astra
 advises; Claude states each next action; David's explicit approval is the
 only thing that ends the loop. It opens no PR and publishes nothing.
 Home: [`core/.claude/skills/plan-review-loop/SKILL.md`](../../core/.claude/skills/plan-review-loop/SKILL.md)

@@ -123,7 +123,8 @@ Before drafting, Claude runs every check in the preflight of
   invariants, not implementation.
 
 Claude then writes the plan to a file in its working tree, from the template
-in `PLANS.md`, with the oracle at its head. It stays there, ignored by git,
+in `PLANS.md`: a short Summary for David first, then the oracle and the
+detail the AI readers work from, each fact written once. It stays there, ignored by git,
 until David approves it. A prototype's first version gets a
 short plan instead — the design question, the hypothesis, the surface it
 shows, and what it leaves out — and only the increment test applies to it.

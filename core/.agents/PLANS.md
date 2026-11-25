@@ -98,7 +98,9 @@ removes what was written twice and what no reader used.
 
 - **Every fact is written once.** The scope the gate agreed (direction, product
   intent, must-not-change, settled decisions) *is* the Problem to Settled
-  Decisions block below, never a second copy above it. The gate's
+  Decisions block below, never a second copy above it; where the loop's script reads the oracle
+  from the plan, the fenced `plan-oracle` block wraps that one block, after
+  the Summary. The gate's
   now/next/never boundaries and ceremony tier are one line each at the end of
   Settled Decisions.
 - **The Preflight has no section.** Its checks run; each result that bears on

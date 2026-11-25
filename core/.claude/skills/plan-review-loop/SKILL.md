@@ -158,8 +158,10 @@ any other.
 
 ### Assessing the plan
 
-Write the plan to `docs/plans/PLAN_<SLUG>.md` in the working tree, with the
-oracle as a fenced `plan-oracle` block at its head — for a prototype's version,
+Write the plan to `docs/plans/PLAN_<SLUG>.md` in the working tree, to the
+shape `PLANS.md` gives it (*Two readers, one file*): the *Summary for David*
+first, then the oracle as a fenced `plan-oracle` block — the plan's one copy
+of the agreed scope, never a second one above the template's sections — for a prototype's version,
 the short plan `PLANS.md` describes, whose product is the questions file the
 `prototype` skill names. Tell David it is drafted and
 **keep going** — v1 changes anyway, and waiting buys nothing. He interjects
@@ -564,5 +566,5 @@ None of these exists any more; a retired instruction that is still readable is o
 | Reconcile-every-prior-or-be-rejected | The ledger is mine; Astra's silence closes nothing |
 | A fresh lens every round; late findings auto-downgraded | An angle when it addresses a credible gap; consequence judged whenever discovered |
 | The `internal` tier's critical-flaw threshold | The Worth rule, applied to what is actually downstream |
-| The Artifact page | Chat: a readout per exchange, the plan itself at approval |
+| The Artifact page | Chat: a readout per exchange, the plan's Summary at approval (`PLANS.md`, *Summary for David*) |
 | The fenced `plan-provenance` block and its parser | The PR body's `Oracle source:` line |

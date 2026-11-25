@@ -421,7 +421,10 @@ and material remaining concerns. The handoff makes clear what will be built and
 what is excluded, why the approach is appropriate, how success will be
 recognised, consequential uncertainty and accepted trade-offs, outstanding
 decisions, and any material technical disagreement that was settled — with its
-practical implications.
+practical implications. **What David is handed is the plan's own Summary**
+(`PLANS.md`, *Summary for David*), not a second document composed for the
+occasion: whatever on this list is his to decide or accept is in it, and the
+concluding assessment says whether it is.
 
 Keep the readout short and the supporting detail available. David should not
 have to reconstruct the conversation or interpret technical jargon. Use the
