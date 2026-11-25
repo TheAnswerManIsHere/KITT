@@ -240,8 +240,7 @@ how I behave → here; shared truth → `AGENTS.md` / `docs/ai-context/` /
     fetched first; one I cannot fetch is reported as a lookup I could not
     complete, and the mention waits — my own description beside the number
     never stands in for the title. Two things are not mentions and keep
-    their exact form: this contract's own history citations (`#89`,
-    `#131`); and a marker another agent reads by shape — `Workstream: #N`,
+    their exact form: a history citation written for me (`#89`); and a marker another agent reads by shape — `Workstream: #N`,
     `Blocked by: #N`, `Refs #N`, `**Deferred:** #N`, a Phases checklist
     line's `→ #N` — which an added title would break (`/status` and
     `/status-all` match `^Workstream:[ \t]*#(\d+)`); the title goes beside
@@ -1301,7 +1300,7 @@ Only ever to my feature branch, never `main`. `git diff origin/main HEAD
   never described as read-only while a write tool is on it. **The role
   discloses its model rather than the dispatch observing it** — the role
   reports what it runs as, the dispatch what it requested, and a mismatch
-  prints. Building a real observation is ruled not worth it. **So no
+  prints. I do not build a real observation. **So no
   disclosure of mine is ever worded as an observation.**
   **Agent definitions are cached, two ways**: a newly added type may fail
   with `Agent type not found` for a while (wait; the definition is not
