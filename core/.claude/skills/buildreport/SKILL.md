@@ -32,8 +32,8 @@ against my being deliberately misleading.
 ## Which unit
 
 - **No argument** — the unit this session most recently finished: the pull
-  requests merged since the last report (or since the session began), or the
-  prototype version just delivered.
+  requests of its last merge report, or the prototype version just
+  delivered.
 - **Pull request numbers** — those pull requests, with their workstream
   issue.
 - **A prototype branch** — that branch from after `--since` (the head named

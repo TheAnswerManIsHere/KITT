@@ -137,7 +137,7 @@ method, so when it over-reports it does so the way he would.
   so the chat and the issue are read together, and the briefing says
   `from the issue record` where the chat no longer holds the detail.
 - **A unit on the private path has no issue comments** (rule 7's carve-out:
-  its FYIs stay in chat, like its build report, and reach the private item
+  its FYIs stay in chat, like any build report he asks for, and reach the private item
   only by David pasting them there), so its briefing rests on the chat and
   on the private item's text as David relays it. Where the chat has
   compacted, the briefing names the gap and asks, never asserting a record
