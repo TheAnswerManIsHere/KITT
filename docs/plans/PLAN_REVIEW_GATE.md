@@ -58,6 +58,127 @@ Full plan with Astra's review: this changes the review loop itself, and a broken
 merges across the fleet.
 ```
 
+## Amendment 1 (2026-11-25): a push before a round's assessments is a note, not a failure
+
+Agreed with David, 2026-11-25; the amendment's oracle is
+`.agents/reviews/review-gate-push-note/oracle-review-gate-push-note.md`, and its text is below.
+The original oracle above is kept as it was agreed: it is the record of 2026-11-11. Where this
+amendment and the sections below disagree, this amendment holds. Decisions 2 and 5, approval item 2,
+the *Runtime Behavior* bullet on a push before the assessments, and the push-history `error` path in
+*Risks* are superseded as stated here.
+
+**Why.** On Overhype.me PR #1263 the builder pushed an unrelated commit (test comments and a
+decisions entry) 24 seconds after Codex's findings landed. Both assessments were then posted, and the
+gate stayed failed until David waived it. He also waived #915, whose early push was the fixes. His
+words: *"We need to modify KITT so that we don't keep running into the need to waive the review
+gate. I'm always going to waive it in this circumstance."* Asked whether that covers a push of fixes
+too (Q30), he answered yes.
+
+Three facts make the failing verdict worthless once its only release is always given. The gate
+cannot tell a fix from an unrelated commit or a base merge (decision 5 says so). A waiver cannot
+undo a fix already pushed; it only releases the PR. And the property David's 2026-11-11 ruling is
+about, that no reviewer is skipped, is fully carried by the presence check: each round still needs
+both assessments of the reviewed commit, posted after the review, before the PR can pass. What the
+order check added was evidence that the assessments came first, and that evidence survives as a
+note in the gate's own output and the builder's disclosure, read by the same people who read the
+failure.
+
+```plan-oracle
+# Oracle — amendment 1 to the review gate: a push before a round's assessments is noted, not failed
+
+Agreed with David, 2026-11-25. His request, from an Overhype.me session: "We need to modify KITT so
+that we don't keep running into the need to waive the review gate. I'm always going to waive it in
+this circumstance." The circumstance: Overhype.me PR #1263, where an unrelated commit was pushed 24
+seconds after Codex's findings landed and before both assessments, which were then posted; the
+gate failed and only his waiver released it. Scope agreed in this session, with Q30 answered
+"q30 yes": the note applies to every push before a round's assessments, fixes included (the #915
+case, which he also waived).
+
+## Direction
+The review gate keeps enforcing what David set up on 2026-11-11 ("Please don't skip reviewers!"):
+every Codex findings round gets both an Astra and a Fable assessment. It stops asking David for a
+waiver he always gives.
+
+## Product intent
+1. A push to the PR branch after a findings review and before both of its assessments no longer
+   fails the gate. It is reported as a non-failing note in the status and the run summary, naming
+   the push.
+2. Everything else the gate requires is unchanged: for each findings round, an Astra and a Fable
+   assessment of the reviewed commit, posted after the review, covering every finding, not a failed
+   dispatch; an unrecognised findings review still fails.
+3. Push history that cannot be read no longer turns the gate to `error`: the note says push order
+   was not checked.
+4. Upstream, the working rule stays: hold every push until both assessments are in. A push that
+   lands before them anyway is disclosed by the builder in that round's `review-action` block.
+5. The waiver remains, for when the assessors genuinely cannot run; it is no longer the recovery for
+   an early push. Every place the contract states the waiver-for-push rule says the new rule.
+
+## Must not change
+- A clean round owes nothing; exempt classes and the Documentation flow behave as today.
+- The rule that no fix is written before both assessments (the write-gate rule) is unchanged.
+- The gate's lifecycle (pending first, head re-read before posting, default-branch copy) is unchanged.
+
+## Ceremony
+Plan amendment with Astra's review, then one PR in the standard loop, internal tier (review-loop
+machinery; loosening the gate is undone by a revert). Prose sweep; `/sync-fleet` once merged.
+```
+
+### Design
+
+- **`decide()`** keeps its order: waiver, exemption, rounds. A round fails only for a missing
+  assessor (or an unrecognised findings review). For each push after a round's review that
+  preceded either assessment, the summary lists a note: `push <sha7> at <time> preceded the <assessor>
+  assessment(s) (noted, not failing)`, and the description of a passing status counts them, e.g.
+  `2 findings rounds assessed; 1 push preceded its assessments`. A failing status's description is
+  unchanged in kind: the first missing item and a count.
+- **Push history is read only to write the note.** Unavailable, empty or incomplete history no
+  longer yields `error`; the summary says push order was not checked, and the status description
+  says so in a few words. `error` remains for a failed read of anything the verdict depends on
+  (the PR, comments, reviews, review comments).
+- **The recovery line** for a failing round says: post the missing assessment; if the assessors
+  genuinely cannot run, David's waiver. No recovery line names a push.
+- **The waiver** keeps its mechanics (label plus a `Review gate waived:` comment with a reason) and
+  its precedence; it is described everywhere as the release for assessors that cannot run.
+- **Upstream (`pr-watch` step 3)**: both assessments are posted before the first push of anything,
+  as now. A push that lands before them anyway (a race with a review that arrives seconds earlier,
+  or a mistake) is disclosed in that round's `review-action` block: the commit, what it contained,
+  and whether it touched any line a finding names. An early push of a fix is still a breach of the
+  write-gate rule and is reported as one in the build report; it no longer goes to David.
+- **No mechanical pre-push check.** The session cannot read the PR's reviews through the REST API
+  (implementation step 1), and a check before a push still races a review that lands after it, which
+  is how #1263 happened; the note covers the race either way.
+
+### Affected surface (the prose sweep's starting inventory)
+
+`git grep -n -i "waiv\|push order\|push landed\|preceded the"` over the repository, excluding this
+plan: `core/scripts/review-gate.mjs` and its tests; both copies of `review-gate.yml` (header
+comment); `claude-core.md` (*Planning* rule 4, *The write-gate rule*, *Shared judgement on a review
+round*, *Close-out*); `pr-watch`; `requesting-code-review`; `receiving-code-review`; `status-all`;
+`agent-working-rules.md`; `working-modes.md`; `workstream-tracking.md`; the memory note
+`review-round-never-answered-before-both-assessments.md`; `CLAUDE.md` (*The guard is gone*). The
+`prose-sweep` skill runs over the retired reading ("only David's waiver releases a push", "stays
+failed if any push landed") before the PR opens.
+
+### Testing
+
+- #915's real sequence with both assessments posted late: **passes**, with both pushes listed as
+  notes.
+- #1263's shape (findings review, an unrelated push 24 s later, both assessments after): passes with
+  one note.
+- #915 before the assessments existed: fails as missing, and the early pushes are listed as notes.
+- Push history unavailable, empty or incomplete with all assessments present: passes, noting push
+  order unchecked; with an assessment missing: fails as missing, never `error`.
+- All existing presence, exemption, waiver, failed-dispatch, wrong-commit, follow-up and
+  unrecognised-review fixtures unchanged in verdict.
+- The I/O test that expected `error` for unavailable push history now expects `success` with the
+  note.
+
+### Done
+
+The gate passes #1263's and #915's sequences once both assessments are posted, still fails a round
+missing either, and every statement of the waiver-for-push rule in the payload says the new rule.
+Synced to every consumer.
+
 ## Problem
 
 On Overhype.me PR #915 — Image tracing, increment 2, Codex's round 1 returned two findings at
