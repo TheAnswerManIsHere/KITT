@@ -510,7 +510,7 @@ thread is still resolved, because the ruleset requires it.
    independent assessment, not a guarantee**: it defends against my being
    *wrong*, never against my being deliberately misleading, and it says what it
    verified and what it took on trust. **A dispatch that fails is disclosed in
-   plain English and never blocks the loop.** Mechanics: `pr-watch`, step 7;
+   plain English and never blocks the loop.** Mechanics: the rest of this step;
    `core/scripts/build-report.mjs` here, `scripts/build-report.mjs` in a
    consumer.
 

@@ -482,7 +482,7 @@ boundaries are `claude-core.md`, *Connectors → Replit*.
 - **Every Agent request bills at the mode of the last message David typed in
   that Repl's Agent chat** — the dropdown alone changes nothing, and
   `ask_question` and `update_app_using_prompt` behave alike
-  (`replit-platform.md`, *Agent modes*). When he has typed under Power or Max
+  (*Agent modes*, above). When he has typed under Power or Max
   there, his one short message typed under Free is the way back; I cannot see
   the mode, so I go by the footers he reports. `list_app_files` and
   `read_app_file` reach no Agent, and are the read path whenever a file's

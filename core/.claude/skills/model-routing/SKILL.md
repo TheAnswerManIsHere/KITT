@@ -455,7 +455,7 @@ rules govern on any conflict.
   **A Claude role is bound twice, and needs both**: its definition declares
   `model:` and `effort:`, derived from the pin and held equal to it by
   `scripts/check-agent-models.mjs`, and the dispatch also passes `model:` on
-  the call; the frontmatter is the only route there is for effort. Measured order and evidence: `model-routing`.
+  the call; the frontmatter is the only route there is for effort. Measured order and evidence: the sections above.
   Three package limits: a dispatch that reuses my own reasoning isn't rescued
   by the stronger tier; an incomplete enumeration is invisible to the
   assessor; and a **false premise produces a confidently wrong assessment** —

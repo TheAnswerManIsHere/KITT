@@ -371,7 +371,7 @@ Q9, the alert hook's text, stays). Each rule's statement stays in
 | The build report's section list, relay and trust wording | `pr-watch`, step 7 |
 | The tier-check detail, the double binding, package limits, the Fable definition's tool list and caching | `model-routing`, its last section |
 
-Measured: `claude-core.md` 95,860 to 87,782 bytes. Each moved passage went
+Measured: `claude-core.md` 95,860 to 87,952 bytes. Each moved passage went
 to its destination verbatim, taken by line range from the file at `fe96604`,
 so the pre-move text is `git show fe96604:core/.agents/core/claude-core.md`.
 The risk accepted is the one Fable named: a moved mechanic applies only when

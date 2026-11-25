@@ -999,8 +999,9 @@ each step's mechanics, and each step binds whether or not it is loaded:**
 1. **Re-verify live PR state immediately before merging** — a fresh
    `pull_request_read`, not cached green. If anything moved, re-work the bar.
 2. **Squash-merge.** Every merge in this repo, whoever clicks it.
-3. **Check the Repl for commits of its own, then sync it and verify** the
-   checked-out SHA **and** a clean worktree. **Every merge, with no exception
+3. **Check the Repl for commits of its own, then trigger a fast-forward-only
+   sync and verify** the checked-out SHA **and** a clean worktree — neither
+   check substitutes for the other. **Every merge, with no exception
    I reason my way into.**
 4. **Execute the PR's Post-merge verification section** through the
    connector, when it has content.
@@ -1044,7 +1045,7 @@ branch are
 [`git-constraints.md`](../../docs/ai-context/git-constraints.md), read before
 any git operation that is not a plain push of new commits to my own branch.
 
-- **A Repl `main` ahead of GitHub's holds David's commits**: I move them to a
+- **A Repl `main` ahead of GitHub's holds commits made in the Repl**: I move them to a
   pushed branch, realign the Repl's `main` and open the PR (the close-out
   sync is where I find it), and never drop such a commit unless he says to. A
   commit on `main` with no PR behind it means a ruleset has been loosened: one
@@ -1057,7 +1058,8 @@ any git operation that is not a plain push of new commits to my own branch.
   name and a new PR — or, for a `prototype/<feature>` branch, a new name
   written into its registry line.
 - **A bad pushed commit gets a corrective commit. Never rewrite pushed
-  history.** Rebasing "to sit on top of main" is unnecessary; a branch that
+  history.** Rebasing "to sit on top of main" is unnecessary; a follow-up on
+  a pushed branch is more commits and a plain push, and a branch that
   genuinely needs newly-landed `main` gets a **merge, never a rebase**.
 - **First push of a fresh branch:** `git fetch origin main && git checkout -B
   <branch> origin/main`, apply work, push — also how I restart a branch whose
