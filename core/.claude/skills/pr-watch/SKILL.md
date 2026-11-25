@@ -37,13 +37,14 @@ body, `uat-doc-format.md`.)
 
 **The restoration, because a strip that overshoots is a deletion nobody
 approved.** Most of the old reply section was a second statement of
-`claude-core.md` rules 5 and 6, and losing a second copy is the point of this
-cut. But the class-level sweep lived *only* here and rule 6 still points at it.
+`claude-core.md` review-loop rules 5 and 6, and losing a second copy is the point of this
+cut. But the class-level sweep lived *only* here and the contract's *Shared
+judgement on a review round*, item 6, still points at it.
 Stripping it would have left the always-loaded contract pointing at a spec that
 no longer exists, which is a worse outcome than the duplication. It is back in
 step 5, stated once, with the duplicated material left out. (The two escape
 valves this sentence also named belonged to the four-line `Class:` / `Worth:` /
-`Oracle:` / `Result:` reply form, which rule 6 retired on 2026-09-17; what
+`Oracle:` / `Result:` reply form, which review-loop rule 6 retired on 2026-09-17; what
 replaced them is step 5's proportionate-evidence rule.)
 
 **Two classes do not run this loop** (David, 2026-09-25; the rule is in
