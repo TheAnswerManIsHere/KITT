@@ -20,6 +20,13 @@ which every session re-reads on every model step, as rules only and moved the
 history here; no rule was meant to change, and a per-slice cold-reader audit
 checked that each survived.
 
+**Target and result.** The brief targeted ~40 KB. The result is 135,945 →
+~95,400 bytes (−30%). Both assessors found the remaining text is rules, with
+no rule lost; what is left to cut is either repetition across sections (the
+same exemption lists restated in several places) or moving rules themselves
+to on-demand docs. Neither is "history moved", so neither was done here; the
+choice is put to David. Phase 2 did **not** meet its size target.
+
 ## Interaction preferences
 
 - **Rule 4, static question IDs** (2026-11-14): *"when you ask me questions,
@@ -189,7 +196,8 @@ Rule 0 (2026-10-21), after a turn ended on *"Starting #730 now"* with no tool
 call. Rule 4 (2026-10-29), after Overhype.me #781's review read Running for 78
 minutes and a bare re-request finished it in under four; 56 pairs across
 Overhype.me and DojoOS (2026-10-20 to 10-29) had median 1.5, p95 6.0, longest
-7.8 minutes.
+7.8 minutes. The contract's 15 minutes is about twice that longest pass;
+re-measure before re-tuning it.
 
 ## Model and routing
 

@@ -159,8 +159,9 @@ review fires automatically when the pull request opens, and Claude arms a
 check-in in the same turn, sized from measured pass times rather than from a
 guess about reviewers. A pass still running at the check-in has stalled: it
 gets one bare re-request, and a repeated stall on the same head is an
-outage, which stops the work and goes to David (2026-10-29). The timing and
-the measurement are in [`claude-core.md`](../../core/.agents/core/claude-core.md), *Waiting, and scheduled check-ins*, item 4. From there the review loop of
+outage, which stops the work and goes to David (2026-10-29). The timing is in
+[`claude-core.md`](../../core/.agents/core/claude-core.md), *Waiting, and scheduled check-ins*, item 4; the
+measurement behind it is in [`docs/decisions.md`](../decisions.md), *Waiting*. From there the review loop of
 chapter 6 takes over.
 
 ### What the server enforces

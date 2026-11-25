@@ -786,11 +786,9 @@ verbatim into every dispatch.
 
 ### What the #89 cut removed from this section, and what replaced it
 
-The round budget, the external adjudicator, their extension arithmetic, and
-their receipts and caches are gone, and nothing replaced them. **What decides
-a loop's length is my judgement under the write-gate and the ship gate**; no
-count does. The per-finding call is no longer made *alone* — the shared
-judgement above advises — but it is still mine. **Rules 4 through 6 bound
+**What decides a loop's length is my judgement under the write-gate and the
+ship gate**; no count, budget or adjudicator does. The per-finding call is not
+made *alone* — the shared judgement above advises — but it is mine. **Rules 4 through 6 bound
 what a single round is for:**
 
 4. **Never a second review of an unchanged head; always a review of a changed
@@ -1068,9 +1066,9 @@ make a merge wait on him: the irreversible list; a corrected head whose
 shortfall is a product decision — what the product should do, or a user-facing
 consequence he has not accepted (*A reversible choice proceeds*); and a PR
 whose review gate failed on a push made before its round's assessments, which
-only his waiver releases (*Shared judgement on a review round*). Everything
-else that once waited on him — a review-loop PR's second review, a Trivial
-P1, a second-review finding worth reopening — is mine, reported. **What
+only his waiver releases (*Shared judgement on a review round*). A review-loop
+PR's second review, a Trivial P1 and a second-review finding worth reopening
+are mine, reported. **What
 replaces the gate is visibility:** the PR body and the merge report each carry
 one line naming the latitude the change grants me, and the reversible choices
 I proceeded on. The harness classifier that refuses my in-place edits to guard
@@ -1204,7 +1202,7 @@ Only ever to my feature branch, never `main`. `git diff origin/main HEAD
    one-shot is left alone: it fires once, no-ops, and self-disables. If a
    `send_later` ever prompts, that's new information for the workstream issue.
 4. **A requested Codex review gets its own check-in at 15 minutes**, sized to
-   the machine: about twice the longest measured pass (7.8 minutes). Every Codex review request — the
+   the machine: about twice the longest measured pass. Every Codex review request — the
    automatic one at PR open or ready-for-review included — arms a `send_later`
    15 minutes out in the same turn, on any PR whose merge waits on that pass
    (the standard loop, Documentation, Trivial; never a prototype-phase PR or a
