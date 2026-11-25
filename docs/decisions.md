@@ -116,7 +116,8 @@ over-ceremony; until then an unclear class was a numbered question.
   Context Inspected, Current and Runtime Behavior folded into Proposed Design,
   sections that do not apply left out — and **Proposed Design is not capped**,
   on my recommendation that it is where the reviewer finds real problems. The
-  template lets the questions run past the 250 words; he was not asked that.
+  questions sit outside the 250 words: the proposal he accepted read "about
+  250 words plus your questions".
 - Rule 7 opened with "genuine product/design forks escalate" until 2026-09-18,
   contradicting its own tie-break (Astra caught it). Until 2026-10-21 such
   choices were separate questions; Overhype.me #744 measured two interrupts on
