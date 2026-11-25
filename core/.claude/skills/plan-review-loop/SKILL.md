@@ -146,7 +146,7 @@ S=.agents/reviews/<slug>; mkdir -p "$S"   # write the oracle here, not at the ro
 node "$P" --kind scope --slug <slug> --oracle $S/oracle-<slug>.md
 ```
 
-Run in the foreground — it reads a page, not a plan. Every later exchange is
+Short enough to run in the foreground — it reads a page, not a plan. Every later exchange is
 detached.
 
 David sees its answer **beside mine** before he says go: my own view first, in
@@ -187,6 +187,8 @@ single quotes with `$PWD`, `$P` and `$S` passed as arguments (`_` is `$0`, which
 `bash -c` consumes). Anything interpolated into a `bash -c` string is re-parsed
 by the inner shell, so a checkout path containing `$`, a backtick or a space
 breaks or executes; passing values as arguments needs no escaping rule.
+Quoting the interpolation is not a fix — it closes one character, not the
+class. The failure's signature is an exit marker of `1` with no log.
 
 **The marker is per round AND cleared before launch, and it needs both.**
 Naming it per round stops one exchange's marker reading as another's
@@ -545,7 +547,7 @@ written *after* he approves the phased shape.
 
 ## What this skill no longer does
 
-None of these exists any more; do not rebuild them.
+None of these exists any more; a retired instruction that is still readable is one an agent follows, so they are not described here.
 
 | Retired | Replaced by |
 |---|---|
@@ -562,3 +564,4 @@ None of these exists any more; do not rebuild them.
 | A fresh lens every round; late findings auto-downgraded | An angle when it addresses a credible gap; consequence judged whenever discovered |
 | The `internal` tier's critical-flaw threshold | The Worth rule, applied to what is actually downstream |
 | The Artifact page | Chat: a readout per exchange, the plan itself at approval |
+| The fenced `plan-provenance` block and its parser | The PR body's `Oracle source:` line |
