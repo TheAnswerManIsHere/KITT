@@ -203,9 +203,9 @@ A plain-English account of one finished unit of work — a pull request's
 merge, or a prototype version — written for David by a separate Claude
 subagent that reads the unit from GitHub itself and whose words reach him
 unedited, in fixed sections: what needs him, what was built, the decisions
-taken on Claude's recommendation with their undo, ramifications, what ships
-unfixed, where it disagrees with Claude's account, spend, and where the plan
-stands. Delivered in chat and as a comment on the workstream issue. It holds
+taken on Claude's recommendation with their undo, where it disagrees with
+Claude's account and what ships unfixed (each only when non-empty), and
+where the plan stands. Delivered in chat and as a comment on the workstream issue. It holds
 no authority: nothing in the build or merge path reads it. It replaced the
 per-round *round translation* on 2026-10-21.
 Home: [`core/.claude/agents/fable-build-report.md`](../../core/.claude/agents/fable-build-report.md)
