@@ -309,7 +309,7 @@ product, the design or correctness are weighed on the merits.
 - **Paraphrasing between tool calls is a property of the app, not something
   KITT can fix.** The rule works around it by placement; anything
   written mid-turn should be assumed unread.
-- **Delivery surfaces are chat, deliberately.** Plans (chapter 4) and build
+- **Delivery surfaces are chat, deliberately.** A plan's Summary (chapter 4) and build
   reports (chapter 6) arrive as chat messages, not as pages or links — a
   build report also as a comment on the workstream issue;
   rebuilding a page for either is ruled out in the core.
