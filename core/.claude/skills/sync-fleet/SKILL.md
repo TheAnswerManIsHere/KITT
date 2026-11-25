@@ -170,7 +170,8 @@ is reported, and the fix is made in KITT and delivered by the next run —
 never by editing a synced file in the consumer.
 
 Then the consumer's own close-out: check and sync its Repl
-(`claude-core.md`, *Close-out*, step 3), which every merge to `main` owes.
+(`claude-core.md`, *Close-out*, step 3; mechanics in the `close-out` skill),
+which every merge to `main` owes.
 
 ## Step 7 — tell the sessions
 

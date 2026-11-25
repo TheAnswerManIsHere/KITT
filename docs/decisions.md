@@ -355,3 +355,26 @@ History removed from `core/.claude/skills/pr-watch/SKILL.md` in the contract die
 - **Review weight**: several `known-failure-patterns.md` entries were caught by review after the shipped tests passed.
 - **Internal-loop bullet**: the two-review limit stood 2026-09-20 to 2026-10-21 (record in `working-modes.md`). Until 2026-09-23 the bullet read "the internal tier governs (David, 2026-08-21) … the two-review limit, the same as everywhere" — naming the tier as classifier and the limit as universal. It also once said "where only a critical flaw is written for", the tier's retired decline quota.
 - **Review-findings batches** (David, 2026-08-09): PR #334, nominally a bugfix but eleven batched findings — 21 rounds, 69 findings, 72% self-inflicted, no breaker fired.
+
+## Rules that load on demand (2026-11-25, the second pass)
+
+David approved moving five groups of mechanics out of the always-loaded
+contract (his answers to Q4 through Q8, on Fable's review of the options;
+Q9, the alert hook's text, stays). Each rule's statement stays in
+`claude-core.md`; what moved is how a step is carried out:
+
+| What moved | To |
+|---|---|
+| Close-out's step mechanics, the unreadable-review shapes, the two reads no gate proves | the new `close-out` skill (Devon) |
+| The ruleset list, the command table, the Repl-ahead and prototype-sweep procedures | `core/docs/ai-context/git-constraints.md` |
+| Agent billing detail and the read/act channel mechanics | `replit-platform.md`, *Working through the connector* |
+| The build report's section list, relay and trust wording | `pr-watch`, step 7 |
+| The tier-check detail, the double binding, package limits, the Fable definition's tool list and caching | `model-routing`, its last section |
+
+Measured: `claude-core.md` 95,860 to 87,934 bytes. Each moved passage went
+to its destination verbatim, taken by line range from the file at `fe96604`,
+so the pre-move text is `git show fe96604:core/.agents/core/claude-core.md`.
+The risk accepted is the one Fable named: a moved mechanic applies only when
+its home is read, so the contract keeps every rule's statement and names the
+moment its home is loaded (before every merge; before any git operation
+beyond a plain push).

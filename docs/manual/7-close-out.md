@@ -10,6 +10,7 @@
 >
 > Deep rules: [`claude-core.md`](../../core/.agents/core/claude-core.md),
 > *Close-out is mine, end to end*;
+> [`close-out`](../../core/.claude/skills/close-out/SKILL.md) (each step's mechanics, loaded before every merge);
 > [`pr-docs`](../../core/.claude/skills/pr-docs/SKILL.md) (what a feature PR
 > must carry before it is done); [`uat`](../../core/.claude/skills/uat/SKILL.md)
 > (running the acceptance test with David).
