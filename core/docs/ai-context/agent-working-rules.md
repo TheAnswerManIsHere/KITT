@@ -579,7 +579,7 @@ UAT step, a hand-off prompt.
   appears on screen.
 - **Every value he must copy or type is in a code block of its own**, so one
   click copies it: a URL he pastes elsewhere, a setting's name, a value, a
-  command for a console. One value per block; nothing else inside it.
+  sign-in code. One value per block; nothing else inside it.
 - **No shorthand for where.** Say which app, which environment (development
   or production), which account and which page, in words he would use, every
   time: "the development app on Replit", never "dev". An agent that is about
