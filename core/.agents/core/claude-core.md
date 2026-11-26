@@ -41,6 +41,7 @@ is the same smell: move it and point at it.
 
 - **Working rules** — David's role, end-to-end ownership, ship-the-UI-surface,
   ask-vs-decide, mid-build pause-and-ask, pre-plan intent as source of truth,
+  directions to David name the place in full,
   bot-review engagement, no rollout-flag gating, engineer-to-the-blast-radius:
   [`agent-working-rules.md`](../../docs/ai-context/agent-working-rules.md).
 - **Async status must be shown** (two altitudes):
