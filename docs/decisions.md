@@ -419,3 +419,38 @@ hand-back, since no earlier build report need exist.
 What was given up, said to David before he decided: the build report was the
 only account of a unit not written by the builder; on demand, nothing
 independent checks a unit unless he asks.
+
+## The paid-AI ledger is a runaway tripwire, not bookkeeping (2026-11-27)
+
+Supersedes the "one comment per paid AI run" reading of the 2026-11-17
+budget decision (*uat skill*, above). The trigger: an Overhype.me session
+was about to log a $0.0000518 top-up acceptance recording (Overhype.me
+PR #1334, Phase 7 amendment, server) on the ledger.
+
+David, 2026-11-27: *"I'm not posting fractional pennies to the ledger. I
+think you're misunderstanding the purpose of the ledger. It's just to keep an
+eye on unexpected runaway costs. If you got stuck in some kind of loop that
+started spending hundreds of dollars, I'd want to know about it and prevent
+it. Spending 1/100th of a penny is not important. Please update the working
+rule that uses the ledger so that it's solving for the issue of runaway
+expenses or some type of huge transaction that is way out of order to the
+expenses we're regularly incurring. Please don't be pedantic and have a
+better understanding of WHY we're keeping track of expenses on a ledger. When
+it comes to the accounting work that we're going to do to track income vs.
+expenses, that will be more important to track every little expense, but
+that's totally different."*
+
+He chose (Overhype.me #1331, Q19: 1) that a KITT session make the change.
+The shape he did not object to, proposed by that session: a run or task of
+$1 or more is logged and reads the month's total first; one under $1 is
+neither logged, read for, nor mentioned; every paid run has a ceiling set
+before it starts and never loops unbounded; a run whose worst case is $10 or
+more, or a task past $10, stops for David with a 🛑; the month past $100
+still asks first. **The $1 and $10 lines are the proposing session's choice,
+not David's numbers; he can move them.** The $10 stop joins the irreversible
+list on his word, since a 🛑 is a blocking ask and only the list's items
+are. The home is `core/docs/tests/uat-doc-format.md`, *Lanes*.
+
+What was given up: the ledger no longer holds every paid call, so it cannot
+answer "what did the fleet spend in total" to the cent. That was never its
+job; the product's income-and-expense accounting will be.

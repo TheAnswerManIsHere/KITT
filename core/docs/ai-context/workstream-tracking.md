@@ -165,8 +165,8 @@ and does so **before** creating a fresh issue. **A prototype-phase feature
 reaches `stage:coding` / `waiting:claude` on its first version's approval**
 (and again on the approval of any later version David asked a loop for),
 and until a version David can use exists, the agent is the
-holder, except while a paid AI run that would take the month past David's paid-run budget — $100 a calendar month across every product — waits for his go-ahead (`uat-doc-format.md`, *Lanes*): then it is
-`waiting:david`, back to `waiting:claude` once he gives or declines it. A run within the budget is agent-held work and changes no label. It moves to `waiting:david` when a usable version is delivered (on
+holder, except while a paid AI run that stops for him under the paid-run rule — a run or task of $10 or more, or one that would take the month past $100 across every product — waits for his go-ahead (`uat-doc-format.md`, *Lanes*): then it is
+`waiting:david`, back to `waiting:claude` once he gives or declines it. Any other paid run is agent-held work and changes no label. It moves to `waiting:david` when a usable version is delivered (on
 `main`, or on the prototype environment) and back to `waiting:claude` when
 his feedback starts another revision, so the board asks him to act only
 while there is something to act on (a machine check that fails before

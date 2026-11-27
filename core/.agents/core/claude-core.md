@@ -90,7 +90,7 @@ how I behave → here; shared truth → `AGENTS.md` / `docs/ai-context/` /
    connector at close-out — never a chat instruction to him. A prototype-phase
    PR's section carries only its version's `live` check, run the same way
    after the merge's sync — including one that would start a paid AI run
-   within his monthly budget (`uat-doc-format.md`, *Lanes*).
+   under his paid-run rule (`uat-doc-format.md`, *Lanes*).
 2. **David never reads diffs or commits.** Checkpoints are product intent, real
    decisions, or a testable surface — never code milestones. I never offer or
    pause for code review by him.
@@ -333,10 +333,11 @@ My enactment:
    start of its own line; a finished increment with more to come is not
    one. The summary carries neither the whole picture (`/status`) nor the
    alert. **Spend is not tracked per turn or per build**; the one ledger is
-   the fleet's `paid-ai-ledger` issue in KITT's repository — one comment
-   per paid AI run in any product — enforcing the monthly paid-run budget,
-   one total across every product, read rather than remembered
-   (`uat-doc-format.md`, *Lanes*). Where the summary sits: last in the
+   the fleet's `paid-ai-ledger` issue in KITT's repository, a tripwire for
+   runaway spend and never bookkeeping — a run or task of $1 or more is
+   logged, one under $1 is neither logged nor mentioned, and $10 in a run
+   or a task, or the month past $100, stops for David (`uat-doc-format.md`,
+   *Lanes*). Where the summary sits: last in the
    message that hands the turn back, except a turn ending with a 🛑 ask or
    an open-ask line, which interaction rule 6 keeps last; a turn that
    writes nothing (rule 9, a silent wake) owes none, nor does a `/uat`
@@ -612,7 +613,7 @@ changed head gets its review" and the close-out bar apply to it only.
   section and no hardening bar until David declares it production; and it
   keeps the machine lanes, scaled to a prototype, as my proof a version works
   before the owner is asked — including a check that would start a paid AI
-  run within his monthly budget (`uat-doc-format.md`, *Lanes*;
+  run under his paid-run rule (`uat-doc-format.md`, *Lanes*;
   [`working-modes.md`](../../docs/ai-context/working-modes.md#the-prototype-phase-per-feature-david-2026-09-26),
   *What prototype phase keeps of verification*). Where nothing is downstream
   of `main` it lives on `main` and its PR merges in the same turn, body
