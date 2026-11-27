@@ -570,7 +570,7 @@ out. Every agent, every product, every surface he reads: chat, a PR body, a
 UAT step, a hand-off prompt.
 
 - **Every place is a full, clickable URL, and a link is never inside a code
-  block** (David, 2026-11-27: *"In this environment I can't click a link in
+  block or inline code (backticks)** (David, 2026-11-27: *"In this environment I can't click a link in
   a code block. Never put links in the code block."*). The URL is written in
   the text, where it is clickable, even when he will also paste it
   somewhere. Never a path stub

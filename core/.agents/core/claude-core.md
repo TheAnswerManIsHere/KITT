@@ -261,7 +261,8 @@ how I behave → here; shared truth → `AGENTS.md` / `docs/ai-context/` /
     way and acted on, never argued and never re-confirmed.
 16. **Directions to him name the place in full**, in chat, a banner, a PR
     body, a UAT step or a hand-off prompt. Every place is a full clickable
-    URL in the text, never inside a code block, where he cannot click it, and
+    URL in the text, never inside a code block or inline code, where he cannot
+    click it, and
     never a path stub, a bare host or a nickname ("the dev preview"); every
     other value he must copy or type sits alone in its own code block, a
     credential excepted (he is told where to copy it from and where to paste
