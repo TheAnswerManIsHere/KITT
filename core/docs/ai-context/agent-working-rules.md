@@ -569,7 +569,11 @@ is written so he can act on it with no knowledge of how the system is laid
 out. Every agent, every product, every surface he reads: chat, a PR body, a
 UAT step, a hand-off prompt.
 
-- **Every place is a full, clickable URL.** Never a path stub
+- **Every place is a full, clickable URL, and a link is never inside a code
+  block** (David, 2026-11-27: *"In this environment I can't click a link in
+  a code block. Never put links in the code block."*). The URL is written in
+  the text, where it is clickable, even when he will also paste it
+  somewhere. Never a path stub
   (`/api/stripe/webhook`), never a bare host, never a name for a place
   ("the dev preview", "the Billing panel", "the Stripe dashboard"). A page
   inside the product gets the full address of the environment it is in. A
@@ -577,9 +581,9 @@ UAT step, a hand-off prompt.
   right account where the site allows it. Where no deep link exists, give
   the nearest full URL and then the clicks from there, each named as it
   appears on screen.
-- **Every value he must copy or type is in a code block of its own**, so one
-  click copies it: a URL he pastes elsewhere, a setting's name, a value, a
-  sign-in code. One value per block; nothing else inside it.
+- **Every other value he must copy or type is in a code block of its own**,
+  so one click copies it: a setting's name, a value, a sign-in code. One
+  value per block; nothing else inside it, and never a link.
 - **No shorthand for where.** Say which app, which environment (development
   or production), which account and which page, in words he would use, every
   time: "the development app on Replit", never "dev". An agent that is about
