@@ -176,16 +176,18 @@ needed.
   its worst case when the cost is unknown. A run under $1 is not logged and
   not mentioned to David. Small runs in one task count together: once a
   task's paid runs reach $1, the task's total goes on the ledger as one
-  comment. The ledger is **one open issue for the fleet**, in KITT's
+  comment, written then and brought up to date when the task ends. The ledger is **one open issue for the fleet**, in KITT's
   repository (`PAID_RUN_LEDGER_REPO` in `machinery.mjs`), labelled
   `paid-ai-ledger`; a comment carries the date, the product, what ran and
   what it cost, under the disclosure check, since that repository is public.
-- **Before a run of $1 or more, the month's total is read, never
-  remembered**: every comment dated in the current calendar month (UTC),
-  whichever product it names, plus the task's own runs not yet logged; that
-  total plus the run's worst case is held against $100. A run whose cost was
-  not recorded counts at its worst case. A run under $1 needs no ledger
-  read. A session whose GitHub access does not reach KITT attaches it
+- **Before a run of $1 or more — and before the paid run that would take a
+  task's runs to $1 or more, a planned batch of small runs counted as one —
+  the month's total is read, never remembered**: every comment dated in the
+  current calendar month (UTC), whichever product it names, plus the task's
+  own runs not yet logged; that total plus the worst case of what is about
+  to run is held against $100, and the task's later runs stay inside what
+  was checked. A run whose cost was not recorded counts at its worst case. A
+  task whose runs stay under $1 needs no ledger read. A session whose GitHub access does not reach KITT attaches it
   (`add_repo`, push access, since it writes the comment) before such a run —
   an attach refused by the auto-mode classifier stops and asks
   ([`add-repo-refused-in-auto-mode.md`](../../.agents/memory/add-repo-refused-in-auto-mode.md));
