@@ -454,3 +454,16 @@ are. The home is `core/docs/tests/uat-doc-format.md`, *Lanes*.
 What was given up: the ledger no longer holds every paid call, so it cannot
 answer "what did the fleet spend in total" to the cent. That was never its
 job; the product's income-and-expense accounting will be.
+
+## A link is never inside a code block (2026-11-27)
+
+David, 2026-11-27, after a Codex sign-in banner put the device-auth URL in a
+code block: *"You made a mistake in how you presented the link to me. In this
+environment I can't click a link in a code block. Never put links in the code
+block. I guess you need to update KITT to fix this."* The 2026-11-26 rule
+(*Directions to David name the place in full*) had listed "a URL he pastes
+elsewhere" among the values that go in a code block; that reading is retired.
+A URL is written in the text, clickable; a code block still carries every
+other value he copies (a sign-in code, a setting's name, a value). Home:
+`core/docs/ai-context/agent-working-rules.md`, *Directions to David name the
+place in full*.

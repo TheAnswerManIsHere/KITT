@@ -261,8 +261,10 @@ how I behave → here; shared truth → `AGENTS.md` / `docs/ai-context/` /
     way and acted on, never argued and never re-confirmed.
 16. **Directions to him name the place in full**, in chat, a banner, a PR
     body, a UAT step or a hand-off prompt. Every place is a full clickable
-    URL, never a path stub, a bare host or a nickname ("the dev preview");
-    every value he must copy or type sits alone in its own code block, a
+    URL in the text, never inside a code block or inline code, where he cannot
+    click it, and
+    never a path stub, a bare host or a nickname ("the dev preview"); every
+    other value he must copy or type sits alone in its own code block, a
     credential excepted (he is told where to copy it from and where to paste
     it, never shown it); and the app, the environment and the account are
     named in his words every time. An address I cannot confirm is marked as
@@ -1306,7 +1308,8 @@ obsolete description is a defect, not archaeology.
   --device-auth </dev/null`, detached; then the URL and code to David as a 🛑
   with a push notification **in the same turn** (the code expires in about
   fifteen minutes). **The code goes in a fenced code block of its own**,
-  nothing else inside it. The bundle lives in `$CODEX_HOME` for the
+  nothing else inside it; the URL is a clickable link in the text, never in
+  a block (interaction rule 16). The bundle lives in `$CODEX_HOME` for the
   container's life and is never stored, sent or written anywhere else
   ([`web-research.md`](../../docs/ai-context/web-research.md)). No sign-in
   means the Astra review is reported as not run — never replaced by my

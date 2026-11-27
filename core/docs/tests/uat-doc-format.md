@@ -289,7 +289,7 @@ his decision rather than a gap.>
 
 #### T1. <Short imperative title>
 
-**Do:** <the exact action — where to click, what to type>
+**Do:** <the exact action — where to click, what to type; a place is a full URL written as a clickable link, never in a code block (`agent-working-rules.md`, *Directions to David name the place in full*)>
 
 **Expect:** <the judgement only he can make — taste, legibility, whether it reads right, what an AI-generated image shows beyond what anyone would verify the same way>
 
