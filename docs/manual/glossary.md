@@ -695,7 +695,7 @@ Home: [`core/scripts/needs-you-alert.mjs`](../../core/scripts/needs-you-alert.mj
 One issue in KITT's repository, labelled `paid-ai-ledger`: a tripwire for
 runaway spend, not bookkeeping. A paid run or task costing $1 or more gets a
 comment, and reads the month's total — one across every product — before it
-runs; one under $1 is neither logged nor mentioned; $10 in one run or task
+runs; one under $1 is neither logged nor mentioned; a $10 worst case in one run, or $10 across a task,
 stops for David. One of
 the two small ledgers the #89 cut's "no ledger" now admits; the other is a
 workstream issue's *Spend so far* line.

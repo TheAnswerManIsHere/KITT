@@ -24,7 +24,7 @@ Read it before settling the first machine-lane step of a run.
   a checkout or worktree at the commit under test** (or the on-demand
   workflow dispatched on that commit), with the output kept with the commit
   it ran at; that is close-out's lapse, so it goes on the run record's
-  **Lifecycle gaps** line (section 5). One that would start a paid AI run runs under David's paid-run rule — a ceiling set before it starts, a 🛑 stop for a run or task of $10 or more, and asking first past $100 a calendar month across every product, as a paid capture does (below).
+  **Lifecycle gaps** line (section 5). One that would start a paid AI run runs under David's paid-run rule — a ceiling set before it starts, a 🛑 stop for a run whose worst case is $10 or more or a task past $10, and asking first past $100 a calendar month across every product, as a paid capture does (below).
 - **`live`** — **cited from close-out's Post-merge verification when that
   section ran the step's check and the Repl's commit has not moved since**:
   the workstream reaching `stage:uat` is that pass's evidence, and the row
@@ -35,7 +35,7 @@ Read it before settling the first machine-lane step of a run.
   `main`'s CI never sees. Then I run it through the live-environment
   connector, **read-only, always**, after confirming the Repl's synced
   commit is the commit under test, and quote what it printed. A check that would start a
-  paid AI run is not read-only: it runs under David's paid-run rule — a ceiling set before it starts, a 🛑 stop for a run or task of $10 or more, and asking first past $100 a calendar month across every product, as a
+  paid AI run is not read-only: it runs under David's paid-run rule — a ceiling set before it starts, a 🛑 stop for a run whose worst case is $10 or more or a task past $10, and asking first past $100 a calendar month across every product, as a
   paid capture does (below). State a check needs is a
   Setup `[claude]` line with its `[restore]` (section 2); a probe whose
   refusal is the thing tested writes nothing and is not a write.
@@ -166,6 +166,6 @@ that is three places:
 **Once a step is fully scriptable, UAT is usually the wrong home for it.** It
 belongs in CI or in the PR's post-merge verification, where it runs on every
 change forever instead of once — unless it calls a paid AI vendor, which
-runs under David's paid-run rule — a ceiling set before it starts, a 🛑 stop for a run or task of $10 or more, and asking first past $100 a calendar month across every product (`uat-doc-format.md`, *Lanes*). Automation is mostly *draining* mechanical
+runs under David's paid-run rule — a ceiling set before it starts, a 🛑 stop for a run whose worst case is $10 or more or a task past $10, and asking first past $100 a calendar month across every product (`uat-doc-format.md`, *Lanes*). Automation is mostly *draining* mechanical
 steps out of UAT into the layers that already exist — and scripting whatever
 live-app checks are left over into the PR's post-merge verification.

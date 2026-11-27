@@ -126,7 +126,7 @@ words plus the questions**, six items in this order:
    recommendation, the same ID and wording as in the section of that name
    below.
 5. **How you'll check it** — what he will click through at UAT.
-6. **Costs and risks that are yours** — a paid run that would hit a stop of the paid-run rule (`uat-doc-format.md`, *Lanes*: $10 or more in a run or task, or the month past $100), anything irreversible, a
+6. **Costs and risks that are yours** — a paid run that would hit a stop of the paid-run rule (`uat-doc-format.md`, *Lanes*: a run whose worst case is $10 or more, a task past $10, or the month past $100), anything irreversible, a
    user-facing shortfall he is asked to accept, a tie settled over a dissent;
    or "none".
 

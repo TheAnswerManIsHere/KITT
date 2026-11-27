@@ -55,7 +55,7 @@ skill is the mechanics of each step. The contract governs on any conflict.
    (the two-call sequence below, read-only scoping stated), when it has
    content. A step that would start a paid AI run is not read-only and runs
    under David's paid-run rule: a ceiling set before it starts, and a stop
-   for him at $10 in a run or task or past $100 in the month
+   for him at a $10 worst case in a run, $10 across a task, or past $100 in the month
    (`uat-doc-format.md`, *Lanes*).
 5. **Post the harvest-notes comment** on the workstream issue (production-phase
    product PRs; a prototype-phase PR posts none).

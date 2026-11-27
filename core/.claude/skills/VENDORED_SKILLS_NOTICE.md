@@ -182,7 +182,7 @@ Modification status:
   The 2026-10-17 paid-run sweep (KITT #219) added one clause to the
   existing notes of `prototype/LOGIC.md`, `prototype/UI.md` and
   `test-driven-development/SKILL.md`: a check that would start a paid AI run
-  runs under David's paid-run rule — a ceiling set before it starts, a 🛑 stop for a run or task of $10 or more, and asking first past $100 a calendar month across every product (the clause first required his go-ahead for each run, retired 2026-10-21; then a $5-a-run and $25-a-week budget, retired 2026-11-17; then "no per-run cap", retired 2026-11-27 for the $10 stop; the rule's home is
+  runs under David's paid-run rule — a ceiling set before it starts, a 🛑 stop for a run whose worst case is $10 or more or a task past $10, and asking first past $100 a calendar month across every product (the clause first required his go-ahead for each run, retired 2026-10-21; then a $5-a-run and $25-a-week budget, retired 2026-11-17; then "no per-run cap", retired 2026-11-27 for the $10 stop; the rule's home is
   `docs/tests/uat-doc-format.md`, *Lanes*).
 - `grill-me/SKILL.md` — **no longer verbatim as of PR #545**: body changed
   from `Run a `/grilling` session.` to upstream's exact delegation form,

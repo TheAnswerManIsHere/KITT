@@ -335,8 +335,8 @@ My enactment:
    alert. **Spend is not tracked per turn or per build**; the one ledger is
    the fleet's `paid-ai-ledger` issue in KITT's repository, a tripwire for
    runaway spend and never bookkeeping — a run or task of $1 or more is
-   logged, one under $1 is neither logged nor mentioned, and $10 in a run
-   or a task, or the month past $100, stops for David (`uat-doc-format.md`,
+   logged, one under $1 is neither logged nor mentioned, and a $10 worst case
+   in a run, $10 across a task, or the month past $100, stops for David (`uat-doc-format.md`,
    *Lanes*). Where the summary sits: last in the
    message that hands the turn back, except a turn ending with a 🛑 ask or
    an open-ask line, which interaction rule 6 keeps last; a turn that
