@@ -28,7 +28,7 @@ phase removes — and its
 vendor, as the command and pass criterion I run after the merge's sync and
 before the owner is asked — one that would start a paid AI run runs under David's paid-run rule — a ceiling set before it starts, a 🛑 stop for a run or task of $10 or more, and asking first past $100 a calendar month across every product (`uat-doc-format.md`, *Lanes*); otherwise
 "none needed". Its scaled `ci` and
-`scripted` lanes run before the merge (a check that would start a paid AI run is never `ci`; as `scripted` it runs within his paid-run budget and asks above it, as above) and its feedback rail is the only human
+`scripted` lanes run before the merge (a check that would start a paid AI run is never `ci`; as `scripted` it runs under the same paid-run rule, as above) and its feedback rail is the only human
 lane (working-modes.md, *The prototype phase, per feature*, and *What
 prototype phase keeps of verification*; Codex, DojoOS #8: without that record
 the mandatory live check had no recorded command for close-out to run).
